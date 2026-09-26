@@ -6,10 +6,15 @@
 
 General results now verified in Lean:
 
-- [`Boundary.lean`](../lean/ProofPursuit/P3/Boundary.lean), `boundary_orbit`: for every binary word of length `k+1`, the piles `(k+bit₀, k−1+bit₁, …, bitₖ)`, with zero removed, form a partition of `k(k+1)/2 + bitCount`. Each step rotates the final bit to the front, and `k+1` steps return to the original partition. This proves the constructive direction of the proposed cycle classification. It does not claim the least period is `k+1`.
+- [`Boundary.lean`](../lean/ProofPursuit/P3/Boundary.lean), `boundary_orbit`: for every binary word of length `k+1`, the piles `(k+bit₀, k−1+bit₁, …, bitₖ)`, with zero removed, form a partition of `k(k+1)/2 + bitCount`. Each step rotates the final bit to the front, and `k+1` steps return to the original partition. This proves the constructive direction of the cycle classification. It does not claim the least period is `k+1`.
 - [`Eventual.lean`](../lean/ProofPursuit/P3/Eventual.lean), `eventually_cyclic` and `depth_exists`: every partition of every `n` reaches a cycle before the partition enumeration is exhausted. This pigeonhole bound is not a sharp transient bound.
 - [`Energy.lean`](../lean/ProofPursuit/P3/Energy.lean), `step_energy_le`: the sum of diagonal indices of cards never increases. `cyclic_energy_constant` proves no loss on a periodic orbit. `cyclic_head_bound` proves the largest pile of any nonempty cyclic partition is at most one plus its pile count.
 
+- [`Classification.lean`](../lean/ProofPursuit/P3/Classification.lean), `cyclic_iff_boundary`: a partition is cyclic **if and only if** it is a staircase with a binary boundary. The converse is proved through energy constancy, diagonal rotation, simultaneous alignment on adjacent diagonals, and reconstruction from the resulting height bounds.
+- [`Necklace.lean`](../lean/ProofPursuit/P3/Necklace.lean), `boundary_same_cycle_iff`: two equal-width binary words describe the same solitaire cycle exactly when one is a rotation of the other. `boundary_injective_of_length` proves the encoding is injective at fixed width. This is a cycle correspondence, not yet the numerical necklace-count formula.
+
+- [`TriangularGeneral.lean`](../lean/ProofPursuit/P3/TriangularGeneral.lean), `triangular_cyclic_unique` and `triangular_eventually_staircase`: for every natural `k`, the staircase is the unique cyclic partition of `k(k+1)/2`, and every partition of that size eventually reaches it. This includes `k=0`; no uniform sharp time bound is claimed here.
+
 The binary-boundary characterization and diagonal-energy approach are classical; see [Griggs and Ho, *The Cycling of Partitions and Compositions under Repeated Shifts*](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf). These files supply explicit checked proofs of the stated lemmas, not new mathematical claims.
 
-Still missing: the converse that every cycle is a binary boundary, the general cycle-count formula, and triangular convergence/uniqueness for arbitrary `k`. C1 remains **Not solved**. [Replay evidence](../evidence/verification.json) records exact source hashes and axiom checks.
+Still missing: the general numerical cycle-count formula. C1 remains **Not solved**. [Replay evidence](../evidence/verification.json) records exact source hashes and axiom checks.

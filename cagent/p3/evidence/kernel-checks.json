@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "ProofPursuit.P3.Classification"
+      ],
+      "exit_code": 0,
+      "seconds": 0.735,
+      "output": ""
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "ProofPursuit.P3.TriangularGeneral"
+      ],
+      "exit_code": 0,
+      "seconds": 0.774,
+      "output": ""
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "ProofPursuit.P3.Necklace"
+      ],
+      "exit_code": 0,
+      "seconds": 0.727,
+      "output": ""
+    }
+  ]
+}

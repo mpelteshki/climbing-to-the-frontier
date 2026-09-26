@@ -15,10 +15,13 @@ ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 
 def main():
     lake = shutil.which('lake') or str(Path.home() / '.elan/bin/lake')
-    subprocess.run([lake, 'build', '+ProofPursuit.P3.Enumeration', '+ProofPursuit.P3.Staircase', '+ProofPursuit.P3.Eventual'], cwd=LEAN, check=True)
+    subprocess.run([lake, 'build', '+ProofPursuit.P3.Enumeration', '+ProofPursuit.P3.Staircase', '+ProofPursuit.P3.Classification', '+ProofPursuit.P3.Necklace', '+ProofPursuit.P3.TriangularGeneral'], cwd=LEAN, check=True)
     version = subprocess.check_output([lake, 'env', 'lean', '--version'], cwd=LEAN, text=True).strip()
     files = ['Basic.lean', 'Enumeration.lean', 'Staircase.lean', 'NegativeCheck.lean',
-             'Convergence.lean', 'Boundary.lean', 'Eventual.lean', 'Energy.lean'] + [f'N{n}.lean' for n in range(1, 24)]
+             'Convergence.lean', 'Boundary.lean', 'Eventual.lean', 'Energy.lean',
+             'CyclicStep.lean', 'Diagonal.lean', 'DiagonalOrder.lean', 'HighestDiagonal.lean',
+             'BoundaryReconstruction.lean', 'Classification.lean', 'Necklace.lean',
+             'TriangularGeneral.lean'] + [f'N{n}.lean' for n in range(1, 24)]
     records = []
     started = time.monotonic()
     for name in files:
@@ -41,8 +44,10 @@ def main():
                       exit_code=result.returncode, output=output)
         records.append(record)
         print(f'{name}: PASS ({record["seconds"]}s)', flush=True)
+    checked_sources = [LEAN/'ProofPursuit/P3'/name for name in files]
+    pinned_config = [LEAN/name for name in ['lean-toolchain', 'lakefile.toml', 'lake-manifest.json']]
     inputs = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
-              for p in sorted(LEAN.rglob('*')) if p.is_file() and '.lake' not in p.parts}
+              for p in sorted(checked_sources + pinned_config) if p.is_file()}
     inputs['verify.py'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     report = dict(lean_version=version, source_sha256=inputs, records=records,
                   total_seconds=round(time.monotonic()-started, 3), status='PASS')
