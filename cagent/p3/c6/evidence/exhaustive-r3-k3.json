@@ -1,0 +1,29 @@
+{
+ "k": 3,
+ "n": 6,
+ "partitions": 11,
+ "D_B": 6,
+ "griggs_ho_L": 6,
+ "small_residue_candidate_(k-1)(k-5)": -4,
+ "match_L": true,
+ "num_maximizers": 1,
+ "maximizers": [
+  [
+   2,
+   2,
+   1,
+   1
+  ]
+ ],
+ "layer_sizes": [
+  1,
+  1,
+  2,
+  3,
+  2,
+  1,
+  1
+ ],
+ "sampled_depth_checks": 10,
+ "seconds": 0.0
+}

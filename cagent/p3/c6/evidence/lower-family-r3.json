@@ -1,0 +1,64 @@
+{
+ "status": "PASS",
+ "k_range_modular_trajectory": [
+  9,
+  120
+ ],
+ "k_range_direct_depth": [
+  9,
+  25
+ ],
+ "small_k_family_not_optimal": {
+  "5": {
+   "family": [
+    3,
+    4,
+    3,
+    2,
+    1
+   ],
+   "family_depth": 1,
+   "n": 13
+  },
+  "6": {
+   "family": [
+    4,
+    4,
+    4,
+    3,
+    2,
+    1
+   ],
+   "family_depth": 5,
+   "n": 18
+  },
+  "7": {
+   "family": [
+    5,
+    5,
+    4,
+    4,
+    3,
+    2,
+    1
+   ],
+   "family_depth": 12,
+   "n": 24
+  },
+  "8": {
+   "family": [
+    6,
+    6,
+    5,
+    4,
+    4,
+    3,
+    2,
+    1
+   ],
+   "family_depth": 21,
+   "n": 31
+  }
+ },
+ "seconds": 6.34
+}
