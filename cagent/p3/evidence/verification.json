@@ -38,12 +38,13 @@
     "lean/ProofPursuit/P3/N9.lean": "0454d61756a9f6217bc1e8f000316f0f9e0bb473b6eb8bddd0ec56e8998294d0",
     "lean/ProofPursuit/P3/Necklace.lean": "b1a0ae5b9f4192c67792607b005a8dd1c81bf9ff27ba984ac3488e52aee146f4",
     "lean/ProofPursuit/P3/NegativeCheck.lean": "ea9babfd95320c2343fce3b8fcdcb2261c628c6a56f1accf7263bba4cec5c140",
+    "lean/ProofPursuit/P3/RankedClassification.lean": "075cfcf78c54d66908605b3c33d20d7fb01ba84739396f2b1e6153c333f6859c",
     "lean/ProofPursuit/P3/Staircase.lean": "532514e031e68fb564643c61479d1fa54741661ac9259a05854f759e41290e09",
     "lean/ProofPursuit/P3/TriangularGeneral.lean": "61582ece878b301ff6f0fba8d13dbc10d06f048abff47fb388f92e9fac7fdf9b",
     "lean/lake-manifest.json": "14dba1712a3ac9fa99952e723e93a403ed6223f7fc08ab04a6f540b3fbd619a2",
     "lean/lakefile.toml": "40be3da9173856eb049db546dca54e21c07ff0d74b8b79da96d9615e02f9b997",
     "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
-    "verify.py": "350dfd4d43fa583564bbf045b8d1923ba1726ce17be76a142d0342a2e0fa435a"
+    "verify.py": "1a1286e8b4321c7e1c8f1be7c2e5a857cde011c6bb2f129adf8aa0f4cea68cbf"
   },
   "records": [
     {
@@ -55,7 +56,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Basic.lean"
       ],
-      "seconds": 0.422,
+      "seconds": 0.957,
       "exit_code": 0,
       "output": ""
     },
@@ -68,7 +69,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Enumeration.lean"
       ],
-      "seconds": 0.42,
+      "seconds": 0.857,
       "exit_code": 0,
       "output": ""
     },
@@ -81,7 +82,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Staircase.lean"
       ],
-      "seconds": 0.413,
+      "seconds": 0.479,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.staircase_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.staircase_partition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.staircase_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.step_isPartition' depends on axioms: [propext, Quot.sound]\n"
     },
@@ -94,7 +95,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/NegativeCheck.lean"
       ],
-      "seconds": 0.346,
+      "seconds": 0.567,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.one_card_not_depth_one' does not depend on any axioms\n"
     },
@@ -107,7 +108,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Convergence.lean"
       ],
-      "seconds": 1.892,
+      "seconds": 2.11,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.triangular_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_3' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_4' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_5' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_6' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -120,7 +121,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Boundary.lean"
       ],
-      "seconds": 0.408,
+      "seconds": 0.434,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.boundary_cyclic' depends on axioms: [propext, Quot.sound]\n'ProofPursuit.P3.boundary_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -133,7 +134,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Eventual.lean"
       ],
-      "seconds": 0.391,
+      "seconds": 0.512,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.eventually_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.depth_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -146,7 +147,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Energy.lean"
       ],
-      "seconds": 0.461,
+      "seconds": 0.532,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.step_energy_le' depends on axioms: [propext, Quot.sound]\n'ProofPursuit.P3.cyclic_energy_constant' depends on axioms: [propext, Quot.sound]\n'ProofPursuit.P3.cyclic_head_bound' depends on axioms: [propext, Quot.sound]\n"
     },
@@ -159,7 +160,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/CyclicStep.lean"
       ],
-      "seconds": 0.389,
+      "seconds": 0.404,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.cyclic_step_eq_rotation' depends on axioms: [propext, Quot.sound]\n'ProofPursuit.P3.height_step_zero' depends on axioms: [propext, Quot.sound]\n'ProofPursuit.P3.height_step_succ' depends on axioms: [propext, Quot.sound]\n"
     },
@@ -172,7 +173,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Diagonal.lean"
       ],
-      "seconds": 0.381,
+      "seconds": 0.424,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.diagonal_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.diagonal_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.diagonal_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -185,7 +186,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/DiagonalOrder.lean"
       ],
-      "seconds": 0.409,
+      "seconds": 0.441,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.lower_diagonal_filled_of_upper_cell' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -198,7 +199,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/HighestDiagonal.lean"
       ],
-      "seconds": 0.422,
+      "seconds": 0.475,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.cyclic_height_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -211,7 +212,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/BoundaryReconstruction.lean"
       ],
-      "seconds": 0.411,
+      "seconds": 0.448,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.boundary_of_height_bounds' depends on axioms: [propext, Quot.sound]\n"
     },
@@ -224,7 +225,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Classification.lean"
       ],
-      "seconds": 0.35,
+      "seconds": 0.519,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.cyclic_is_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.cyclic_iff_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -237,7 +238,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/Necklace.lean"
       ],
-      "seconds": 0.419,
+      "seconds": 0.427,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.boundary_injective_of_length' depends on axioms: [propext, Quot.sound]\n'ProofPursuit.P3.boundary_same_cycle_iff' depends on axioms: [propext, Quot.sound]\n"
     },
@@ -250,9 +251,22 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/TriangularGeneral.lean"
       ],
-      "seconds": 0.424,
+      "seconds": 0.486,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.triangular_cyclic_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_eventually_staircase' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/RankedClassification.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/RankedClassification.lean"
+      ],
+      "seconds": 0.466,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.ranked_cyclic_iff_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
     {
       "file": "ProofPursuit/P3/N1.lean",
@@ -263,7 +277,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N1.lean"
       ],
-      "seconds": 0.361,
+      "seconds": 0.384,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -276,7 +290,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N2.lean"
       ],
-      "seconds": 0.365,
+      "seconds": 0.4,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -289,7 +303,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N3.lean"
       ],
-      "seconds": 0.376,
+      "seconds": 0.428,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_3' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -302,7 +316,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N4.lean"
       ],
-      "seconds": 0.376,
+      "seconds": 0.439,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_4' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -315,7 +329,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N5.lean"
       ],
-      "seconds": 0.38,
+      "seconds": 0.42,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_5' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -328,7 +342,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N6.lean"
       ],
-      "seconds": 0.421,
+      "seconds": 0.482,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_6' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -341,7 +355,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N7.lean"
       ],
-      "seconds": 0.394,
+      "seconds": 0.431,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_7' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -354,7 +368,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N8.lean"
       ],
-      "seconds": 0.428,
+      "seconds": 0.487,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_8' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -367,7 +381,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N9.lean"
       ],
-      "seconds": 0.496,
+      "seconds": 0.481,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_9' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -380,7 +394,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N10.lean"
       ],
-      "seconds": 0.507,
+      "seconds": 0.492,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_10' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -393,7 +407,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N11.lean"
       ],
-      "seconds": 0.502,
+      "seconds": 0.513,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_11' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -406,7 +420,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N12.lean"
       ],
-      "seconds": 0.576,
+      "seconds": 0.575,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_12' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -419,7 +433,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N13.lean"
       ],
-      "seconds": 0.529,
+      "seconds": 0.593,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_13' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -432,7 +446,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N14.lean"
       ],
-      "seconds": 0.633,
+      "seconds": 1.667,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_14' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -445,7 +459,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N15.lean"
       ],
-      "seconds": 0.701,
+      "seconds": 1.93,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_15' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -458,7 +472,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N16.lean"
       ],
-      "seconds": 0.786,
+      "seconds": 3.516,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_16' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -471,7 +485,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N17.lean"
       ],
-      "seconds": 0.862,
+      "seconds": 1.019,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_17' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -484,7 +498,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N18.lean"
       ],
-      "seconds": 1.1,
+      "seconds": 1.353,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_18' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -497,7 +511,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N19.lean"
       ],
-      "seconds": 1.339,
+      "seconds": 1.558,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_19' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -510,7 +524,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N20.lean"
       ],
-      "seconds": 1.605,
+      "seconds": 2.026,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_20' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -523,7 +537,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N21.lean"
       ],
-      "seconds": 2.215,
+      "seconds": 2.87,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_21' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -536,7 +550,7 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N22.lean"
       ],
-      "seconds": 2.653,
+      "seconds": 4.528,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_22' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     },
@@ -549,11 +563,11 @@
         "-DwarningAsError=true",
         "ProofPursuit/P3/N23.lean"
       ],
-      "seconds": 3.272,
+      "seconds": 4.343,
       "exit_code": 0,
       "output": "'ProofPursuit.P3.maximumDepth_23' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
     }
   ],
-  "total_seconds": 28.841,
+  "total_seconds": 41.49,
   "status": "PASS"
 }

@@ -17,4 +17,6 @@ General results now verified in Lean:
 
 The binary-boundary characterization and diagonal-energy approach are classical; see [Griggs and Ho, *The Cycling of Partitions and Compositions under Repeated Shifts*](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf). These files supply explicit checked proofs of the stated lemmas, not new mathematical claims.
 
+- [`RankedClassification.lean`](../lean/ProofPursuit/P3/RankedClassification.lean), `ranked_cyclic_iff_boundary`: when `Tₖ₋₁ < n ≤ Tₖ`, cyclic partitions are exactly boundary words of length `k` and weight `n−Tₖ₋₁`, including the triangular upper endpoint.
+
 Still missing: the general numerical cycle-count formula. C1 remains **Not solved**. [Replay evidence](../evidence/verification.json) records exact source hashes and axiom checks.
