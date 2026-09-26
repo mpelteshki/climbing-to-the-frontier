@@ -1,0 +1,64 @@
+{
+  "build_seconds": 0.723,
+  "certificate_checks": {
+    "compact_trees": {
+      "bytes": 83325,
+      "checked_nodes": 40292,
+      "complete": true,
+      "trees": 59,
+      "wall_seconds": 0.385
+    },
+    "minimum_cardinality": {
+      "claims": 107,
+      "complete": true,
+      "facts": 20436,
+      "minimum_sizes": {
+        "15": {
+          "12": 3,
+          "6": 16,
+          "7": 11
+        },
+        "16": {
+          "10": 11,
+          "11": 9,
+          "7": 16,
+          "8": 2,
+          "9": 39
+        }
+      },
+      "smaller_sat_facts_used": 19704,
+      "wall_seconds": 1.582
+    },
+    "refutation_trees": {
+      "checked_nodes": 40292,
+      "complete": true,
+      "unique_obstructions": 59,
+      "wall_seconds": 0.368
+    }
+  },
+  "complete": true,
+  "overall_wall_seconds": 27.626,
+  "sizes": [
+    {
+      "each_equals_independently_checked_baseline": true,
+      "exact_lists_equal": true,
+      "k": 15,
+      "off_nodes": 8750591,
+      "off_wall_seconds": 1.909,
+      "on_nodes": 2116642,
+      "on_wall_seconds": 1.825,
+      "survivors": 30
+    },
+    {
+      "each_equals_independently_checked_baseline": true,
+      "exact_lists_equal": true,
+      "k": 16,
+      "off_nodes": 27446587,
+      "off_wall_seconds": 10.856,
+      "on_nodes": 6832600,
+      "on_wall_seconds": 9.975,
+      "survivors": 77
+    }
+  ],
+  "source_sha256": "2f8223f6054840a939b26e11496664239b906a9a74ebcb01ba385bd8bf2320b2"
+}
