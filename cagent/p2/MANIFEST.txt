@@ -2,6 +2,7 @@
 MANIFEST.txt
 Established-results.md
 README.md
+writeup.md
 Task.md
 c1/Q3.lean
 c1/Q4.lean

@@ -12,7 +12,7 @@ The pile-count pattern method comes from [Griggs and Ho, Sections 3–4](https:/
 
 ## Lifetimes and the last pattern
 
-Put $n=T_{k-1}+1$ and $c_i=\#B^{i-1}(\lambda)$. The pile born on move $i$ exists at integer times $i+1,\ldots,i+c_i$; call its lifetime $J_i$. Thus
+Put $n=T_{k-1}+1$ and $c_i=\operatorname{length}(B^{i-1}(\lambda))$. The pile born on move $i$ exists at integer times $i+1,\ldots,i+c_i$; call its lifetime $J_i$. Thus
 
 $$
 c_{i+1}=c_i+1-d_i,
@@ -21,8 +21,10 @@ $$
 where $d_i$ is the number of piles dying at time $i$. In particular, a rise by one permits no death, and a constant consecutive pair permits exactly one death. A block of $m$ pile counts satisfies
 
 $$
-\sum_{j=0}^{m-1}c_{p+j}\le n+T_{m-1}. \tag{1}
+\sum_{j=0}^{m-1}c_{p+j}\le n+T_{m-1}.
 $$
+
+(1)
 
 Indeed, the piles existing at time $p$ contribute at most their total $n$ remaining cards to these counts. The successive new piles contribute at most $m-1,m-2,\ldots,1$ further occurrences.
 
@@ -35,14 +37,18 @@ $$
 [C2's retreat argument](../c2/upper-bound-proof.md) proves
 
 $$
-p\le x(L-1). \tag{2}
+p\le x(L-1).
 $$
+
+(2)
 
 It also proves that a level $k-1$ pattern of width $k$ satisfies
 
 $$
-p+k\le n+1. \tag{3}
+p+k\le n+1.
 $$
+
+(3)
 
 Both are statements about arbitrary solitaire trajectories, not just triangular card counts. Their lifetime proofs precede the triangular application in C2. Equation (2)'s abstract induction is additionally [checked in Lean](../lean/ProofPursuit/P3/C2SandwichBound.lean).
 

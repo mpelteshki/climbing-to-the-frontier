@@ -15,16 +15,20 @@ $$
 Its last time is $e_i=i+c_i$. At any time $m$, precisely $c_m$ of these original-pile and created-pile intervals contain $m$. One new interval starts between times $i$ and $i+1$; if $d_i$ intervals end at $i$, then
 
 $$
-c_{i+1}=c_i+1-d_i. \tag{1}
+c_{i+1}=c_i+1-d_i.
 $$
+
+(1)
 
 In particular $c_{i+1}\le c_i+1$; a rise by one means **no** pile dies, and a constant pair means **exactly one** pile dies.
 
 We use a *sandwich pattern* of level $x$ and width $L=q-p\ge2$:
 
 $$
-(c_p,c_{p+1},\ldots,c_q)=(x-1,x,\ldots,x,x+1). \tag{2}
+(c_p,c_{p+1},\ldots,c_q)=(x-1,x,\ldots,x,x+1).
 $$
+
+(2)
 
 The two rises occur at its ends. The following elementary sandwich rule will locate one. If $i<j$, $c_i\le x-1$, and $c_j\ge x+1$, choose $p$ as the last index before $j$ with $c_p\le x-1$, and $q$ as the first subsequent index with $c_q\ge x+1$. Equation (1) forces $c_p=x-1$, $c_{p+1}=\cdots=c_{q-1}=x$, and $c_q=x+1$. Thus (2) occurs within $[i,j]$.
 
@@ -35,16 +39,20 @@ Suppose (2) occurs and $p>x$. Among the $x$ recent created piles $J_{p-x},\ldots
 Put $h=p-u-1$ and $y=h+1=p-u\le x$. The absence of $J_u$ at $p$ gives $c_u\le h$. The presence of $J_{u+1}$ at $p+1$ gives $c_{u+1}\ge h+1$. Applying $c_{u+1}\le c_u+1$ shows
 
 $$
-c_u=h=y-1,\qquad c_{u+1}=h+1=y. \tag{3}
+c_u=h=y-1,\qquad c_{u+1}=h+1=y.
 $$
+
+(3)
 
 Moreover $J_{u+1}$ ends at time $u+1+y=p+1$.
 
 If $L=2$, the pattern also has $c_{p+2}=c_{p+1}+1$, so no interval ends at $p+1$, a contradiction. Hence every width-two pattern satisfies
 
 $$
-p\le x. \tag{4}
+p\le x.
 $$
+
+(4)
 
 Now let $L\ge3$. As long as no later value $c_{u+s}$ has risen from $y$ to $y+1$, the consecutive intervals
 
@@ -58,16 +66,20 @@ At $s=L-1$, the transition from $c_{q-1}=x$ to $c_q=x+1$ permits no death. Thus 
 
 $$
 u+2\le v\le u+L-1,
-\qquad(c_u,\ldots,c_v)=(y-1,y,\ldots,y,y+1). \tag{5}
+\qquad(c_u,\ldots,c_v)=(y-1,y,\ldots,y,y+1).
 $$
+
+(5)
 
 It occurs by $p+1$: otherwise both $c_p$ and $c_{p+1}$ would equal $y$, contradicting their values $x-1,x$. Thus $u\ge p-x$, $v\le p+1$, $y\le x$, and the new width $v-u<L$. This is the retreat step.
 
 Each retreat decreases the positive integer width. It therefore stops either at a pattern with start at most its level or at width two, where (4) gives the same bound. Working backward through $p\le u+x$, while levels never increase, gives the explicit bound
 
 $$
-\boxed{p\le x(L-1)} \tag{6}
+\boxed{p\le x(L-1)}
 $$
+
+(6)
 
 for every sandwich pattern (2). More formally, if $p\le x$, then $p\le x(L-1)$ since $L\ge2$. Otherwise induction on $L$ gives $p\le u+x\le y(L'-1)+x\le x(L-2)+x=x(L-1)$ for the smaller width $L'<L$. This abstract induction is also kernel-checked as [`sandwich_start_bound`](../lean/ProofPursuit/P3/C2SandwichBound.lean); the lifetime argument above proves its application hypotheses in writing.
 
@@ -76,8 +88,10 @@ for every sandwich pattern (2). More formally, if $p\le x$, then $p\le x(L-1)$ s
 We also need one bound that uses the number $n$ of cards. Suppose
 
 $$
-(c_p,\ldots,c_{p+k})=(k-2,k-1,\ldots,k-1,k). \tag{7}
+(c_p,\ldots,c_{p+k})=(k-2,k-1,\ldots,k-1,k).
 $$
+
+(7)
 
 Here $k\ge3$. The interval $J_p$ ends at $p+k-2$. Since $c_{p+k-2}=c_{p+k-1}=k-1$, it is the **only** interval ending then. No interval ends at $p+k-1$, since the next count rises from $k-1$ to $k$.
 
@@ -92,8 +106,10 @@ $$
 Equality follows, making $J_{i-1}$ a second interval ending at $p+k-2$, contrary to the uniqueness of $J_p$. We have proved
 
 $$
-\boxed{p+k\le n+1}. \tag{8}
+\boxed{p+k\le n+1}.
 $$
+
+(8)
 
 ## Finding the final pattern
 
@@ -102,8 +118,10 @@ Every trajectory at triangular size eventually reaches the staircase, by [triang
 Assume $t\ge k+1$. Of the $k$ intervals $J_{t-k},\ldots,J_{t-1}$, at least one is absent at time $t$, because only $k-1$ piles exist. The last, $J_{t-1}$, is present. Choose the largest absent index $u\in[t-k,t-2]$. Repeating the argument leading to (3), now with $p=t$ and $x=k$, gives
 
 $$
-c_u=t-u-1,\qquad c_{u+1}=t-u. \tag{9}
+c_u=t-u-1,\qquad c_{u+1}=t-u.
 $$
+
+(9)
 
 If $u\ge t-k+1$, then $c_u\le k-2$. Apply the sandwich rule between $u$ and $t+1$ at level $k-1$. It produces a type-II pattern $k-2,k-1,\ldots,k-1,k$ with endpoints $p\ge t-k+1$, $q\le t+1$, and width $q-p\le k$. When that width is exactly $k$, it is the special pattern (7).
 
@@ -112,8 +130,10 @@ The remaining case is $u=t-k$, giving $c_{t-k}=k-1$ and $c_{t-k+1}=k$. If some $
 $$
 (c_p,\ldots,c_q)=(k-1,k,\ldots,k,k+1),
 \quad t-k\le p<q\le t-1,
-\quad q-p\le k-1. \tag{10}
+\quad q-p\le k-1.
 $$
+
+(10)
 
 Finally suppose every intermediate $c_j$ is $k-1$ or $k$. By the choice $u=t-k$, all $J_{t-k+1},\ldots,J_{t-1}$ are present at time $t$. They account for all $k-1$ piles, and all survive to $t+1$; the only new pile is $J_t$, of size $k-1$. At time $t+1$, each older $J_j$ has remaining size $j+c_j-t\le (t-1)+k-t=k-1$. No pile can have size $k$, contradicting the staircase. Thus either (10) occurs, or a type-II pattern occurs with width at most $k$.
 

@@ -1,5 +1,7 @@
 # P2: uphill paths on hypercubes Q3–Q8
 
+The [standalone judge writeup](writeup.md) contains the complete C1–C4 arguments and all six binary vertex lists in submission order.
+
 This package gives explicit increasing-label vertex lists and Lean-checked witness counts for C1–C4 of P2. The counts are 14, 34, 88, 204, 464, and 1040 for dimensions 3 through 8. Each `Qd.lean` proves that its list is a permutation of all vertices, its exact path count, and an existential witness attaining that count. Lean also proves the universal lower bounds for Q3 and Q4 in [C1Optimal.lean](c1/C1Optimal.lean), establishing their exact optima; for Q5–Q8 the witness theorems give **upper bounds** on U(Qd).
 
 The separate [Established-results.md](Established-results.md) gives written lower bounds, an independently replayable finite Q5 decycling check, and face doubling for Q6–Q8. Together with the witnesses, these support the exact C1–C4 values mathematically. Universal optimality for C2–C4 remains incomplete **in Lean**. C5 and C6 (Q9) are outside this package.
