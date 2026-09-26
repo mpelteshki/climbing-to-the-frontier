@@ -38,3 +38,7 @@ check described in `REPORT.md`. Python checking is not a Lean theorem.
 - `rerun-positive-control-9-14.jsonl`, `rerun-audit-9-14.json`: corrected fresh control and direct audit.
 
 Run from repository root: `python3 -B cagent/p4/audit/replay.py --max-k 14`. Saved outputs need not be deleted; choose `--output-dir` only for a fresh directory. The runner checks baseline counts as well as exact survivor lists.
+
+## Complete C4 replay through 16
+
+`rerun-full/` contains the complete 500.013-second run: `replay-evidence-9-16.json`, regenerated tuple and clique outputs, positive control, and the through-14 rule-on outputs. These are evidence artifacts, not required inputs to a new run. Run `python3 -B cagent/p4/audit/replay.py --max-k 16` to generate a new independent replay directory.

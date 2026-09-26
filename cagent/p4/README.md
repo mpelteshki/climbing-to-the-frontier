@@ -29,11 +29,11 @@ lake env lean ProofPursuit/P4/C3.lean
 | [C1](c1/README.md) | `Statement 3` | Complete |
 | [C2](c2/README.md) | `Statement 4` | Complete |
 | [C3](c3/README.md) | `Statement k` for `2 ≤ k ≤ 8` | Complete |
-| [C4](c4/README.md) | `Statement k` for `2 ≤ k ≤ 12`; finite-reduction and density lemmas; exact k=13 obstruction audit | Not solved |
+| [C4](c4/README.md) | Lean range 2–12; complete written/computational audit and residue decisions at 9–16 | Complete |
 | [C5](c5/solution.md) | Certified boundary 14; full replay, rule-off comparison, positive control; written 24/30 least-counterexample exclusions | Complete for claimed boundary 14 |
 | C6 | — | Skipped; open-conjecture work paused |
 
-The full C3 theorem is in [C3.lean](lean/ProofPursuit/P4/C3.lean). The package contains individual proofs through `Statement 7`. `Eight.step` proves `Statement 8` from `Statement 7`, and `Progress.solution` supplies that premise using `Seven.solution`. `ThroughTwelve.solution` now extends the unconditional range through 12. No theorem asserting `Statement k` for `k > 12` is claimed. The k=13 results concern one explicit modulus list, not all configurations of thirteen classes.
+The full C3 theorem is in [C3.lean](lean/ProofPursuit/P4/C3.lean). The package contains individual proofs through `Statement 7`. `Eight.step` proves `Statement 8` from `Statement 7`, and `Progress.solution` supplies that premise using `Seven.solution`. `ThroughTwelve.solution` now extends the unconditional range through 12. No general Lean theorem asserting `Statement k` for `k > 12` is claimed. The Lean k=13 modules concern one explicit modulus list; the complete written reduction plus independent exhaustive computation rules out every remaining case through 16.
 
 New C4 work is documented in [c4/README.md](c4/README.md). Every subset of the displayed thirteen-modulus list passes the canonical density test, but the list has no disjoint residue assignment. Lean checks explicit assignments for every submultiset of size at most six, proving that the exhibited seven-class obstruction has minimum cardinality within this list. Cases 10–12 now have complete semantic proofs: `Ten.solution`, `Eleven.step`, and `Twelve.step`; `ThroughTwelve.solution` discharges all smaller-case dependencies.
 
@@ -48,3 +48,7 @@ The [computational audit](audit/MANIFEST.md) includes exact independent replay a
 ## Completed C5 boundary
 
 [C5 solution](c5/solution.md) claims the contiguous range through **14**, with all additional benchmark checks complete in a 16.109-second fresh replay. Evidence through 16 is reported separately because its stronger C5 rule-off requirement is unfinished. This is a task-specific certificate endpoint, not a claim that 15 is false or unknown in the literature.
+
+## Completed C4 audit
+
+[C4 solution](c4/solution.md) is complete: every pruning rule is proved, every survivor is decided with a smallest obstruction, and both independent enumeration methods reproduce exact node counts and lists through 16. The fresh complete replay took **500.013 seconds**. This extends the mathematical certificate to 16; the general Lean theorem remains through 12.

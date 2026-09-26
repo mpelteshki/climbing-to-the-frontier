@@ -1,6 +1,6 @@
 # P4 C4: range proof and exact method audit
 
-Task source: [Every k up to 12](https://hackathon.bainsa.ai/p/p4/c4), checked on 2026-09-26. This document is a proposed solution, not an organizer acceptance or platform submission.
+Task source: [Every k up to 12](https://hackathon.bainsa.ai/p/p4/c4), checked on 2026-09-26. This cell is complete under the stated hand-in requirements. No organizer acceptance or platform submission is claimed.
 
 ## Claim and meaning of the computation
 
@@ -48,4 +48,21 @@ These facts also extend the mathematical conclusion inductively to k=16: assume 
 
 O'Bryant's [paper](https://arxiv.org/abs/math/0604347), §4.4, reports no survivors through 19 from the displayed pair-gcd and every-subset density machinery. The explicit thirteen-list above passes those tests: every pair gcd is in [2,12], and all 8,178 position subsets of cardinality at least two satisfy the canonical integer density inequality. Independent Python checking and `DensityAudit13.every_sublist_passes` establish this. Consequently that reported emptiness claim, interpreted as the stated necessary-condition tests, is incorrect. Our exhibited survivor is not a counterexample to the disjoint-congruence conjecture; its residue impossibility was proved above. We do not claim to have identified the cause of the paper's computational discrepancy.
 
-During our own audit we also found an implementation error: an old residue search compared an original modulus to an effective residue bound when applying equal-modulus symmetry. The corrected search compares original moduli with each other. Independent saved-tree replay already used the correct condition. The correction and reruns are recorded openly; no old search-only UNSAT answer is being treated as sufficient evidence.
+During our own audit we found that the residue search used a stronger compressed-variable symmetry than the written explanation. We initially called this an error; further analysis shows the old variables were interchangeable because their effective bounds and gcd constraints agree. That initial diagnosis is withdrawn, with proof in the [reduction document](../audit/reduction-proof.md). The current implementation uses the simpler equal-original-modulus rule and reproduces every stored claim and witness unchanged. Independent saved-tree replay has always used that simpler rule.
+
+## Fresh exhaustive replay
+
+`python3 -B cagent/p4/audit/replay.py --max-k 16` completed in **500.013 seconds**. Both searches reproduced their exact saved node counts and survivor lists at all eight sizes; their relevant lists agree elementwise. All certificate checks passed. The [evidence file](../audit/rerun-full/replay-evidence-9-16.json) records per-size wall clocks, node counts, completion flags, positive control, and certificate results. The runner uses a new output directory by default.
+
+| k | Tuple recursion nodes | Graph recursion nodes | Tuple wall seconds | Graph wall seconds |
+|---:|---:|---:|---:|---:|
+| 9 | 10 | 20 | 0.031 | 0.03 |
+| 10 | 92 | 85 | 0.032 | 0.033 |
+| 11 | 9,541 | 7,460 | 0.107 | 0.106 |
+| 12 | 773 | 699 | 0.042 | 0.036 |
+| 13 | 347,628 | 217,024 | 5.2 | 3.795 |
+| 14 | 12,884 | 8,359 | 0.149 | 0.081 |
+| 15 | 2,330,980 | 1,522,808 | 59.622 | 57.823 |
+| 16 | 6,921,594 | 4,111,538 | 201.727 | 165.504 |
+
+The two algorithms count different recursive states, so their counts need not equal one another. Each exactly matches its own earlier run. The underlying JSONL records also include depth-specific counts and anchor-triple attempts where applicable.
