@@ -1,6 +1,6 @@
 name = "p2-certificates"
 version = "0.1.0"
-defaultTargets = ["Fast"]
+defaultTargets = ["C1Optimal"]
 
 [[lean_lib]]
 name = "Hypercube"
@@ -9,3 +9,23 @@ srcDir = "shared"
 [[lean_lib]]
 name = "Fast"
 srcDir = "shared"
+
+[[lean_lib]]
+name = "LowerBound"
+srcDir = "shared"
+
+[[lean_lib]]
+name = "RegularLower"
+srcDir = "shared"
+
+[[lean_lib]]
+name = "Q3"
+srcDir = "c1"
+
+[[lean_lib]]
+name = "Q4"
+srcDir = "c1"
+
+[[lean_lib]]
+name = "C1Optimal"
+srcDir = "c1"

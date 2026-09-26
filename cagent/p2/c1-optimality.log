@@ -1,0 +1,60 @@
+Lean toolchain:
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+
+Build C1Optimal and dependencies:
+ℹ [2/9] Replayed Hypercube
+info: shared/Hypercube.lean:107:0: 'Hypercube.paths_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/Hypercube.lean:108:0: 'Hypercube.mem_extensions' depends on axioms: [propext, Quot.sound]
+info: shared/Hypercube.lean:109:0: 'Hypercube.mem_paths' depends on axioms: [propext, Quot.sound]
+ℹ [3/9] Replayed Fast
+info: shared/Fast.lean:73:0: 'Hypercube.fast_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4/9] Built Q3 (907ms)
+info: c1/Q3.lean:13:0: 'Hypercube.q3_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: c1/Q3.lean:14:0: 'Hypercube.q3_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: c1/Q3.lean:15:0: 'Hypercube.q3_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5/9] Built Q4 (954ms)
+info: c1/Q4.lean:13:0: 'Hypercube.q4_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: c1/Q4.lean:14:0: 'Hypercube.q4_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: c1/Q4.lean:15:0: 'Hypercube.q4_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [6/9] Built RegularLower (1.2s)
+info: shared/RegularLower.lean:427:0: 'Hypercube.endpoint_ge_indegree' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:428:0: 'Hypercube.totalIndegree_eq_edgeCount' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:429:0: 'Hypercube.edgeCount_cube3' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:430:0: 'Hypercube.edgeCount_cube4' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:431:0: 'Hypercube.regularLower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/RegularLower.lean:432:0: 'Hypercube.regularLower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7/9] Built LowerBound (728ms)
+info: shared/LowerBound.lean:542:0: 'Hypercube.append_vertex_mem_paths_iff' depends on axioms: [propext, Quot.sound]
+info: shared/LowerBound.lean:543:0: 'Hypercube.path_append_of_edge' depends on axioms: [propext, Quot.sound]
+info: shared/LowerBound.lean:544:0: 'Hypercube.endPaths_perm_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:545:0: 'Hypercube.endCount_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:546:0: 'Hypercube.pathCount_eq_sum_endCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:547:0: 'Hypercube.pathCount_lower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:548:0: 'Hypercube.pathCount_lower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8/9] Built C1Optimal (362ms)
+info: c1/C1Optimal.lean:17:0: 'Hypercube.q3_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: c1/C1Optimal.lean:18:0: 'Hypercube.q4_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9 jobs).
+
+Independent kernel replay:
+
+LowerBound axiom audit:
+'Hypercube.append_vertex_mem_paths_iff' depends on axioms: [propext, Quot.sound]
+'Hypercube.path_append_of_edge' depends on axioms: [propext, Quot.sound]
+'Hypercube.endPaths_perm_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.endCount_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.pathCount_eq_sum_endCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.pathCount_lower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.pathCount_lower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RegularLower axiom audit:
+'Hypercube.endpoint_ge_indegree' depends on axioms: [propext, Quot.sound]
+'Hypercube.totalIndegree_eq_edgeCount' depends on axioms: [propext, Quot.sound]
+'Hypercube.edgeCount_cube3' depends on axioms: [propext, Quot.sound]
+'Hypercube.edgeCount_cube4' depends on axioms: [propext, Quot.sound]
+'Hypercube.regularLower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.regularLower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+C1Optimal axiom audit:
+'Hypercube.q3_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q4_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]

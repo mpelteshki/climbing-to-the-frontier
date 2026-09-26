@@ -4,7 +4,7 @@ A hackathon research workspace for automated mathematical discovery: explore con
 
 ## Proof progress
 
-**3 solved · 16 not solved · 5 skipped.** This is the authoritative progress overview. “Solved” means the **entire cell** is proved in Lean. “Not solved” includes useful partial proofs, finite cases, and witnesses without optimality. “Skipped” means intentionally paused; it does not mean impossible. No answers have been submitted to the hackathon platform.
+**4 solved · 15 not solved · 5 skipped.** This is the authoritative progress overview. “Solved” means the **entire cell** is proved in Lean. “Not solved” includes useful partial proofs, finite cases, and witnesses without optimality. “Skipped” means intentionally paused; it does not mean impossible. No answers have been submitted to the hackathon platform.
 
 The table records **published, verified work**, not unfinished local experiments. Proof links include the exact statements and limitations. Written arguments are identified separately from Lean proofs.
 
@@ -16,7 +16,7 @@ The table records **published, verified work**, not unfinished local experiments
 | P1 — [C4](cagent/p1/statements.md) | Not solved | No complete geometric Lean proof published. | Prove the five-line ℝ³ bound 4π and six-line ℝ⁴ bound 13π/2. |
 | P1 — [C5](cagent/p1/c5/README.md) | Not solved | Lean: d+2-line bound for d=2. | Prove the bound for all d≥2. |
 | P1 — [C6](cagent/p1/statements.md) | Skipped | General N-line, d-dimensional conjecture. | Open-conjecture work paused. |
-| **P2 · Hypercube paths** — [C1](cagent/p2/README.md) | Not solved | Lean: explicit Q3/Q4 labellings with 14/34 uphill paths. Written lower bounds available. | Formalize optimality; Lean currently proves upper bounds only. |
+| **P2 · Hypercube paths** — [C1](cagent/p2/c1/C1Optimal.lean) | **Solved** | Lean: exact U(Q3)=14 and U(Q4)=34, with explicit attaining labellings and universal lower bounds. | None. |
 | P2 — [C2](cagent/p2/c2/Q5.lean) | Not solved | Lean: Q5 labelling with 88 paths. Written optimality uses established decycling results. | Formalize the lower bound. |
 | P2 — [C3](cagent/p2/c3/Q6.lean) | Not solved | Lean: Q6 labelling with 204 paths. Written optimality uses established decycling results. | Formalize the lower bound. |
 | P2 — [C4](cagent/p2/README.md) | Not solved | Lean: Q7/Q8 labellings with 464/1040 paths. Written optimality uses established decycling results. | Formalize both lower bounds. |
@@ -42,7 +42,7 @@ All packages pin Lean **4.34.1**. P1 additionally pins Mathlib. Lean-checked fin
 | Package | Reproduce from repository root | Evidence and trust boundary |
 | --- | --- | --- |
 | [P1 · Angles](cagent/p1/README.md) | `cd cagent/p1 && ./verify.sh` | [Lean log](cagent/p1/evidence/verification.log), [environment and checksum](cagent/p1/evidence/environment.txt), [written proofs](cagent/p1/written-proofs.md). Source checked against pinned local Mathlib; clean portable dependency-download replay not yet run. |
-| [P2 · Hypercube paths](cagent/p2/README.md) | `cd cagent/p2 && ./verify.sh` | [Lean log](cagent/p2/verification.log), [written lower bounds](cagent/p2/Established-results.md). Q8 verification takes substantially longer than smaller cases. No formal optimality claim. |
+| [P2 · Hypercube paths](cagent/p2/README.md) | `cd cagent/p2 && ./verify.sh` | [C1 proof and kernel replay](cagent/p2/c1-optimality.log), [Q3–Q8 witness log](cagent/p2/verification.log), [written lower bounds](cagent/p2/Established-results.md). C1 has complete formal optimality; C2–C4 have Lean upper bounds and written lower bounds. Q8 verification takes substantially longer than smaller cases. |
 | [P3 · Bulgarian solitaire](cagent/p3/README.md) | `python3 cagent/p3/verify.py` | [Source hashes, axioms and timings](cagent/p3/evidence/verification.json): 40 files passed in 41.49 seconds; [independent kernel checks](cagent/p3/evidence/kernel-checks.json) passed for the three new principal results. Includes exact depths for every n=1–23. |
 | [P4 · Congruence classes](cagent/p4/README.md) | `cd cagent/p4/lean && lake build ProofPursuit.P4.ThroughNine && lake env leanchecker ProofPursuit.P4.ThroughNine` | [Verification record](cagent/p4/verification.md) and [C4 audit replay](cagent/p4/c4/README.md). Full C1–C3 plus k=9 checked; C4 remains partial. |
 

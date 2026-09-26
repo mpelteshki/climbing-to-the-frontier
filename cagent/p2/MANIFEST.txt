@@ -5,6 +5,7 @@ README.md
 Task.md
 c1/Q3.lean
 c1/Q4.lean
+c1/C1Optimal.lean
 c1/q3-labels.txt
 c1/q3.json
 c1/q4-labels.txt
@@ -25,6 +26,9 @@ lakefile.toml
 lean-toolchain
 shared/Fast.lean
 shared/Hypercube.lean
+shared/LowerBound.lean
+shared/RegularLower.lean
 shared/witnesses.py
+c1-optimality.log
 verification.log
 verify.sh

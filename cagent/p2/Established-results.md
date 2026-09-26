@@ -1,6 +1,6 @@
 # Established optimal values and the remaining Lean gap
 
-The explicit witnesses have path counts 14, 34, 88, 204, 464, 1040 in dimensions 3 through 8. These are the optimal values, using the following reduction and the established hypercube decycling numbers. The reduction and external decycling theorem have **not** been formalized in this Lean project. The Lean certificates prove the witness counts and hence upper bounds; they do not alone prove optimality.
+The explicit witnesses have path counts 14, 34, 88, 204, 464, 1040 in dimensions 3 through 8. These are the optimal values mathematically, using the following reduction and the established hypercube decycling numbers. For C1, [Lean now proves](c1/C1Optimal.lean) that the Q3 and Q4 witnesses attain universal lower bounds. The reduction and external decycling theorem used for C2–C4 have **not** been formalized in this Lean project; their Lean certificates prove witness counts and upper bounds.
 
 ## Reduction, proved mathematically
 
@@ -31,7 +31,7 @@ There is at least one source. Since e_B>=0, the identity for s gives (d-1)*b>=m-
 
 For Q3, (n,m,d)=(8,12,3), so b>=3 and P>=14.
 For Q4, (n,m,d)=(16,32,4), so b>=6 and P>=34.
-The certified labellings attain these bounds.
+The certified labellings attain these bounds. The written argument is retained here; [`q3_optimal` and `q4_optimal`](c1/C1Optimal.lean) now prove the exact C1 values in Lean.
 
 ## C2–C4, established decycling theorem
 
@@ -46,4 +46,4 @@ Original paper: https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1097-0118(1997
 
 The table is reproduced in Section 2 of the primary-author survey *The Decycling Number of Graphs*: https://arxiv.org/pdf/math/0703544 (PDF page 3). The general doubling lower bound follows by restricting a feedback vertex set to each of two disjoint (d-1)-dimensional faces. Thus the value 14 for Q5 also supplies the lower bounds 28,56,112 for Q6,Q7,Q8.
 
-No reference is imported as an axiom. Full Lean optimality still requires formalizing the reduction and the relevant feedback-vertex-set lower bounds. C5 and C6 remain unworked under the instruction to pause open-problem research.
+No reference is imported as an axiom. Full Lean optimality for C2–C4 still requires formalizing the reduction and the relevant feedback-vertex-set lower bounds. C5 and C6 remain unworked under the instruction to pause open-problem research.
