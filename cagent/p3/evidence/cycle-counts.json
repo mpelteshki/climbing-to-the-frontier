@@ -1,0 +1,499 @@
+{
+  "status": "PASS",
+  "scope": "Finite cross-check only: 1 <= n <= 40",
+  "general_count_formula_lean_verified": false,
+  "checker_sha256": "c247ba935a5f3fdde33529d134f9e1e742b3b52950742b27829a2a49f135dcbb",
+  "partitions_checked": 215307,
+  "seconds": 0.463,
+  "records": [
+    {
+      "n": 1,
+      "rank": 1,
+      "weight": 1,
+      "partitions": 1,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 2,
+      "rank": 2,
+      "weight": 1,
+      "partitions": 2,
+      "cyclic_partitions": 2,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "2": 1
+      }
+    },
+    {
+      "n": 3,
+      "rank": 2,
+      "weight": 2,
+      "partitions": 3,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 4,
+      "rank": 3,
+      "weight": 1,
+      "partitions": 5,
+      "cyclic_partitions": 3,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "3": 1
+      }
+    },
+    {
+      "n": 5,
+      "rank": 3,
+      "weight": 2,
+      "partitions": 7,
+      "cyclic_partitions": 3,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "3": 1
+      }
+    },
+    {
+      "n": 6,
+      "rank": 3,
+      "weight": 3,
+      "partitions": 11,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 7,
+      "rank": 4,
+      "weight": 1,
+      "partitions": 15,
+      "cyclic_partitions": 4,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "4": 1
+      }
+    },
+    {
+      "n": 8,
+      "rank": 4,
+      "weight": 2,
+      "partitions": 22,
+      "cyclic_partitions": 6,
+      "cycles": 2,
+      "formula": 2,
+      "cycle_length_histogram": {
+        "2": 1,
+        "4": 1
+      }
+    },
+    {
+      "n": 9,
+      "rank": 4,
+      "weight": 3,
+      "partitions": 30,
+      "cyclic_partitions": 4,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "4": 1
+      }
+    },
+    {
+      "n": 10,
+      "rank": 4,
+      "weight": 4,
+      "partitions": 42,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 11,
+      "rank": 5,
+      "weight": 1,
+      "partitions": 56,
+      "cyclic_partitions": 5,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "5": 1
+      }
+    },
+    {
+      "n": 12,
+      "rank": 5,
+      "weight": 2,
+      "partitions": 77,
+      "cyclic_partitions": 10,
+      "cycles": 2,
+      "formula": 2,
+      "cycle_length_histogram": {
+        "5": 2
+      }
+    },
+    {
+      "n": 13,
+      "rank": 5,
+      "weight": 3,
+      "partitions": 101,
+      "cyclic_partitions": 10,
+      "cycles": 2,
+      "formula": 2,
+      "cycle_length_histogram": {
+        "5": 2
+      }
+    },
+    {
+      "n": 14,
+      "rank": 5,
+      "weight": 4,
+      "partitions": 135,
+      "cyclic_partitions": 5,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "5": 1
+      }
+    },
+    {
+      "n": 15,
+      "rank": 5,
+      "weight": 5,
+      "partitions": 176,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 16,
+      "rank": 6,
+      "weight": 1,
+      "partitions": 231,
+      "cyclic_partitions": 6,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "6": 1
+      }
+    },
+    {
+      "n": 17,
+      "rank": 6,
+      "weight": 2,
+      "partitions": 297,
+      "cyclic_partitions": 15,
+      "cycles": 3,
+      "formula": 3,
+      "cycle_length_histogram": {
+        "3": 1,
+        "6": 2
+      }
+    },
+    {
+      "n": 18,
+      "rank": 6,
+      "weight": 3,
+      "partitions": 385,
+      "cyclic_partitions": 20,
+      "cycles": 4,
+      "formula": 4,
+      "cycle_length_histogram": {
+        "2": 1,
+        "6": 3
+      }
+    },
+    {
+      "n": 19,
+      "rank": 6,
+      "weight": 4,
+      "partitions": 490,
+      "cyclic_partitions": 15,
+      "cycles": 3,
+      "formula": 3,
+      "cycle_length_histogram": {
+        "3": 1,
+        "6": 2
+      }
+    },
+    {
+      "n": 20,
+      "rank": 6,
+      "weight": 5,
+      "partitions": 627,
+      "cyclic_partitions": 6,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "6": 1
+      }
+    },
+    {
+      "n": 21,
+      "rank": 6,
+      "weight": 6,
+      "partitions": 792,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 22,
+      "rank": 7,
+      "weight": 1,
+      "partitions": 1002,
+      "cyclic_partitions": 7,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "7": 1
+      }
+    },
+    {
+      "n": 23,
+      "rank": 7,
+      "weight": 2,
+      "partitions": 1255,
+      "cyclic_partitions": 21,
+      "cycles": 3,
+      "formula": 3,
+      "cycle_length_histogram": {
+        "7": 3
+      }
+    },
+    {
+      "n": 24,
+      "rank": 7,
+      "weight": 3,
+      "partitions": 1575,
+      "cyclic_partitions": 35,
+      "cycles": 5,
+      "formula": 5,
+      "cycle_length_histogram": {
+        "7": 5
+      }
+    },
+    {
+      "n": 25,
+      "rank": 7,
+      "weight": 4,
+      "partitions": 1958,
+      "cyclic_partitions": 35,
+      "cycles": 5,
+      "formula": 5,
+      "cycle_length_histogram": {
+        "7": 5
+      }
+    },
+    {
+      "n": 26,
+      "rank": 7,
+      "weight": 5,
+      "partitions": 2436,
+      "cyclic_partitions": 21,
+      "cycles": 3,
+      "formula": 3,
+      "cycle_length_histogram": {
+        "7": 3
+      }
+    },
+    {
+      "n": 27,
+      "rank": 7,
+      "weight": 6,
+      "partitions": 3010,
+      "cyclic_partitions": 7,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "7": 1
+      }
+    },
+    {
+      "n": 28,
+      "rank": 7,
+      "weight": 7,
+      "partitions": 3718,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 29,
+      "rank": 8,
+      "weight": 1,
+      "partitions": 4565,
+      "cyclic_partitions": 8,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "8": 1
+      }
+    },
+    {
+      "n": 30,
+      "rank": 8,
+      "weight": 2,
+      "partitions": 5604,
+      "cyclic_partitions": 28,
+      "cycles": 4,
+      "formula": 4,
+      "cycle_length_histogram": {
+        "4": 1,
+        "8": 3
+      }
+    },
+    {
+      "n": 31,
+      "rank": 8,
+      "weight": 3,
+      "partitions": 6842,
+      "cyclic_partitions": 56,
+      "cycles": 7,
+      "formula": 7,
+      "cycle_length_histogram": {
+        "8": 7
+      }
+    },
+    {
+      "n": 32,
+      "rank": 8,
+      "weight": 4,
+      "partitions": 8349,
+      "cyclic_partitions": 70,
+      "cycles": 10,
+      "formula": 10,
+      "cycle_length_histogram": {
+        "2": 1,
+        "4": 1,
+        "8": 8
+      }
+    },
+    {
+      "n": 33,
+      "rank": 8,
+      "weight": 5,
+      "partitions": 10143,
+      "cyclic_partitions": 56,
+      "cycles": 7,
+      "formula": 7,
+      "cycle_length_histogram": {
+        "8": 7
+      }
+    },
+    {
+      "n": 34,
+      "rank": 8,
+      "weight": 6,
+      "partitions": 12310,
+      "cyclic_partitions": 28,
+      "cycles": 4,
+      "formula": 4,
+      "cycle_length_histogram": {
+        "4": 1,
+        "8": 3
+      }
+    },
+    {
+      "n": 35,
+      "rank": 8,
+      "weight": 7,
+      "partitions": 14883,
+      "cyclic_partitions": 8,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "8": 1
+      }
+    },
+    {
+      "n": 36,
+      "rank": 8,
+      "weight": 8,
+      "partitions": 17977,
+      "cyclic_partitions": 1,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 37,
+      "rank": 9,
+      "weight": 1,
+      "partitions": 21637,
+      "cyclic_partitions": 9,
+      "cycles": 1,
+      "formula": 1,
+      "cycle_length_histogram": {
+        "9": 1
+      }
+    },
+    {
+      "n": 38,
+      "rank": 9,
+      "weight": 2,
+      "partitions": 26015,
+      "cyclic_partitions": 36,
+      "cycles": 4,
+      "formula": 4,
+      "cycle_length_histogram": {
+        "9": 4
+      }
+    },
+    {
+      "n": 39,
+      "rank": 9,
+      "weight": 3,
+      "partitions": 31185,
+      "cyclic_partitions": 84,
+      "cycles": 10,
+      "formula": 10,
+      "cycle_length_histogram": {
+        "3": 1,
+        "9": 9
+      }
+    },
+    {
+      "n": 40,
+      "rank": 9,
+      "weight": 4,
+      "partitions": 37338,
+      "cyclic_partitions": 126,
+      "cycles": 14,
+      "formula": 14,
+      "cycle_length_histogram": {
+        "9": 14
+      }
+    }
+  ]
+}

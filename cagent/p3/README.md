@@ -12,6 +12,14 @@ Each theorem `maximumDepth_n` proves two statements: every decreasing positive p
 
 Cell status: [C1](c1/README.md) has an all-`k` fixed-staircase theorem, the full rank-normalized binary-boundary cycle classification and the cycle/rotation correspondence, general eventual cycling and energy lemmas, all-`k` triangular convergence/uniqueness, and exact convergence times through `k=6`; [C2](c2/README.md) has six triangular instances; [C3](c3/README.md) has finite instances for ranks 4–6; [C4](c4/README.md) has three finite instances; [C5](c5/README.md) has six finite instances. [C6](c6/README.md) is paused and unattempted.
 
+## Method fit
+
+Lean has paid off for definitions, the complete cycle classification, arbitrary-size triangular convergence, and exact finite depth certificates: 40 files replay with explicit axiom checks. It is also useful for any new reusable lemma needed by several cells.
+
+For the remaining C1 counting step, a short double-counting argument is more efficient than adding group actions, finite cardinalities, and a list-to-quotient bridge solely to translate a classical formula. [The complete written C1 proof](c1/written-proof.md) supplies that argument. [Independent exact replay](evidence/cycle-counts.json) checks the formula against actual cycles for n=1–40, covering 215,307 partitions in 0.463 seconds. Run `python3 cagent/p3/c1/check_cycles.py` from the repository root. This replay is finite evidence, not a proof for all n; the general argument is readable mathematics and its counting step is not Lean-certified.
+
+For C2–C5, the useful next work is a general upper-bound argument and a matching explicit extremal family. Blindly extending finite Lean checks cannot establish either. Derive and audit those arguments first; use exact trajectory certificates to test extremal families, then formalize reusable parts where that provides more assurance than cost. C6 remains paused.
+
 ## Replay
 
 From the repository root, run:
