@@ -1,0 +1,4 @@
+{"base_survivors": [], "complete": true, "counts": {"anchor_nodes": 14, "other_nodes": 6}, "domain_size": 25, "k": 9, "reduced_survivors": [], "seconds": 0.0}
+{"base_survivors": [], "complete": true, "counts": {"anchor_nodes": 34, "other_nodes": 51}, "domain_size": 40, "k": 10, "reduced_survivors": [], "seconds": 0.001}
+{"base_survivors": [], "complete": true, "counts": {"anchor_nodes": 392, "other_nodes": 7068}, "domain_size": 40, "k": 11, "reduced_survivors": [], "seconds": 0.077}
+{"base_survivors": [], "complete": true, "counts": {"anchor_nodes": 210, "other_nodes": 489}, "domain_size": 87, "k": 12, "reduced_survivors": [], "seconds": 0.003}

@@ -1,6 +1,6 @@
 # C4: partial, not solved
 
-The cell requires all cases through 12 and an exact account of the chosen method's survivors at every size 9–16. The published Lean range is currently **2–9**. Cases 10–12 and the complete 9–16 method audit are not yet certified.
+The cell requires all cases through 12 and an exact account of the chosen method's survivors at every size 9–16. The published Lean range is now **2–12**, without additional assumptions. The complete 9–16 method audit remains separate; the full cell remains unfinished.
 
 ## Unconditional case 9
 
@@ -11,6 +11,14 @@ Deleting any one class and applying the eight-class theorem gives a pair with gc
 Remove the anchors carrying 5 and 7. The seven-class theorem gives a pair with gcd 7 in the remaining seven classes: gcd 8 is impossible because only one 8-anchor remains. Both moduli in that pair must be odd, since each shares 7 with the removed 7-anchor. Both must share an odd prime with the removed 5-anchor; its only available prime from {3,5,7} is 5. Their gcd is therefore divisible by 35, a contradiction.
 
 Dependencies are discharged by existing proofs of cases 5, 7 and 8. No modulus-normalization assumption is needed for this argument.
+
+## Cases 10–12
+
+`Ten.solution` combines smaller cases with a compressed density contradiction. `NormalForm11` and `NormalForm12` reduce potential counterexamples to finite modulus domains while preserving actual disjointness. Their anchor lemmas derive three moduli divisible by k−1 from the preceding case.
+
+For k=11, `ElevenCertificate` embeds a refutation tree: 6,923 branch nodes and 4,295 density leaves. Its generic soundness theorem checks complete branch coverage and each exact integer density contradiction. `Eleven.step` connects this certificate to arbitrary congruence classes. For k=12, `TwelveCheck` exhausts the normalized domain with kernel reduction; `Twelve.step` supplies the semantic bridge. `ThroughTwelve.solution` combines all cases and discharges every smaller-case premise.
+
+The generator is a certificate proposer, not part of the trusted proof. No `native_decide` is used.
 
 ## Formal infrastructure
 
@@ -40,8 +48,8 @@ This separates density admissibility from actual residue realizability. It also 
 From `cagent/p4/lean`:
 
 ```sh
-lake build ProofPursuit.P4.ThroughNine ProofPursuit.P4.Density ProofPursuit.P4.FiniteSearch ProofPursuit.P4.Survivor13 ProofPursuit.P4.Minimality13
-lake env leanchecker ProofPursuit.P4.ThroughNine
+lake build ProofPursuit.P4.ThroughTwelve ProofPursuit.P4.Density ProofPursuit.P4.FiniteSearch ProofPursuit.P4.Survivor13 ProofPursuit.P4.Minimality13
+lake env leanchecker ProofPursuit.P4.ThroughTwelve
 lake env leanchecker ProofPursuit.P4.Density
 lake env leanchecker ProofPursuit.P4.FiniteSearch
 lake env leanchecker ProofPursuit.P4.Survivor13
@@ -49,3 +57,9 @@ lake env leanchecker ProofPursuit.P4.Minimality13
 ```
 
 `Minimality13` imports and checks `DensityAudit13`. Only Lean 4.34.1 and bundled Std are required. See [verification record](../verification.md). No hackathon-platform submission was made.
+
+## Reproducible computational audit
+
+The [audit manifest](../audit/MANIFEST.md) packages two independently written finite enumerators, their exact survivor sets, explicit smaller-subset witnesses, and independently replayable residue refutation trees. See [audit report](../audit/REPORT.md) for definitions and limitations. The complete reduced survivor counts are 0, 0, 0, 0, 1, 0, 30, 77 for k=9,…,16. For k=15 and 16 these use additional pruning; the unpruned raw survivor counts were not established. Independent algorithms agree element by element on the reduced sets.
+
+These computational results are not being presented as Lean theorems. Full cell completion additionally requires auditing the mathematical justification and exact task coverage of every reduction and reported survivor claim.
