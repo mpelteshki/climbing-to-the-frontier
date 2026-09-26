@@ -16,6 +16,8 @@ The P1 appendix includes all 18 published Lean modules and describes their actua
 
 ## Computational replay
 
-The self-contained P4 C4 archive was extracted into a fresh directory and replayed through 16. Both enumerators matched every recorded baseline exactly; the run completed successfully in 591.587 seconds. This is one observed runtime, not a portable performance guarantee. The smaller C5 package is independently replayed through 14 before submission.
+The self-contained P4 C4 archive was extracted into a fresh directory and replayed through 16. Both enumerators matched every recorded baseline exactly; the run completed successfully in 591.587 seconds. This is one observed runtime, not a portable performance guarantee. The smaller C5 package was independently extracted and replayed through 14 before submission. Its final run completed in 14.95 seconds.
+
+The compact C4 submission uses the explicitly defined least-size/minimum-sum modulus method. Its three embedded source files are byte-identical to the reviewed implementations. The exact 108 displayed survivor lists were checked against both exhaustive algorithms through 16; the compact driver reported 296.609 seconds for searches and result checks (archive extraction/hash verification precedes that timer). It reports unresolved lists and conditional premises honestly rather than claiming every surviving modulus list has been decided.
 
 Platform arguments use full inline Markdown/LaTeX text. Submission text is reviewed separately from the typeset editions; no public repository hosting is required.
