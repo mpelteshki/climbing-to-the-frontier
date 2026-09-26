@@ -8,4 +8,4 @@ The `N7`, `N8`, `N9`, `N11`–`N14`, and `N16`–`N20` Lean files give exact max
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Exact maximum depth | 4 | 5 | 7 | 8 | 8 | 9 | 14 | 15 | 12 | 13 | 16 | 23 |
 
-The package also verifies `n=2,4,5,22,23`, but does not prove a general formula or classify all maximizing partitions. C3 remains partial.
+**C3 is Solved under the task criteria.** The [complete written proof](written-proof.md) establishes the general bound, equality at `T_k−1`, and an explicit inverse construction generating every maximizing partition. These general arguments are not yet Lean theorems. Run `python3 cagent/p3/c3/check.py` for the [independent finite replay](finite-check.json), comparing inverse-generated sets with exhaustive forward depths for k=4–7.

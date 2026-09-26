@@ -12,7 +12,7 @@ The pile-count pattern method comes from [Griggs and Ho, Sections 3–4](https:/
 
 ## Lifetimes and the last pattern
 
-Put $n=T_{k-1}+1$ and $c_i=\operatorname{length}(B^{i-1}(\lambda))$. The pile born on move $i$ exists at integer times $i+1,\ldots,i+c_i$; call its lifetime $J_i$. Thus
+Put $n=T_{k-1}+1$ and let $c_i$ be the number of piles in $B^{i-1}(\lambda)$. The pile born on move $i$ exists at integer times $i+1,\ldots,i+c_i$; call its lifetime $J_i$. Thus
 
 $$
 c_{i+1}=c_i+1-d_i,

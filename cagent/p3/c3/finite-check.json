@@ -1,0 +1,84 @@
+{
+  "scope": "finite exhaustive cross-check",
+  "results": [
+    {
+      "k": 4,
+      "n": 9,
+      "partitions": 30,
+      "maximum_depth": 7,
+      "maximizing_partitions": 1,
+      "inverse_set_equals_forward_set": true,
+      "seed": [
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "k4_maximizers": [
+        [
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "k": 5,
+      "n": 14,
+      "partitions": 135,
+      "maximum_depth": 14,
+      "maximizing_partitions": 6,
+      "inverse_set_equals_forward_set": true,
+      "seed": [
+        5,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "k4_maximizers": null
+    },
+    {
+      "k": 6,
+      "n": 20,
+      "partitions": 627,
+      "maximum_depth": 23,
+      "maximizing_partitions": 34,
+      "inverse_set_equals_forward_set": true,
+      "seed": [
+        6,
+        5,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "k4_maximizers": null
+    },
+    {
+      "k": 7,
+      "n": 27,
+      "partitions": 3010,
+      "maximum_depth": 34,
+      "maximizing_partitions": 175,
+      "inverse_set_equals_forward_set": true,
+      "seed": [
+        7,
+        6,
+        5,
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "k4_maximizers": null
+    }
+  ],
+  "seconds": 0.01
+}
