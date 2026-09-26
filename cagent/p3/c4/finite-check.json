@@ -1,0 +1,91 @@
+{
+  "scope": "finite exhaustive cross-check, not a general proof",
+  "results": [
+    {
+      "k": 5,
+      "n": 11,
+      "partitions": 56,
+      "maximum_depth": 8,
+      "maximizing_partitions": 3,
+      "witness": [
+        3,
+        3,
+        2,
+        2,
+        1
+      ],
+      "witness_depth": 8
+    },
+    {
+      "k": 6,
+      "n": 16,
+      "partitions": 231,
+      "maximum_depth": 15,
+      "maximizing_partitions": 12,
+      "witness": [
+        4,
+        4,
+        3,
+        2,
+        2,
+        1
+      ],
+      "witness_depth": 15
+    },
+    {
+      "k": 7,
+      "n": 22,
+      "partitions": 1002,
+      "maximum_depth": 24,
+      "maximizing_partitions": 62,
+      "witness": [
+        5,
+        5,
+        4,
+        3,
+        2,
+        2,
+        1
+      ],
+      "witness_depth": 24
+    },
+    {
+      "k": 8,
+      "n": 29,
+      "partitions": 4565,
+      "maximum_depth": 35,
+      "maximizing_partitions": 288,
+      "witness": [
+        6,
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        1
+      ],
+      "witness_depth": 35
+    },
+    {
+      "k": 9,
+      "n": 37,
+      "partitions": 21637,
+      "maximum_depth": 48,
+      "maximizing_partitions": 1310,
+      "witness": [
+        7,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        1
+      ],
+      "witness_depth": 48
+    }
+  ],
+  "seconds": 0.051
+}

@@ -18,3 +18,7 @@
 - Update the root README’s status, exact verified scope, remaining gap, proof links, and replay evidence together with the problem README whenever published coverage changes. Link exact theorem sources and verification evidence from the problem README. Audit assumptions against the original cell before changing status; never infer completion from filenames or successful compilation alone.
 - Coordinate shared index/configuration edits and serialize git writes. Stage only owned files and agreed shared documentation; preserve unrelated work.
 - GitHub publication is authorized. Submission to the hackathon platform is not authorized. Open-conjecture work remains paused.
+
+## Publication format
+
+Write judge-readable Markdown with `$...$` inline math and `$$...$$` display math, exact cell labels, full arguments, citations, and links to reproducible code and Lean evidence. The platform accepts Markdown with LaTeX math and an optional write-up link; a standalone `.tex` or PDF is not mandatory. Check rendered math and preserve the distinction between written, computational, and Lean proofs. Formatting preparation does not authorize platform submission.
