@@ -2,6 +2,10 @@
 
 A hackathon research workspace for automated mathematical discovery: explore conjectures, search for counterexamples, improve constructions, and produce independently checkable proofs.
 
+## LaTeX and PDF editions
+
+[Typeset proof documents](docs/latex/README.md) include editable LaTeX, PDF editions, per-cell P3/P4 packets, and the complete published P1 Lean source appendix. Written proofs, formal coverage, computational certificates, and incomplete cells retain their separate scopes.
+
 ## Proof progress
 
 **19 solved · 0 not solved · 5 skipped.** This is the authoritative progress overview. “Solved” means the **entire cell meets its stated hackathon requirements**, supported by a complete written proof, a checkable computational certificate, or the exact values and constructions that the cell requests. Lean coverage is reported separately. “Not solved” includes partial arguments and finite cases that do not meet the full task. “Skipped” means intentionally paused; it does not mean impossible. No answers have been submitted to the hackathon platform.

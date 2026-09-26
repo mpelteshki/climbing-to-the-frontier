@@ -1,0 +1,37 @@
+{
+  "source_commit": "212bba53b1818c08c40b8c4b48f636651eaf6410",
+  "pandoc_version": "3.11",
+  "sha256": {
+    "cagent/p1/writeup.md": "c6da1a67ca7bd40bfc00653fbda46b9ab91ee8c67849885e893fecd7659fafe1",
+    "cagent/p2/writeup.md": "fcb924996a729df23f83a241aa6451c17f6768ce9e7469f3306b7b204fd071e6",
+    "cagent/p3/c1/written-proof.md": "887babced380e30a39248de87865e606a392275824bbb421514d38d631ec5e34",
+    "cagent/p3/c2/upper-bound-proof.md": "5b98c6e21b4aa47e62342e9fc96f090db785f359309c16375c8b230f49fd0473",
+    "cagent/p3/c2/lower-bound-proof.md": "a49c008f7157f4e9f421c64a5a55cf1eb76bc146721270fb50c6be9dd7c1f8ad",
+    "cagent/p3/c3/written-proof.md": "5c019a7dba6c8040d7f102fea8ec41a4acf44a7e5083de14ac94ce4fd01d9783",
+    "cagent/p3/c4/written-proof.md": "55656398e7fa4db015a594bb97e860ce41044cf69289bcfe09a5f0334ada99fa",
+    "cagent/p3/c5/lower-bound-proof.md": "5c50ae8cd1aa04919cc97a056b835024d2e44f156d627926cd1bb2591acf41c0",
+    "docs/latex/p3-source.md": "9f95cbbdb354238facc6a80affbf0c8594904c06c55c7a77c881446676f36472",
+    "cagent/p4/SUBMISSION.md": "97d70e9780c6d952520742f9f5d2fb6f29580008ddb00268acf690d9999bad96",
+    "docs/latex/cells/p3-c1.md": "b668e7d0c6b4ae1549fbc4cadb4f1083ee023531af517388ccf41cdf2464472b",
+    "docs/latex/cells/p3-c2.md": "eb097746fd401c5c45d1ad34d22f808f4e6740c3a7f69a0f03fe2bfa6a604df7",
+    "docs/latex/cells/p3-c3.md": "e8cda0f8e5c5becbf0c88462e8ee5b54672c42d19066c89d22a5dbec707f5db3",
+    "docs/latex/cells/p3-c4.md": "011ab4726de63abd23e334bb034a72cd4527dedd12d4f179d1d338e3da6becbe",
+    "docs/latex/cells/p3-c5.md": "b5fc1018f495eed365f7ac7f316e72aa1b914afdcb291d1f9f6bc0a97e20df9c",
+    "docs/latex/cells/p3-c6.md": "be7238f248d5d93d300ce71445bfc4cf59dc20153e2746095a77a4a966e0708e",
+    "docs/latex/cells/p4-c1.md": "a8a114c491baa9de12e5074f8f296b192d6568a22992f32f955c279353155bf9",
+    "docs/latex/cells/p4-c2.md": "c4c6ec8e896e0865f50bf3f5793e0ad04603f89628ae9d35a05e2617564e0970",
+    "docs/latex/cells/p4-c3.md": "e777e8aecf72551d07e1abdf286ac7748fbf587fa49e126a22ec25592673ae29",
+    "docs/latex/cells/p4-c4.md": "5d77553dc664c9a9ecc2b527dd8d55bf3ceecf7a0575fc580e6cfce7383368d0",
+    "docs/latex/cells/p4-c5.md": "6c4f03309f563d9ea8ceda40bb895178713b46b3c88c8acb1d65f6a9bdf8d48d",
+    "docs/latex/cells/p4-c6.md": "8e97eb56fbeab21fbc312e079decf0c739833f2251a80a24adf206d93e8d1511",
+    "docs/latex/p1-formalization.md": "002f732a1af5eb23f0774aee600e59a488557b9fe090349d411a02ef502a8653",
+    "docs/latex/cells/p1-c3.md": "ba1f9a064a7853f2030662d77cb4e12a51854b0b16537e10b7df2a6218edd0d3",
+    "docs/latex/cells/p1-c4.md": "99743d9ad5c3d0bb115e4f797f350654525873a4be45bed279781b08c52a257e",
+    "docs/latex/cells/p1-c5.md": "85134df399a3c7c7c69d6900c98f3ef1edbf64bf6673a5e296c1883864cf552c"
+  },
+  "assets_sha256": {
+    "docs/latex/fonts/JuliaMono-Regular.ttf": "40a07da0d1601215eb6b89312eb44128a3e2f36675d3e1f518264bd391fc7023",
+    "docs/latex/fonts/LICENSE_JULIAMONO": "d27b85137453d4eb0893eee45bdc6eb79a661693680856f3f7df8bc77dfe902f"
+  },
+  "font_source": "https://github.com/cormullion/juliamono/releases/tag/v0.63.2"
+}
