@@ -64,7 +64,7 @@ $$
 d_1=1,\qquad d_{i+1}=1-\frac{a_i^2}{d_i}=1-b_i^2.
 $$
 
-All pivots are positive. Explicitly, take $L$ lower bidiagonal, with diagonal $1$ and $L_{i+1,i}=a_i/d_i$. Direct multiplication gives $G=L\operatorname{diag}(d_1,\ldots,d_m)L^{\mathsf T}$. Thus $\det G=\prod_i d_i>0$, contradicting singularity. This contradiction proves $\sum_i\beta_i\ge\pi/2$ and hence C2.
+All pivots are positive. Explicitly, take $L$ lower bidiagonal, with diagonal $1$ and $L_{i+1,i}=a_i/d_i$. Direct multiplication gives $G=L\mathrm{diag}(d_1,\ldots,d_m)L^{\mathsf T}$. Thus $\det G=\prod_i d_i>0$, contradicting singularity. This contradiction proves $\sum_i\beta_i\ge\pi/2$ and hence C2.
 
 This is a full written argument, including zero adjacent products. The general matrix factorization/rank argument and scalar induction are not formalized here. The actual geometric $m=2$ and $m=3$ cases are separately Lean-checked when listed in [README.md](README.md).
 
