@@ -22,3 +22,18 @@
 ## Publication format
 
 Write judge-readable Markdown with `$...$` inline math and `$$...$$` display math, exact cell labels, full arguments, citations, and links to reproducible code and Lean evidence. The platform accepts Markdown with LaTeX math and an optional write-up link; a standalone `.tex` or PDF is not mandatory. Check rendered math and preserve the distinction between written, computational, and Lean proofs. Formatting preparation does not authorize platform submission.
+
+## Judge-ready writeup is part of task completion
+
+Every problem task must prepare, verify, and publish its judge-ready writeup as part of the task itself. Do not treat the writeup as an optional follow-up or wait for a separate formatting request.
+
+After the mathematical work, required witnesses, code, and verification are complete, consolidate them into one final judge-ready Markdown submission item for that task. This is the final deliverable, not merely a progress summary. Earlier drafts remain drafts until reconciled with the final verified results and published evidence.
+
+- Use Markdown with `$...$` inline mathematics and `$$...$$` display mathematics, matching the hackathon submission editor. A separate LaTeX source or PDF is optional unless a cell explicitly requires it.
+- State the exact problem and cell labels, answers, and truthful task status. Include the complete argument and every artifact required by that cell, such as explicit attaining binary vertex lists, constructions, or counterexamples. Do not replace required content with a progress report or a link to an unfinished proof.
+- Cite reused published results, explain how their hypotheses match the task, and distinguish reused results from independently reconstructed arguments or computations.
+- For computer-assisted proofs, explain why the computation proves the claim, provide the code, exact replay commands, and recorded runtime, and satisfy the task's runtime limit. Distinguish computational evidence, written proofs, and Lean certification, including any remaining premises or limitations.
+- Check the rendered mathematical notation or its supported Markdown syntax, required lists and values, citations, and evidence links. Use self-contained links when the text is intended to be copied into the submission editor.
+- Include the writeup in the package manifest and link it prominently from the problem README. The sole publisher integrates it with the relevant cell's status and evidence update and verifies publication on remote main.
+- Apply this requirement to every P1–P4 task, including already completed cells whose writeup is missing. Preserve the distinction between a mathematically solved cell and an incomplete publication package; complete missing packaging before calling the task finished.
+- Preparing or publishing a writeup does not authorize submitting it to the hackathon platform. Platform submission remains unauthorized.
