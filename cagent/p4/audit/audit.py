@@ -55,7 +55,7 @@ def residues(xs, deadline=None):
                 if any(chosen[j] >= 0 and (value - chosen[j]) % pair[i][j] == 0
                        for j in range(n) if j != i):
                     continue
-                if any(xs[j] == modulus and chosen[j] >= 0 and
+                if any(xs[j] == xs[i] and chosen[j] >= 0 and
                        ((j < i and chosen[j] >= value) or (j > i and chosen[j] <= value))
                        for j in range(n) if j != i):
                     continue
