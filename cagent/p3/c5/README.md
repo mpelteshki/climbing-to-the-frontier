@@ -1,5 +1,7 @@
 # P3 C5: two above a triangular number
 
+**Submission files:** [standalone LaTeX](submission.tex) · [copy-ready Markdown](submission.md) · [fresh Astra audit](audit.md). The LaTeX includes all prerequisite proofs and compiles successfully.
+
 [Cell statement](https://hackathon.bainsa.ai/p/p3/c5) · [Consolidated judge write-up](../writeup.md)
 
 **Solved — complete written proof; Lean partial.** For $k\ge7$,

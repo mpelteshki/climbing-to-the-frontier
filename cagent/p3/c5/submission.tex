@@ -1,0 +1,583 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\title{Proof Pursuit P3, Cell 5\\Two above a triangular number}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For Bulgarian solitaire, let $D_B(n)$ denote the largest number of moves before first entry into a periodic orbit, over all partitions of $n$. We prove
+\[
+D_B(T_{k-1}+2)=
+\begin{cases}
+2,3,5,8,12 & \text{for } k=2,3,4,5,6,\text{ respectively},\\
+(k-1)(k-4) & \text{for every }k\ge7,
+\end{cases}
+\qquad T_j=\frac{j(j+1)}2.
+\]
+We give explicit maximizing partitions, a uniform upper-bound argument, and an exact account of the limitation of the C3 method. The general proof is written mathematics. Lean certifies the exceptional finite values and selected prerequisite results; full general Lean formalization is not claimed.
+\end{abstract}
+\paragraph{Definitions.} A partition is a finite nonincreasing list of positive pile sizes. One move $B$ removes one card from each pile, discards zeros, adds a pile equal to the previous number of piles, and sorts. The depth is the least $d\ge0$ for which $B^d(\lambda)$ is periodic. All references to the state at count index $i$ mean $B^{i-1}(\lambda)$; $B^p(\lambda)$ denotes the state after exactly $p$ moves.
+\paragraph{Reading order.} Sections 1--3 give the construction, upper bound, and exceptional values. Appendices prove the classification and lifetime lemmas used in the upper bound, including the final-pattern dichotomy. No unproved conjecture is used.
+\tableofcontents
+\section{Explicit extremal family and lower bound}
+
+For every $k\ge5$, the partition
+
+\[
+\lambda_k=(k-2,k-2,k-3,\ldots,3,3,2,1)
+\]
+
+has first cyclic depth exactly $(k-1)(k-4)$. To remove any ambiguity in the short tail, its $k$ entries are $\lambda_1=k-2$, $\lambda_i=k-i$ for $2\le i\le k-3$, and $(\lambda_{k-2},\lambda_{k-1},\lambda_k)=(3,2,1)$. Their sum is $T_{k-1}+2$.
+
+This proves the \textbf{general lower bound}; the complete upper-bound proof below establishes equality for every $k\ge7$. The family is the $r=2$ specialization of \href{https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf}{Griggs and Ho, Theorem 4.5}; the detailed modular trajectory below supplies the omitted calculation. For $k=5,6$ this family is not optimal. The Lean finite cases give the exact depths $2,3,5,8,12$ for $k=2,3,4,5,6$ respectively.
+
+Use columns numbered from zero and rows numbered from one. Relative to the staircase of height $k-1$, the initial diagram has one hole on diagonal $k-1$ at column $0$, and three extra cards on diagonal $k$ at columns $k-3,k-2,k-1$.
+
+Let $F=(k-1)(k-4)$. Before sorting, a Bulgarian move rotates diagonal $w$ one column forward modulo $w$. At a time $0\le t<F$, write $t=a(k-1)+b$ with $0\le a\le k-5$ and $0\le b\le k-2$. The hole rotates to column $b$. The extra cards rotate to
+
+\[
+(b-a-3)\bmod k,\quad(b-a-2)\bmod k,\quad(b-a-1)\bmod k.
+\]
+
+Each unreduced value is either nonnegative and strictly less than $b$, or negative and becomes at least $b+2$ after adding $k$: the smallest wrapped difference is $k-a-3\ge2$. Thus none of the extras occupies the hole's column or the column immediately to its right. There is no vertical gap, and the column heights remain decreasing. Away from the hole, a staircase with distinct extra columns cannot have an adjacent inversion; at the hole, only an extra immediately to its right could cause one. Sorting therefore does nothing before time $F$, so induction proves this trajectory formula at every such time.
+
+At $t=F$, the unsorted diagram has the hole at column $0$ and extra cards at columns $1,2,3$. The first four heights are $k-2,k-1,k-2,k-3$. Sorting swaps the first two, giving
+
+\[
+(k-1,k-2,k-2,k-3,k-5,k-6,\ldots,1).
+\]
+
+The tail is empty when $k=5$. This is a complete staircase of height $k-1$ plus one card in each of columns $2,3$, hence a cyclic partition by C1. Before time $F$, a hole remained below that boundary, so no earlier state was cyclic. The witness therefore has first cyclic depth exactly $F$.
+
+The matching upper bound for every $k\ge7$ is proved by the complete uniform argument in the companion upper-bound proof; finite agreement is only a cross-check.
+\section{Uniform upper bound}
+
+For every $k\ge7$, put $n=T_{k-1}+2$ and $F=(k-1)(k-4)$. This proof establishes the uniform upper bound $D_B(n)\le F$. Together with the explicit lower-bound family, it proves
+
+\[
+D_B(T_{k-1}+2)=(k-1)(k-4)\qquad(k\ge7).
+\]
+
+The exceptional values for $k=2,3,4,5,6$ are respectively $2,3,5,8,12$, proved by the exhaustive Lean certificates linked in the cell summary. The general proof below is written mathematics, not a full Lean formalization.
+
+\href{https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf}{Griggs and Ho, Theorem 4.5} supplies the general lower-bound construction; their Conjecture 4.7 concerns its sharpness more broadly. The argument here proves this particular two-above-triangular case directly. It does not assume their conjecture or claim novelty.
+
+\subsection{Sequence facts}
+
+For a trajectory from a partition of $n$, let $c_i$ be the pile count in $B^{i-1}(\lambda)$, and let $d$ be its first cyclic depth. Use the lifetime and retreat lemmas proved in Appendix B and the final-pattern dichotomy proved in Appendix C. Choose the earliest count rise $c_t=k-1,c_{t+1}=k$ occurring in a cyclic state. Then $d\le t-1$. If $t>k$, one of two patterns occurs:
+
+\begin{itemize}
+\item Type I: $(c_p,\ldots,c_q)=(k-1,k,\ldots,k,k+1)$, with $t-k\le p<q\le t-1$.
+\item Type II: $(c_p,\ldots,c_q)=(k-2,k-1,\ldots,k-1,k)$, with $t-k+1\le p<q\le t+1$.
+\end{itemize}
+
+Write $L=q-p\ge2$. Every level $x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies
+
+\[
+\sum_{j=0}^{m-1}c_{p+j}\le n+T_{m-1}.
+\]
+
+(1)
+
+The last inequality counts the remaining lives of piles present at time $p$, plus at most $m-1,m-2,\ldots,1$ appearances by subsequent newborn piles. For a type-II pattern of full width $k$, the special lifetime lemma also gives $p+k\le n+1$.
+
+If $t\le k$, then $d\le k-1<F$. The rest assumes $t>k$.
+
+\subsection{Type I}
+
+Equation (1) gives $n\ge k(L+1)-T_L$. The right side is nondecreasing over the allowed widths $L\le k-1$. At $L=k-3$ it exceeds $n$ by $k-5>0$, so $L\le k-4$. At $L=k-4$ it exceeds $n$ by $k-8$. Consequently, for $k\ge9$, $L\le k-5$, and
+
+\[
+d\le t-1\le p+k-1\le k(k-6)+k-1=F-5.
+\]
+
+(2)
+
+For $k=7,8$, (2) also applies whenever $L\le k-5$. The only further type-I case is $L=k-4$ at these two values. At time $p+1$, the new pile has size $k-1$. Each constant count on the plateau forces exactly one death, so $k-6$ old piles have sizes $1,\ldots,k-6$. The remaining five old piles survive the final rise and have size at least $k-4$. Their minimum card total, including the new pile, is $(k-1)+T_{k-6}+5(k-4)$, equal to $22$ at $k=7$ and $30$ at $k=8$. The actual totals are $23$ and $30$. Thus the state immediately after the first rise, $B^p(\lambda)$, is respectively
+
+\[
+U_7=(6,4,3,3,3,3,1),\qquad U_8=(7,4,4,4,4,4,2,1).
+\]
+
+These two finite cases can be closed by reversing the move. For a partition $\mu$ of length $m$, each predecessor is obtained by choosing a distinct part $s\ge m-1$, removing that part, adding one to every other part, and appending $s-m+1$ ones. This is exhaustive because the removed part must be the newly created pile. Starting from $U_7$, the numbers of states in successive inverse layers $j=0,1,\ldots,8$ are
+
+\[
+1,1,1,1,2,3,4,4,0.
+\]
+
+At layer $7$, the four states are
+
+\[
+\begin{gathered}
+(5,3,3,3,3,2,2,1,1),\quad(5,4,4,2,2,2,2,1,1),\\
+(5,4,4,3,3,1,1,1,1),\quad(5,4,4,3,3,2,2).
+\end{gathered}
+\]
+
+Each has largest part below its length minus one, so layer $8$ is empty. Thus $p\le7$. Five forward moves take $U_7$ to the cyclic boundary $(6,5,4,4,3,1)$, giving $d\le p+5\le12<F=18$. For $U_8$, its sole predecessor is $(5,5,5,5,5,3,2)$, which has no predecessor because its largest part $5$ is less than $7-1$. Hence $p\le1$; six forward moves take $U_8$ to the cyclic boundary $(7,6,5,4,4,3,1)$, and $d\le7<F=28$. This settles type I for all $k\ge7$.
+
+\subsection{Type II: narrow and forbidden widths}
+
+If $L\le k-4$, then
+
+\[
+d\le t-1\le p+k-2\le(k-1)(k-5)+k-2=F-1.
+\]
+
+(3)
+
+Width $k-1$ is impossible. The pile born on move $p$ has size $k-2$, so it dies at $p+k-2=q-1$; the final rise $c_{q-1}=k-1\to c_q=k$ allows no death then.
+
+At full width $L=k$, exactly one old pile survives the initial plateau. The deaths determine the other old sizes as $1,\ldots,k-3$, and the new pile has size $k-2$. The card sum $T_{k-1}+2$ forces the surviving old size to be $k+1$. Thus
+
+\[
+B^p(\lambda)=(k+1,k-2,k-3,\ldots,1).
+\]
+
+Its next move is a cyclic binary-boundary partition. Hence the special lifetime bound gives
+
+\[
+d\le p+1\le n+2-k\le F,
+\]
+
+since $2(F-(n+2-k))=k(k-7)\ge0$.
+
+\subsection{Type II: width $k-3$}
+
+Here $B^p(\lambda)$ has $k-1$ piles. The new pile has size $k-2$. The plateau deaths force $k-5$ old piles of sizes $1,\ldots,k-5$, leaving three old piles of size at least $k-3$. Their total has only three cards above this minimum. The three possible excess multisets are $(3,0,0),(2,1,0),(1,1,1)$. The first two give cyclic binary-boundary states, so $d\le p\le(k-1)(k-4)=F$.
+
+The third gives the state
+
+\[
+S_k=((k-2)^4,k-5,k-6,\ldots,1).
+\]
+
+(4)
+
+This state cannot belong to the final pattern. To see its delay directly, use zero-based columns and one-based rows. Relative to the full staircase of height $k-1$, $S_k$ has one missing cell on diagonal $k-1$ at column $0$, two added cells on diagonal $k$ at columns $2,3$, and one added cell on diagonal $k+1$ at column $3$. Under the unsorted move, diagonal $w$ advances one column modulo $w$. For $0\le j\le k-2$, place the missing cell at column $j$, the two diagonal $k$ cells at $(j+2)\bmod k,(j+3)\bmod k$, and the diagonal $(k+1)$ cell at $(j+3)\bmod(k+1)$. These diagrams are Ferrers:
+
+\begin{itemize}
+\item For $0\le j\le k-4$, all displayed columns are unwrapped. The missing cell makes columns $j,j+1$ equal, while the extra cells make columns $j+1,j+2,j+3$ equal; all other adjacent staircase differences remain nonnegative.
+\item At $j=k-3$, the diagonal $k$ extras wrap to $k-1,0$, and the diagonal $(k+1)$ extra is in column $k$. The right tail has heights $1,1,1,1$, and the increased column $0$ preserves the leftmost inequality.
+\item At $j=k-2$, the extras occupy columns $0,1$ on diagonal $k$ and column $0$ on diagonal $k+1$; the missing cell deletes the rightmost staircase column. The first two heights become $k+1,k-1$, and the rest decrease.
+\end{itemize}
+
+Thus sorting does nothing during these $k-2$ moves, and every one of $S_k,B(S_k),\ldots,B^{k-2}(S_k)$ still has a cell on diagonal $k+1$. The C1 classification rules out cyclicity at all these times. But $t\le p+k-1$, so the chosen cyclic state at time $t-1$ would occur at most $k-2$ moves after $B^p(\lambda)=S_k$, a contradiction. Therefore width $k-3$ also obeys $d\le F$.
+
+\subsection{Width $k-2$: two possible cyclic entry states}
+
+At this width, the same death-and-card calculation leaves exactly two possible states immediately after the first rise:
+
+\[
+A_k=(k,k-2,k-2,k-4,k-5,\ldots,1),\qquad
+B_k=(k-1,k-1,k-2,k-4,k-5,\ldots,1).
+\]
+
+(5)
+
+Both are cyclic by Appendix A. The preceding state has $c_p=k-2$ piles, whereas a rank $k$ cyclic state has $k-1$ or $k$ piles. Thus this is the first cyclic entry and $d=p$. Their only immediate predecessors compatible with the initial rise and no deaths are, respectively,
+
+\[
+(k+1,k-1,k-3,k-4,\ldots,2),\qquad
+(k,k,k-3,k-4,\ldots,2).
+\]
+
+(6)
+
+\subsection{The $B_k$ family is bounded}
+
+For a partition $\mu$ with $m$ parts, every predecessor under Bulgarian solitaire is obtained by choosing a distinct part $s\ge m-1$, removing it, incrementing every other part, and appending $s-m+1$ ones. This is exhaustive: $s$ is the newborn pile in $\mu$, and the ones are precisely the predecessor piles that die in the move.
+
+The only eligible values in $B_k$ are $k-1$ and $k-2$. Removing $k-1$ gives another cyclic binary-boundary state. Removing $k-2$ gives the unique noncyclic immediate predecessor
+
+\[
+P_k=(k,k,k-3,k-4,\ldots,2).
+\]
+
+Thus $p=0$ or the reverse path passes through $P_k$ after its first step.
+
+In every state reached by reversing from $P_k$ while retaining both displayed largest piles, they remain equal, say of size $M=k+j$, and every other part is at most $M-3$. This holds initially. If the inverse rule selects a smaller part, both largest parts gain one and every other surviving part gains one; appended ones also satisfy the gap. Since the two large parts contain $2(k+j)$ cards, card conservation gives
+
+\[
+j\le\left\lfloor\frac{n-2k}{2}\right\rfloor
+ =\left\lfloor\frac{F}{4}\right\rfloor.
+\]
+
+If the inverse rule instead selects one of the equal largest parts of size $M$, the next state has exactly $M$ parts, one part of size $M+1$, and all other parts at most $M-2$. Its inverse eligibility threshold is $M-1$, so the $M+1$ part is its only eligible choice. Selecting it gives a state with $M+1$ parts and all parts at most $M-1$, below the new threshold $M$. No further predecessor exists. Therefore at most two reverse moves follow the last twin-retaining state.
+
+Including the initial $B_k\to P_k$ reverse move gives $p\le1+j+2\le3+\lfloor F/4\rfloor\le F$, since $F\ge18$ for $k\ge7$. This proves the $B_k$ first-entry bound without a high-birth-deadline lemma or a finite-rank assumption.
+
+\subsection{The $A_k$ family is bounded}
+
+Use the exhaustive inverse rule: for a partition $\mu$ with $m$ parts, choose a distinct part $s\ge m-1$, remove it, increment every other part, and append $s-m+1$ ones. The resulting partition is a predecessor of $\mu$, and all predecessors arise this way.
+
+Since $A_k$ has $k-1$ parts, only its part values $k$ and $k-2$ are eligible. Removing $k$ gives
+
+\[
+(k-1,k-1,k-3,k-4,\ldots,2,1,1),
+\]
+
+which is already cyclic: relative to the padded staircase $(k-1,k-2,\ldots,1,0)$, it has exactly the two added boundary bits at columns $1$ and $k-1$. Hence, if $p>0$, its predecessor at time $p-1$ must be
+
+\[
+P_k=(k+1,k-1,k-3,k-4,\ldots,2),
+\]
+
+obtained by removing $k-2$. This state has two distinguished largest parts $M=k+1$ and $M-2=k-1$, and every tail part is at most $M-4$.
+
+Trace the $p-1$ further inverse moves from $P_k$. Call a move \emph{tail-selecting} if it selects neither distinguished large part. After $j$ successive tail-selecting moves, both large parts remain, of sizes $M=k+1+j$ and $M-2$. Card conservation gives
+
+\[
+2k+2j\le n,\qquad
+j\le\left\lfloor\frac{n-2k}{2}\right\rfloor
+ =\left\lfloor\frac F4\right\rfloor.
+\]
+
+If the inverse chain ends without selecting a distinguished part, its length from $A_k$ is at most $1+j\le1+\lfloor F/4\rfloor<F$.
+
+Suppose at least one tail-selecting move occurs. Initially $P_k$ has $k-2$ parts, so the inverse threshold is $k-3$; its unique eligible tail part is the largest tail part $k-3=M-4$. Removing that part leaves every tail part at most $M-5$ before incrementing, so afterward every tail part is at most the new largest part minus $5$. Further tail-selecting moves preserve this gap. Thus, when a distinguished part is eventually selected after $j\ge1$ tail moves, the state has top parts $M,M-2$ and tail parts at most $M-5$.
+
+If the inverse step selects the largest part $M$, the next partition has $M$ parts, one part $M-1$, and all others at most $M-4$. Its threshold is $M-1$, making that top part the unique eligible choice. Selecting it gives a partition of length $M-1$, all of whose parts are at most $M-3$, below the threshold $M-2$. Thus at most two inverse moves follow the $j$ tail moves. If instead the step selects the second-largest part $M-2$, the next partition has $M-2$ parts, one part $M+1$, and all others at most $M-4$. Its threshold is $M-3$, so again only its top part is eligible; selecting it gives a partition of length $M+1$, all of whose parts are at most $M-3$, below the threshold $M$. In either case,
+
+\[
+p\le1+j+2\le3+\left\lfloor\frac F4\right\rfloor\le F.
+\]
+
+It remains to consider selecting a distinguished part immediately at $P_k$, before any tail move.
+
+\textbf{Select the second-largest $k-1$.} The resulting partition is
+
+\[
+Q_2=(k+2,k-2,k-3,\ldots,3,1,1).
+\]
+
+Its unique largest part exceeds every tail part by at least $4$. Any reverse step selecting a tail part preserves this gap and increments the largest part. If a reverse step selects the largest part $M$, its predecessor has length $M$ and all parts at most $M-3$, so it has no predecessor. Starting from size $k+2$, there can be at most $n-k-2$ tail-selecting inverse moves by card conservation, followed by at most one largest-part selection. Including the first two reverse moves $A_k\to P_k\to Q_2$,
+
+\[
+p\le2+(n-k-2)+1=n-k+1\le F.
+\]
+
+For the last inequality, $2(F-(n-k+1))=k^2-7k+2\ge0$ when $k\ge7$.
+
+\textbf{Select the largest $k+1$.} The resulting partition is
+
+\[
+Q_1=(k,k-2,k-3,\ldots,3,1,1,1,1).
+\]
+
+It has $k+1$ parts and largest part $k$, so its only predecessor is obtained by selecting $k$. That predecessor has $k$ parts and largest part $k-1$, so its predecessor is again unique, obtained by selecting $k-1$. If $p\le3$, the desired bound is immediate. Otherwise the resulting earlier state exists, and the three consecutive pile counts at indices $p-3,p-2,p-1$ are
+
+\[
+(c_{p-3},c_{p-2},c_{p-1})=(k-1,k,k+1).
+\]
+
+This is a width-two, level $k$ sandwich. The C2 width-two lifetime lemma gives $p-3\le k$, hence $p\le k+3\le F$ for $k\ge7$.
+
+All reverse branches are covered, proving the claimed first-entry bound for $A_k$.
+
+\subsection{Conclusion and why C3 alone is insufficient}
+
+Every final-pattern case now gives $d\le F$: type I, all type-II widths other than $k-2$, and both possible first-entry states at width $k-2$. Together with the explicit lower-bound family, this proves the formula for every $k\ge7$.
+
+C3 gives only $D_B(n)\le k^2-2k-1$, exceeding this target $F=k^2-5k+4$ by $3k-5$. Even after the two-extra-card budget eliminates most pattern widths, the ordinary retreat estimate at width $k-2$ is only $p\le(k-1)(k-3)=F+k-1$. It still misses the target by $k-1$.
+
+The additional ingredient is the exact inverse structure of the two possible cyclic entry states. Distinguished large piles persist under inverse steps until selected; their total card mass bounds those steps, and selecting them leaves only a short branch. The one exceptional branch has two forced predecessors, exposing a width-two count pattern to which the C2 lifetime lemma applies. This closes the gap uniformly in $k$, without a separate search for each rank.
+\section{Exceptional values and replay evidence}
+The following exact finite maxima cover all $k$ outside the uniform range. The notation $1^m$ means $m$ piles of size one.
+\begin{center}
+\begin{tabular}{rrrrl}
+\toprule
+$k$ & $n=T_{k-1}+2$ & $D_B(n)$ & & Attaining partition\\
+\midrule
+2&3&2&&$1^3$\\
+3&5&3&&$1^5$\\
+4&8&5&&$1^8$\\
+5&12&8&&$(3,3,2,2,1,1)$\\
+6&17&12&&$1^{17}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These claims are proved by the Lean declarations \texttt{maximumDepth\_3}, \texttt{maximumDepth\_5}, \texttt{maximumDepth\_8}, \texttt{maximumDepth\_12}, and \texttt{maximumDepth\_17}. The complete partition enumeration and transition checker are proved sound in \texttt{Enumeration.lean}; each theorem gives an exhaustive upper bound and an explicit attaining witness. Computation uses kernel-checked \texttt{cbv}, not \texttt{native\_decide}, an external solver, or an unproved axiom.
+
+The pinned toolchain is Lean 4.34.1. The package's 41-module recorded verification took 28.203 seconds. From the repository root:
+\begin{verbatim}
+python3 cagent/p3/verify.py
+python3 cagent/p3/c5/check.py --max-k 10
+\end{verbatim}
+The independent Python checker detects cycles directly and exhausts 158,034 partitions at ranks $2$ through $10$. The maxima are $2,3,5,8,12,18,28,40,54$; the recorded run took 0.335 seconds. This finite cross-check supports the proof but does not establish the infinite family. Timings refer to recorded local runs, not a hardware-independent guarantee.
+
+\paragraph{Sources and artifacts.}
+The construction and pile-count method originate in Griggs and Ho, \emph{The Cycling of Partitions and Compositions under Repeated Shifts} (1998), particularly Sections 3--4 and Theorem 4.5. Their broader sharpness conjecture is not assumed here. The argument reconstructs the prerequisites and supplies the two-entry-family inverse argument explicitly; no novelty claim is made.
+\begin{itemize}
+\item \href{https://hackathon.bainsa.ai/p/p3/c5}{Exact hackathon cell statement}.
+\item \href{https://people.math.sc.edu/griggs/cycling.pdf}{Griggs--Ho primary paper}.
+\item \href{https://github.com/mpelteshki/climbing-to-the-frontier/tree/main/cagent/p3}{Proof sources and pinned Lean project}.
+\item \href{https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/evidence/verification.json}{Lean source hashes, axiom checks, and recorded timings}.
+\item \href{https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/check.py}{Independent exact-cycle checker} and \href{https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/finite-check.json}{recorded finite results}.
+\end{itemize}
+The repository is private; linked code requires repository access. This document contains the general written argument and prerequisite proofs directly. No platform submission or organizer acceptance is claimed.
+\appendix
+\section{Cyclic-state classification}
+Write $T_k=k(k+1)/2$. For $n>0$, let $k$ be its unique rank, so $T_{k-1}<n\le T_k$, and put $r=n-T_{k-1}$. Thus $1\le r\le k$.
+
+The cyclic partitions are exactly
+
+\[
+(k-1+\varepsilon_0,\ k-2+\varepsilon_1,\ldots,\varepsilon_{k-1}),
+\qquad \varepsilon_j\in\{0,1\},\qquad \sum_j\varepsilon_j=r,
+\]
+
+with a final zero omitted. Every finite-state trajectory eventually reaches a cycle.
+
+\subsection{1. Energy and the shape of a cyclic orbit}
+
+Draw a partition as columns of heights $\lambda_0\ge\cdots\ge\lambda_{\ell-1}>0$. A card in column $j\ge0$, row $i\ge1$, lies on diagonal $i+j$. Let $E(\lambda)$ be the sum of these diagonal indices over all cards.
+
+Before sorting, a move produces the column list
+
+\[
+(\ell,\lambda_0-1,\ldots,\lambda_{\ell-1}-1).
+\]
+
+This has the same energy as the original diagram. Indeed, move each card with $i>1$ to $(i-1,j+1)$, and each top card $(1,j)$ to $(j+1,0)$. These moves preserve $i+j$ and give exactly that new column list.
+
+The zero columns are trailing and can be deleted without changing the energy. Sorting the remaining columns into decreasing order cannot increase energy: swapping adjacent heights $a<b$ decreases the column-index contribution by exactly $b-a>0$, while preserving the within-column contribution. Therefore $E(B\lambda)\le E(\lambda)$.
+
+On a cyclic orbit, energy must stay constant at every move. In particular, the unsorted first two columns cannot satisfy $\ell<\lambda_0-1$. Every nonempty cyclic partition therefore satisfies
+
+\[
+\lambda_0\le\ell+1.
+\]
+
+The rest of the unsorted list is already decreasing. Thus on a cyclic orbit no sorting is needed at all: each diagonal undergoes exactly the rotation described above. On diagonal $w$, column indices advance by one modulo $w$.
+
+\subsection{2. A higher occupied diagonal forces the lower one to be full}
+
+Suppose a cyclic partition has a hole on diagonal $w>0$, at column $j<w$, and a card on diagonal $w+1$, at column $q<w+1$. Choose
+
+\[
+t=(w+1)(w-1-j)+wq.
+\]
+
+Then $j+t\equiv w-1\pmod w$, whereas $q+t\equiv0\pmod{w+1}$. After $t$ moves, the hole is in row 1, column $w-1$, so the new partition has fewer than $w$ columns. The card is in row $w+1$, column 0, so its largest pile has size at least $w+1$. This contradicts the preceding bound: its largest pile is at most its number of columns plus one, hence at most $w$.
+
+Therefore an occupied cell on diagonal $w+1$ forces \textbf{every} cell on diagonal $w$ to be occupied.
+
+Let $K$ be the highest occupied diagonal of a nonempty cyclic partition. Diagonal $K-1$ is full when $K>1$; the partition property also fills every lower diagonal. All diagonals above $K$ are empty. Consequently its column heights are
+
+\[
+K-1+\varepsilon_0,\ K-2+\varepsilon_1,\ldots,\varepsilon_{K-1}
+\]
+
+for bits $\varepsilon_j$. At least one bit is 1, since diagonal $K$ is occupied. Thus
+
+\[
+T_{K-1}<n=T_{K-1}+\sum_j\varepsilon_j\le T_K.
+\]
+
+Uniqueness of rank gives $K=k$, and the bit sum is $r$. This proves necessity of the asserted form.
+
+\subsection{3. Every asserted boundary is cyclic}
+
+Conversely, take any length $k$ bit word of weight $r$. The asserted pile list is decreasing: adjacent differences are $1+\varepsilon_j-\varepsilon_{j+1}\ge0$. Its only possible zero is the last entry, and its total is $T_{k-1}+r=n$.
+
+Its number of positive piles is $k-1+\varepsilon_{k-1}$. One move therefore changes its boundary word to
+
+\[
+(\varepsilon_{k-1},\varepsilon_0,\ldots,\varepsilon_{k-2}).
+\]
+
+After $k$ moves it returns. This proves sufficiency. The word-to-partition map at fixed $k$ is injective: pad the partition with a final zero when needed and subtract $(k-1,k-2,\ldots,0)$. Hence two such partitions belong to the same cycle exactly when their words are rotations of one another.
+
+\section{Pile lifetimes and sandwich lemmas}
+\subsection{Pile lifetimes and a sequence bound}
+
+Write $c_i$ for the number of piles in $B^{i-1}(\lambda)$, with $i\ge1$. An original pile of size $a$ exists at times $1,\ldots,a$. The pile created by move $i$ has size $c_i$ and exists at times
+
+\[
+J_i=[i+1,i+c_i].
+\]
+
+Its last time is $e_i=i+c_i$. At any time $m$, precisely $c_m$ of these original-pile and created-pile intervals contain $m$. One new interval starts between times $i$ and $i+1$; if $d_i$ intervals end at $i$, then
+
+\[
+c_{i+1}=c_i+1-d_i.
+\]
+
+(1)
+
+In particular $c_{i+1}\le c_i+1$; a rise by one means \textbf{no} pile dies, and a constant pair means \textbf{exactly one} pile dies.
+
+We use a \emph{sandwich pattern} of level $x$ and width $L=q-p\ge2$:
+
+\[
+(c_p,c_{p+1},\ldots,c_q)=(x-1,x,\ldots,x,x+1).
+\]
+
+(2)
+
+The two rises occur at its ends. The following elementary sandwich rule will locate one. If $i<j$, $c_i\le x-1$, and $c_j\ge x+1$, choose $p$ as the last index before $j$ with $c_p\le x-1$, and $q$ as the first subsequent index with $c_q\ge x+1$. Equation (1) forces $c_p=x-1$, $c_{p+1}=\cdots=c_{q-1}=x$, and $c_q=x+1$. Thus (2) occurs within $[i,j]$.
+
+\subsection{The retreat lemma}
+
+Suppose (2) occurs and $p>x$. Among the $x$ recent created piles $J_{p-x},\ldots,J_{p-1}$, at least one is absent at time $p$, since $c_p=x-1$. The last, $J_{p-1}$, is present. Let $u\in[p-x,p-2]$ be the largest index whose interval is absent. All of $J_{u+1},\ldots,J_{p-1}$ are present at $p$. Since $c_{p+1}=c_p+1$, none dies at $p$, so they remain present at $p+1$.
+
+Put $h=p-u-1$ and $y=h+1=p-u\le x$. The absence of $J_u$ at $p$ gives $c_u\le h$. The presence of $J_{u+1}$ at $p+1$ gives $c_{u+1}\ge h+1$. Applying $c_{u+1}\le c_u+1$ shows
+
+\[
+c_u=h=y-1,\qquad c_{u+1}=h+1=y.
+\]
+
+(3)
+
+Moreover $J_{u+1}$ ends at time $u+1+y=p+1$.
+
+If $L=2$, the pattern also has $c_{p+2}=c_{p+1}+1$, so no interval ends at $p+1$, a contradiction. Hence every width-two pattern satisfies
+
+\[
+p\le x.
+\]
+
+(4)
+
+Now let $L\ge3$. As long as no later value $c_{u+s}$ has risen from $y$ to $y+1$, the consecutive intervals
+
+\[
+J_{u+s},J_{u+s+1},\ldots,J_{p+s-1}
+\]
+
+are all present at time $p+s$, for $1\le s\le L-1$. This holds for $s=1$ by the choice of $u$ and the lack of a death at $p$. If $c_{u+s}=y$, then $J_{u+s}$ ends at $(u+s)+y=p+s$. For $s\le L-2$, the pair $c_{p+s}=c_{p+s+1}=x$ permits exactly one death. It must be this interval; all the others survive, and $J_{p+s}$ is born. This proves the induction. At each stage the active $J_{u+s}$ implies $c_{u+s}\ge y$, while (1) and the preceding value $y$ imply $c_{u+s}\le y+1$. Hence it either stays at $y$ or supplies the desired rise.
+
+At $s=L-1$, the transition from $c_{q-1}=x$ to $c_q=x+1$ permits no death. Thus $J_{u+L-1}$ cannot have size $y$, which would make it end at $q-1$. A first rise occurs at some $v$ with
+
+\[
+u+2\le v\le u+L-1,
+\qquad(c_u,\ldots,c_v)=(y-1,y,\ldots,y,y+1).
+\]
+
+(5)
+
+It occurs by $p+1$: otherwise both $c_p$ and $c_{p+1}$ would equal $y$, contradicting their values $x-1,x$. Thus $u\ge p-x$, $v\le p+1$, $y\le x$, and the new width $v-u<L$. This is the retreat step.
+
+Each retreat decreases the positive integer width. It therefore stops either at a pattern with start at most its level or at width two, where (4) gives the same bound. Working backward through $p\le u+x$, while levels never increase, gives the explicit bound
+
+\[
+\boxed{p\le x(L-1)}
+\]
+
+(6)
+
+for every sandwich pattern (2). More formally, if $p\le x$, then $p\le x(L-1)$ since $L\ge2$. Otherwise induction on $L$ gives $p\le u+x\le y(L'-1)+x\le x(L-2)+x=x(L-1)$ for the smaller width $L'<L$. This abstract induction is also kernel-checked as \texttt{sandwich\_start\_bound}; the lifetime argument above proves its application hypotheses in writing.
+
+\subsection{A special full-width pattern}
+
+We also need one bound that uses the number $n$ of cards. Suppose
+
+\[
+(c_p,\ldots,c_{p+k})=(k-2,k-1,\ldots,k-1,k).
+\]
+
+(7)
+
+Here $k\ge3$. The interval $J_p$ ends at $p+k-2$. Since $c_{p+k-2}=c_{p+k-1}=k-1$, it is the \textbf{only} interval ending then. No interval ends at $p+k-1$, since the next count rises from $k-1$ to $k$.
+
+At time $p+k$, the $k-1$ intervals $J_{p+1},\ldots,J_{p+k-1}$ are all present. There is exactly one other pile. If it is original, its original size is at least $p+k$, and hence $n\ge p+k$. If it is $J_1$, then $1+c_1\ge p+k$, and $c_1\le n$ gives $n+1\ge p+k$.
+
+The only other possibility would be $J_i$ for some $2\le i\le p-1$; $J_p$ has already died. Such a $J_i$ is also the unique extra pile at time $p+k-1$, alongside $J_{p+1},\ldots,J_{p+k-2}$. Hence $J_{i-1}$ is absent at that time, so $(i-1)+c_{i-1}\le p+k-2$. But $J_i$ survives to $p+k$, and (1) yields
+
+\[
+(i-1)+c_{i-1}\ge(i-1)+(c_i-1)\ge p+k-2.
+\]
+
+Equality follows, making $J_{i-1}$ a second interval ending at $p+k-2$, contrary to the uniqueness of $J_p$. We have proved
+
+\[
+\boxed{p+k\le n+1}.
+\]
+
+(8)
+
+\section{Final-pattern dichotomy}
+\subsection{Sequence facts carried over from C2}
+
+For a starting partition $\lambda$, let $c_i$ be the number of piles in $B^{i-1}(\lambda)$. The new pile born on move $i$ has size $c_i$ and lives at times $i+1,\ldots,i+c_i$. Denote its lifetime interval by $J_i=[i+1,i+c_i]$. At time $m$, exactly $c_m$ intervals, including those of the original piles, are alive. Hence $c_{i+1}\le c_i+1$; a rise by one means no pile dies on move $i$.
+
+Appendix B proves three sequence lemmas without using the C2 conclusion:
+
+\begin{enumerate}
+\item If $c_i\le x-1$ and $c_j\ge x+1$ for $i<j$, a \emph{sandwich pattern} $(c_p,\ldots,c_q)=(x-1,x,\ldots,x,x+1)$ occurs inside $[i,j]$.
+\item Every such pattern of width $L=q-p\ge2$ obeys $p\le x(L-1)$. This follows from the explicit retreat to a shorter earlier pattern, stopping when $p\le x$, as is forced at width two.
+\item If $(c_p,\ldots,c_{p+k})=(k-2,k-1,\ldots,k-1,k)$, then $p+k\le n+1$. The proof counts live intervals at time $p+k$ and rules out an extra pile born after move 1.
+\end{enumerate}
+
+We also need two elementary links between a pile-count sequence and its state. First, its entire future determines its starting partition. At relative time $m$, subtract from $c_m$ the number of known new intervals $J_i$ covering $m$. The result is the number of original piles of size at least $m$, for every $m$, and these counts determine the partition. Thus, if $c_{t+i}=c_{t+k+i}$ for all $i\ge0$, the states at times $t$ and $t+k$ are equal; the state at time $t$ is cyclic.
+
+Second, let $m\ge1$ satisfy
+
+\[
+c_m=k-1,\quad c_{m+1}=k,\quad
+c_{m+a}\in\{k-1,k\}\ (2\le a<k),\quad c_{m+k}=k-1.
+\]
+
+(B)
+
+The state at time $m$ is already cyclic. Indeed, for $1\le a\le k$, all the $a-1$ piles born on moves $m,\ldots,m+a-2$ remain alive at time $m+a-1$. If $H_a$ counts the piles of the time $m$ state that have size at least $a$, then
+
+\[
+H_a=c_{m+a-1}-(a-1)\in\{k-a,k-a+1\}.
+\]
+
+(C)
+
+At time $m+k$, the $k-1$ piles $J_{m+1},\ldots,J_{m+k-1}$ already fill all $c_{m+k}=k-1$ places, so no time $m$ pile has size above $k$. Formula (C) says the conjugate diagram lies between the staircases of sizes $k-1$ and $k$; transposing gives the same containment for the original diagram. Its column heights therefore have the form $k-1+\varepsilon_0,k-2+\varepsilon_1,\ldots,\varepsilon_{k-1}$, with bits $\varepsilon_j$, so it is cyclic by Appendix A.
+
+\subsection{Finding a late sandwich}
+
+The boundary classification in Appendix A also says every cyclic state at rank $k$ has pile counts in $\{k-1,k\}$ and period dividing $k$. Because $1\le r<k$, its boundary word contains both a zero and a one, so the cyclic count sequence has a rise $k-1$ to $k$. Choose the \textbf{smallest} positive index $t$ for which
+
+\[
+c_t=k-1,\quad c_{t+1}=k,\quad
+c_{t+i}=c_{t+k+i}\quad\text{for all }i\ge0.
+\]
+
+(D)
+
+This $t$ exists. Let $d_B(\lambda)$ be the first-cyclic depth. The future-count argument above gives $d_B(\lambda)\le t-1$. If $t\ge k+1$, minimality means the preceding block $(c_{t-k},\ldots,c_{t-1})$ differs from $(c_t,\ldots,c_{t+k-1})$; otherwise the periodicity and the rise in (D) would already begin at $t-k$.
+
+Assume $t\ge k+1$. Since $c_t=k-1$, one of the $k$ recent intervals $J_{t-k},\ldots,J_{t-1}$ is absent at time $t$. Let $u$ be the largest absent index. The rise $c_t\to c_{t+1}$ entails no death, so the same lifetime calculation as in Appendix B gives
+
+\[
+c_u=t-u-1,\qquad c_{u+1}=t-u.
+\]
+
+(E)
+
+If $u\ge t-k+1$, then $c_u\le k-2$, and the sandwich rule between $u$ and $t+1$ produces a \textbf{type II} pattern
+
+\[
+(c_p,\ldots,c_q)=(k-2,k-1,\ldots,k-1,k),\quad
+t-k+1\le p<q\le t+1,\quad q-p\le k.
+\]
+
+(II)
+
+Otherwise $u=t-k$, so $c_{t-k}=k-1$ and $c_{t-k+1}=k$. If one of $c_{t-k+2},\ldots,c_{t-1}$ is at most $k-2$, the same rule gives (II). If one is at least $k+1$, the rule between $t-k$ and that index produces a \textbf{type I} pattern
+
+\[
+(c_p,\ldots,c_q)=(k-1,k,\ldots,k,k+1),\quad
+t-k\le p<q\le t-1,\quad q-p\le k-1.
+\]
+
+(I)
+
+In the remaining case all intermediate counts lie in $\{k-1,k\}$. Since (D) also gives $c_t=k-1$, condition (B) holds at $m=t-k$, so that earlier state is cyclic. Its future counts must then be $k$-periodic, contrary to the minimality of $t$. Thus (I) or (II) always occurs.
+
+\end{document}

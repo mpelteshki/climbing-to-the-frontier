@@ -8,7 +8,7 @@ $$
 
 has first cyclic depth exactly $(k-1)(k-4)$. To remove any ambiguity in the short tail, its $k$ entries are $\lambda_1=k-2$, $\lambda_i=k-i$ for $2\le i\le k-3$, and $(\lambda_{k-2},\lambda_{k-1},\lambda_k)=(3,2,1)$. Their sum is $T_{k-1}+2$.
 
-This proves a **general lower bound**, not yet the matching general upper bound. The family is the $r=2$ specialization of [Griggs and Ho, Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf); the detailed modular trajectory below supplies the omitted calculation. For $k=5,6$ this family is not optimal. The [Lean finite cases](README.md) give the exact depths $2,3,5,8,12$ for $k=2,3,4,5,6$ respectively.
+This proves the **general lower bound**; the complete upper-bound proof below establishes equality for every $k\ge7$. The family is the $r=2$ specialization of [Griggs and Ho, Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf); the detailed modular trajectory below supplies the omitted calculation. For $k=5,6$ this family is not optimal. The [Lean finite cases](README.md) give the exact depths $2,3,5,8,12$ for $k=2,3,4,5,6$ respectively.
 
 Use columns numbered from zero and rows numbered from one. Relative to the staircase of height $k-1$, the initial diagram has one hole on diagonal $k-1$ at column $0$, and three extra cards on diagonal $k$ at columns $k-3,k-2,k-1$.
 
@@ -28,4 +28,4 @@ $$
 
 The tail is empty when $k=5$. This is a complete staircase of height $k-1$ plus one card in each of columns $2,3$, hence a cyclic partition by [C1](../c1/written-proof.md). Before time $F$, a hole remained below that boundary, so no earlier state was cyclic. The witness therefore has first cyclic depth exactly $F$.
 
-The matching upper-bound claim for all $k\ge7$ remains a separate proof obligation; finite agreement alone does not establish it.
+The matching upper bound for every $k\ge7$ is proved by the complete uniform argument in the companion upper-bound proof; finite agreement is only a cross-check.

@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "reviewer": "GPT-6 Astra",
+  "review_kind": "independent mathematical audit; not full Lean certification",
+  "audited_files": {
+    "c5/upper-bound-proof.md": "d92f05332e35db654a34b27692229886233fd418b1815ad7c212c2e6db25c3b8",
+    "c5/lower-bound-proof.md": "f34dfd489ceb6ae175e08be48a90c6f295583b040d078923b48483ada689ffb5",
+    "c5/submission.tex": "d95ef9f532fc3b07634b3fc4a1e6ab662f81e0c8127dd1f17d47892039931341",
+    "c5/submission.md": "3a88188d1681189f20b4a08957d4995b34eefdbbfd1fbee1d5bdf7e470a279d4",
+    "c5/evidence/astra-independent-check.py": "dc9f607b7d6043def8edb15b77abceb195e60949d4f0efd1bac7fe6d5479842f"
+  },
+  "independent_replay": {
+    "exit_code": 0,
+    "partition_count": 158034,
+    "ranks": [
+      2,
+      10
+    ],
+    "maximum_depths": [
+      2,
+      3,
+      5,
+      8,
+      12,
+      18,
+      28,
+      40,
+      54
+    ],
+    "modular_witness_ranks": [
+      5,
+      150
+    ],
+    "exclusion_trajectory_ranks": [
+      7,
+      150
+    ],
+    "u7_inverse_layers": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      4,
+      4,
+      0
+    ],
+    "u8_inverse_layers": [
+      1,
+      1,
+      0
+    ]
+  },
+  "latex": {
+    "compiler": "Codex desktop standalone LaTeX compiler",
+    "result": "success",
+    "pdf_exported": false
+  },
+  "full_general_lean_proof": false,
+  "hackathon_submission_by_this_task": false
+}

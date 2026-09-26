@@ -14,6 +14,8 @@ Each theorem `maximumDepth_n` proves two statements: every decreasing positive p
 
 Cell status: [C1](c1/README.md) has an all-`k` fixed-staircase theorem, the full rank-normalized binary-boundary cycle classification and the cycle/rotation correspondence, general eventual cycling and energy lemmas, all-`k` triangular convergence/uniqueness, and exact convergence times through `k=6`; [C2](c2/README.md) is solved by matching [general upper](c2/upper-bound-proof.md) and [lower](c2/lower-bound-proof.md) proofs; Lean covers six triangular instances and the abstract descent arithmetic; [C3](c3/README.md) is solved in writing, with Lean instances for ranks 4–6; [C4](c4/README.md) has a complete written general proof and three Lean instances; [C5](c5/README.md) has a complete written formula for all ranks, with Lean certificates for its exceptional values. [C6](c6/README.md) is paused and unattempted.
 
+C5 also has a [standalone LaTeX submission](c5/submission.tex), [cell-only Markdown](c5/submission.md), and [fresh Astra audit](c5/audit.md).
+
 ## Method fit
 
 Lean has paid off for definitions, the complete cycle classification, arbitrary-size triangular convergence, and exact finite depth certificates: 41 files replay with explicit axiom checks. It is also useful for any new reusable lemma needed by several cells.
