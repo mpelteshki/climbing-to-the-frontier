@@ -1,6 +1,6 @@
 # P2 — Uphill paths on hypercubes: C1–C4
 
-This writeup supplies the values and complete binary vertex lists required by [the P2 task](https://hackathon.bainsa.ai/p/p2). The page was audited on 2026-09-26: C1–C4 request a value and an explicit list of **every** vertex in increasing label order, and the cells are marked correct on the values alone. The lists below satisfy that format. They are submission materials, not a claim that a platform submission was made. C5 and C6, concerning $Q_9$, were intentionally skipped.
+This writeup supplies the values and complete binary vertex lists required by [the P2 task](https://hackathon.bainsa.ai/p/p2). The page was audited on 2026-09-26: C1–C4 request a value and an explicit list of **every** vertex in increasing label order, and the cells are marked correct on the values alone. The lists below satisfy that format. They are submission materials, not a claim that a platform submission was made. The subsequent [standalone C5 proof](c5/submission.md) establishes $U(Q_9)\ge2369$ with complete inline certificates. C6, the exact $Q_9$ value, remains skipped.
 
 | Cell | Dimensions | $U(Q_d)$ | Task status | Lean optimality coverage |
 |---|---|---|---|---|
@@ -8,7 +8,7 @@ This writeup supplies the values and complete binary vertex lists required by [t
 | C2 | $5$ | $88$ | **Solved** | Attaining list proved; universal lower bound has explicit unproved Lean premises, with independent finite replays below. |
 | C3 | $6$ | $204$ | **Solved** | Attaining list proved; face-doubling lower bound is written below. |
 | C4 | $7,8$ | $464,1040$ | **Solved** | Attaining lists proved; face-doubling lower bounds are written below. |
-| C5 | $9$ | — | Skipped | Bound-improvement work paused. |
+| C5 | $9$ | $U(Q_9)\ge2369$ | Solved | [Complete standalone written/computational proof](c5/submission.md). |
 | C6 | $9$ | — | Skipped | Open exact-value work paused. |
 
 For $Q_d$, vertices are width-$d$ binary strings. Two vertices are adjacent when they differ in one bit. A labelling bijectively assigns $1,\ldots,2^d$ to the vertices. A valley has no lower-labelled neighbour. An uphill path starts at a valley and follows edges with strictly increasing labels; a singleton valley counts as one path. Write $P(\lambda)$ for the path count of labelling $\lambda$, and $U(Q_d)=\min_\lambda P(\lambda)$. In each list below, the **first line has label 1**, the next line label 2, and so on; the lists are complete permutations, not just the vertices on one path.

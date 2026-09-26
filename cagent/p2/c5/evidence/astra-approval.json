@@ -1,0 +1,24 @@
+{
+  "status": "APPROVE",
+  "claim": "U(Q9) >= 2369",
+  "payload": "cagent/p2/c5/submission.md",
+  "payload_sha256": "4125609499ae662beccdc3e9d1d81db9205293c8789cb70bb3cd34638012c25b",
+  "utf8_bytes": 28418,
+  "characters": 28398,
+  "reviewer": "Astra",
+  "four_inline_blocks_exit_zero": true,
+  "replay_seconds": 0.4528526670183055,
+  "case_counts": [
+    1110562,
+    134,
+    20,
+    0
+  ],
+  "external_theorem": "Harper vertex-isoperimetric theorem, explicitly stated and cited",
+  "limitations": [
+    "Not a formal Lean proof",
+    "Does not assert organizer acceptance or submission"
+  ],
+  "report": "astra-approval.md",
+  "replay": "astra-final-replay.json"
+}

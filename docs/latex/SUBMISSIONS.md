@@ -9,7 +9,7 @@
 | P1 C4 | Under review, one attempt, 11:17 site display. |
 | P1 C5 | Under review, one attempt, 11:22 site display. |
 | P2 C1–C4 | Already solved on the platform; no duplicate submission. |
-| P2 C5 | Active research on explicit user request; no verified improvement or submission yet. |
+| P2 C5 | Under review, one attempt, 12:33 site display. Complete inline proof U(Q9)≥2369; optional links empty. |
 | P3 C1 | Under review, one attempt, 11:09 site display. |
 | P3 C2–C4 | Under review, one attempt each, 11:10 site display. |
 | P3 C5 | Under review, one attempt, 11:48 site display. |
@@ -21,3 +21,5 @@
 | P1 C6, P2 C6, P3 C6, P4 C6 | No complete solution in this package; not submitted as solved. |
 
 All times above are recorded exactly as displayed by the site. Exact submitted P4 C4/C5 inline source and replay bundles are retained in `submissions/p4-c4.md` and `submissions/p4-c5.md`. The reference PDFs and TeX files are separate typeset editions with explicit scope limits.
+
+P2 C5 exact inline argument: `submissions/p2-c5.md`, SHA-256 `4125609499ae662beccdc3e9d1d81db9205293c8789cb70bb3cd34638012c25b`. All four embedded Python blocks replayed independently; Astra approved this exact text before submission. The 10-page PDF is a separate typeset edition.

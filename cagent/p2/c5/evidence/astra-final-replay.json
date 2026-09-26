@@ -1,0 +1,37 @@
+{
+  "payload_sha256": "4125609499ae662beccdc3e9d1d81db9205293c8789cb70bb3cd34638012c25b",
+  "python": "3.14.5 (main, May 10 2026, 10:21:34) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "blocks": [
+    {
+      "block": 1,
+      "sha256": "e66aedec49b2ba3bc9b82f0ca23cda5e193cea25752882def0520efe29752d2e",
+      "exit": 0
+    },
+    {
+      "block": 2,
+      "sha256": "3f6fc3cf97569f31edbad9254e9b25e7b1d1dac576a33475a7b3557f17f551ea",
+      "exit": 0
+    },
+    {
+      "block": 3,
+      "sha256": "17a3f3ddd69239d600e7cc1b4ccb9cc9f8d98db89519e864ecdfc0ded516c4ab",
+      "exit": 0
+    },
+    {
+      "block": 4,
+      "sha256": "abc71151f047fab615e0b6232747a324795c3e513c7014053def533ac3c18832",
+      "exit": 0,
+      "counts": {
+        "after_triple": 20,
+        "before_triple": 134,
+        "degree_multisets": 1110562
+      },
+      "strong_costs": [
+        68,
+        71,
+        72
+      ]
+    }
+  ],
+  "seconds": 0.4528526670183055
+}

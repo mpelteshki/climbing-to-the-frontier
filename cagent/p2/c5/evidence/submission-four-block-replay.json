@@ -1,0 +1,430 @@
+{
+  "blocks": [
+    {
+      "code_sha256": "f0a78858f2fcd233e3f6b8e6bb26cc1f93e680a4721816091bd3fc871b9888b2",
+      "elapsed_seconds": 0.022127,
+      "exit_code": 0,
+      "index": 1,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "code_sha256": "ac3d9c427296c2d2ff568c34107a8fe275b2af471d957b5eae98a9484d19d4f4",
+      "elapsed_seconds": 0.040319,
+      "exit_code": 0,
+      "index": 2,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "code_sha256": "ea10c20f1b77559c79762ad3854c5f8a1b2fff7862b0e17ea31e375dd257546c",
+      "elapsed_seconds": 0.0214,
+      "exit_code": 0,
+      "index": 3,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "after_triple_rows": [
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 1,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 1,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        },
+        {
+          "c": 9,
+          "degrees": [
+            2,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 2,
+          "lower_cost": 61,
+          "lower_excess": 10,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 71
+        },
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 2,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 2,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        },
+        {
+          "c": 9,
+          "degrees": [
+            2,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 3,
+          "lower_cost": 61,
+          "lower_excess": 10,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 71
+        },
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 3,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 3,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        },
+        {
+          "c": 9,
+          "degrees": [
+            2,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 4,
+          "lower_cost": 61,
+          "lower_excess": 10,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 71
+        },
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 4,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 4,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        },
+        {
+          "c": 9,
+          "degrees": [
+            2,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 5,
+          "lower_cost": 61,
+          "lower_excess": 10,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 71
+        },
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 5,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 5,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        },
+        {
+          "c": 9,
+          "degrees": [
+            2,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 6,
+          "lower_cost": 61,
+          "lower_excess": 10,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 71
+        },
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 6,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 6,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        },
+        {
+          "c": 9,
+          "degrees": [
+            2,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 7,
+          "lower_cost": 61,
+          "lower_excess": 10,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 71
+        },
+        {
+          "c": 10,
+          "degrees": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6
+          ],
+          "delta": 7,
+          "lower_cost": 61,
+          "lower_excess": 6,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 72
+        },
+        {
+          "c": 10,
+          "degrees": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "delta": 7,
+          "lower_cost": 56,
+          "lower_excess": 0,
+          "major_cores": 6,
+          "minimum_d": 3,
+          "minor_cores": 2,
+          "q": 8,
+          "strengthened_cost": 68
+        }
+      ],
+      "before_triple_count": 134,
+      "code_sha256": "ce7d401f8e83fcf083453b189d170a744dd9ec701dc55fd8901d674f24572d46",
+      "elapsed_seconds": 0.363799,
+      "exit_code": 0,
+      "index": 4,
+      "parsed_counts": {
+        "after_triple": 20,
+        "before_triple": 134,
+        "degree_multisets": 1110562
+      },
+      "stderr": "",
+      "stdout": "{\n  \"after_triple_rows\": [\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 1,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 1,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    },\n    {\n      \"c\": 9,\n      \"degrees\": [\n        2,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 2,\n      \"lower_cost\": 61,\n      \"lower_excess\": 10,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 71\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 2,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 2,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    },\n    {\n      \"c\": 9,\n      \"degrees\": [\n        2,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 3,\n      \"lower_cost\": 61,\n      \"lower_excess\": 10,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 71\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 3,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 3,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    },\n    {\n      \"c\": 9,\n      \"degrees\": [\n        2,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 4,\n      \"lower_cost\": 61,\n      \"lower_excess\": 10,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 71\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 4,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 4,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    },\n    {\n      \"c\": 9,\n      \"degrees\": [\n        2,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 5,\n      \"lower_cost\": 61,\n      \"lower_excess\": 10,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 71\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 5,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 5,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    },\n    {\n      \"c\": 9,\n      \"degrees\": [\n        2,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 6,\n      \"lower_cost\": 61,\n      \"lower_excess\": 10,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 71\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 6,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 6,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    },\n    {\n      \"c\": 9,\n      \"degrees\": [\n        2,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 7,\n      \"lower_cost\": 61,\n      \"lower_excess\": 10,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 71\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        4,\n        5,\n        5,\n        5,\n        5,\n        6\n      ],\n      \"delta\": 7,\n      \"lower_cost\": 61,\n      \"lower_excess\": 6,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 72\n    },\n    {\n      \"c\": 10,\n      \"degrees\": [\n        5,\n        5,\n        5,\n        5,\n        5,\n        5\n      ],\n      \"delta\": 7,\n      \"lower_cost\": 56,\n      \"lower_excess\": 0,\n      \"major_cores\": 6,\n      \"minimum_d\": 3,\n      \"minor_cores\": 2,\n      \"q\": 8,\n      \"strengthened_cost\": 68\n    }\n  ],\n  \"before_triple_count\": 134,\n  \"counts\": {\n    \"after_triple\": 20,\n    \"before_triple\": 134,\n    \"degree_multisets\": 1110562\n  }\n}\n"
+    }
+  ],
+  "finished_at_utc": "2026-09-26T12:31:13.191712+00:00",
+  "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "python_version": "3.14.5",
+  "source": "/private/tmp/frontier-latex-publication/cagent/p2/c5/submission.md",
+  "source_sha256": "4125609499ae662beccdc3e9d1d81db9205293c8789cb70bb3cd34638012c25b",
+  "started_at_utc": "2026-09-26T12:31:12.743426+00:00"
+}

@@ -1,8 +1,10 @@
 # Standalone LaTeX editions
 
+**Current P2 C5:** [complete PDF](cells/p2-c5.pdf), [standalone LaTeX](cells/p2-c5.tex), and [full inline proof](../../cagent/p2/c5/submission.md) establish $U(Q_9)\ge2369$. The combined `p2.pdf` is a historical C1–C4 snapshot; use this separate edition for C5.
+
 **Current P3 C5:** [complete PDF](cells/p3-c5.pdf), [standalone LaTeX](cells/p3-c5.tex), [submission Markdown](cells/p3-c5.md), and [fresh Astra audit](../../cagent/p3/c5/audit.md). This edition replaces the earlier partial C5 document. The combined `p3.pdf` is a historical snapshot; use the current C5 document for the complete upper bound.
 
-The four problem editions typeset the published P1–P4 Markdown at repository commit [`212bba53b1818c08c40b8c4b48f636651eaf6410`](https://github.com/mpelteshki/climbing-to-the-frontier/tree/212bba53b1818c08c40b8c4b48f636651eaf6410). The P1 formalization appendix and 14 cell editions use their accompanying Markdown sources in this directory, assembled and audited for individual submission. They are presentation copies and retain each cell’s stated proof limits. `sources.json` records SHA-256 hashes of every Markdown input. For original `cagent/` sources, the builder uses the local file when its hash matches and otherwise reads it from the pinned commit with `git show`, then verifies the hash. Derived `p3-source.md` and cell Markdown must match their local hashes exactly.
+The four problem editions typeset the published P1–P4 Markdown at repository commit [`212bba53b1818c08c40b8c4b48f636651eaf6410`](https://github.com/mpelteshki/climbing-to-the-frontier/tree/212bba53b1818c08c40b8c4b48f636651eaf6410). The P1 formalization appendix and 15 cell editions use their accompanying Markdown sources in this directory, assembled and audited for individual submission. They are presentation copies and retain each cell’s stated proof limits. `sources.json` records SHA-256 hashes of every Markdown input. For original `cagent/` sources, the builder uses the local file when its hash matches and otherwise reads it from the pinned commit with `git show`, then verifies the hash. Derived `p3-source.md` and cell Markdown must match their local hashes exactly.
 
 | Edition | Source and scope |
 | --- | --- |
@@ -12,6 +14,7 @@ The four problem editions typeset the published P1–P4 Markdown at repository c
 | `p3.tex` | `p3-source.md`: assembled published C1–C4 proofs and C5 lower bound. Historical snapshot: its C5 section contains only the lower bound and is superseded by the complete `cells/p3-c5` edition; C6 is skipped. |
 | `p4.tex` | `cagent/p4/SUBMISSION.md`: full published submission, including code appendix and stated limitations. |
 | `cells/p1-c4.tex` and `cells/p1-c5.tex` | Matching `cells/*.md`: the complete published written C4/C5 arguments as individual submissions. |
+| `cells/p2-c5.tex` | `cells/p2-c5.md`: byte-identical copy of the complete P2 C5 lower-bound proof in `cagent/p2/c5/submission.md`, including its arithmetic certificate. |
 | `cells/p3-c1.tex` through `cells/p3-c6.tex` | Matching `cells/*.md`: each P3 cell as a separate document, with C5 replaced by its complete Astra-audited submission; C6 remains a status-only document. |
 | `cells/p4-c1.tex` through `cells/p4-c6.tex` | Matching `cells/*.md`: each P4 cell as a separate document, with formal evidence and stated limits. |
 

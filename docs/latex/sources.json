@@ -27,7 +27,8 @@
     "docs/latex/p1-formalization.md": "002f732a1af5eb23f0774aee600e59a488557b9fe090349d411a02ef502a8653",
     "docs/latex/cells/p1-c3.md": "ba1f9a064a7853f2030662d77cb4e12a51854b0b16537e10b7df2a6218edd0d3",
     "docs/latex/cells/p1-c4.md": "99743d9ad5c3d0bb115e4f797f350654525873a4be45bed279781b08c52a257e",
-    "docs/latex/cells/p1-c5.md": "85134df399a3c7c7c69d6900c98f3ef1edbf64bf6673a5e296c1883864cf552c"
+    "docs/latex/cells/p1-c5.md": "85134df399a3c7c7c69d6900c98f3ef1edbf64bf6673a5e296c1883864cf552c",
+    "docs/latex/cells/p2-c5.md": "4125609499ae662beccdc3e9d1d81db9205293c8789cb70bb3cd34638012c25b"
   },
   "assets_sha256": {
     "docs/latex/fonts/JuliaMono-Regular.ttf": "40a07da0d1601215eb6b89312eb44128a3e2f36675d3e1f518264bd391fc7023",

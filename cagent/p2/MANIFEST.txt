@@ -41,3 +41,12 @@ verify.sh
 shared/DecyclingBridge.lean
 shared/Decycling5.lean
 decycling-increment-verification.log
+c5/README.md
+c5/submission.md
+c5/verify.py
+c5/evidence/integrator-replay.json
+c5/evidence/submission-four-block-replay.json
+c5/evidence/submission-receipt.json
+c5/evidence/astra-approval.md
+c5/evidence/astra-approval.json
+c5/evidence/astra-final-replay.json
