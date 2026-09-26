@@ -21,7 +21,7 @@ def main():
              'Convergence.lean', 'Boundary.lean', 'Eventual.lean', 'Energy.lean',
              'CyclicStep.lean', 'Diagonal.lean', 'DiagonalOrder.lean', 'HighestDiagonal.lean',
              'BoundaryReconstruction.lean', 'Classification.lean', 'Necklace.lean',
-             'TriangularGeneral.lean', 'RankedClassification.lean'] + [f'N{n}.lean' for n in range(1, 24)]
+             'TriangularGeneral.lean', 'RankedClassification.lean', 'C2SandwichBound.lean'] + [f'N{n}.lean' for n in range(1, 24)]
     records = []
     started = time.monotonic()
     for name in files:

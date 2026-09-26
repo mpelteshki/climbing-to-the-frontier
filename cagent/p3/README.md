@@ -14,7 +14,7 @@ Cell status: [C1](c1/README.md) has an all-`k` fixed-staircase theorem, the full
 
 ## Method fit
 
-Lean has paid off for definitions, the complete cycle classification, arbitrary-size triangular convergence, and exact finite depth certificates: 40 files replay with explicit axiom checks. It is also useful for any new reusable lemma needed by several cells.
+Lean has paid off for definitions, the complete cycle classification, arbitrary-size triangular convergence, and exact finite depth certificates: 41 files replay with explicit axiom checks. It is also useful for any new reusable lemma needed by several cells.
 
 For C1’s counting step, a short double-counting argument is more efficient than adding group actions, finite cardinalities, and a list-to-quotient bridge solely to translate a classical formula. [The complete written C1 proof](c1/written-proof.md) supplies that argument. [Independent exact replay](evidence/cycle-counts.json) checks the formula against actual cycles for n=1–40, covering 215,307 partitions in 0.463 seconds. Run `python3 cagent/p3/c1/check_cycles.py` from the repository root. This replay is finite evidence, not a proof for all n; the general argument is readable mathematics and its counting step is not Lean-certified.
 
