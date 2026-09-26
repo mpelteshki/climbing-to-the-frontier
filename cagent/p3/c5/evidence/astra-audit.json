@@ -55,7 +55,11 @@
   "latex": {
     "compiler": "Codex desktop standalone LaTeX compiler",
     "result": "success",
-    "pdf_exported": false
+    "pdf_exported": true,
+    "pdf_exporter": "Tectonic 0.17.0",
+    "pdf_pages": 13,
+    "out_of_page_text_spans": 0,
+    "pdf_sha256": "7bd93da4015cb1ddf8b8a8da279b71f264d722e2cabd0f81208066be1a394d9b"
   },
   "full_general_lean_proof": false,
   "hackathon_submission_by_this_task": false

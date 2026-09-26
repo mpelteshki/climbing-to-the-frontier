@@ -31,4 +31,4 @@ python3 cagent/p3/c5/evidence/astra-independent-check.py
 
 The reviewer inspected the exceptional Lean declarations and checker soundness but did not rerun Lean compilation. Existing pinned Lean replay evidence remains separate. This is an independent model-assisted written-proof audit, not a formal kernel certification of the full general theorem and not organizer acceptance.
 
-The standalone LaTeX source compiled successfully with the desktop editor's compiler. The task prepared artifacts but did not submit anything to the hackathon platform.
+The standalone LaTeX source compiled successfully with the desktop editor's compiler. Tectonic 0.17.0 also exported a 13-page PDF; all pages passed text-bound checks, and representative opening, inverse-proof, and final-appendix pages were visually inspected. The only compiler warning was an underfull paragraph; no missing glyph or overfull-box warning was reported. The task prepared artifacts but did not submit anything to the hackathon platform.

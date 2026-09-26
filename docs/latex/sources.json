@@ -16,7 +16,7 @@
     "docs/latex/cells/p3-c2.md": "eb097746fd401c5c45d1ad34d22f808f4e6740c3a7f69a0f03fe2bfa6a604df7",
     "docs/latex/cells/p3-c3.md": "e8cda0f8e5c5becbf0c88462e8ee5b54672c42d19066c89d22a5dbec707f5db3",
     "docs/latex/cells/p3-c4.md": "011ab4726de63abd23e334bb034a72cd4527dedd12d4f179d1d338e3da6becbe",
-    "docs/latex/cells/p3-c5.md": "b5fc1018f495eed365f7ac7f316e72aa1b914afdcb291d1f9f6bc0a97e20df9c",
+    "docs/latex/cells/p3-c5.md": "29a1227e02f0d57fd1ec00173a88a3f68cb7bc21dc6a372477aa5a2bb6d3c247",
     "docs/latex/cells/p3-c6.md": "be7238f248d5d93d300ce71445bfc4cf59dc20153e2746095a77a4a966e0708e",
     "docs/latex/cells/p4-c1.md": "a8a114c491baa9de12e5074f8f296b192d6568a22992f32f955c279353155bf9",
     "docs/latex/cells/p4-c2.md": "c4c6ec8e896e0865f50bf3f5793e0ad04603f89628ae9d35a05e2617564e0970",
@@ -33,5 +33,8 @@
     "docs/latex/fonts/JuliaMono-Regular.ttf": "40a07da0d1601215eb6b89312eb44128a3e2f36675d3e1f518264bd391fc7023",
     "docs/latex/fonts/LICENSE_JULIAMONO": "d27b85137453d4eb0893eee45bdc6eb79a661693680856f3f7df8bc77dfe902f"
   },
-  "font_source": "https://github.com/cormullion/juliamono/releases/tag/v0.63.2"
+  "font_source": "https://github.com/cormullion/juliamono/releases/tag/v0.63.2",
+  "edition_notes": {
+    "p3-c5": "Updated from the fresh Astra-audited complete C5 submission; absolute evidence links pin d2a2e5c28dfceeef474b90b2a4b83eab0d580cb0. The standalone TeX/PDF are copies of cagent/p3/c5/submission.tex/pdf."
+  }
 }
