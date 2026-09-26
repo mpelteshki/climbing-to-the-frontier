@@ -1,0 +1,125 @@
+{
+  "graphs": {
+    "exhaustive_domain": "All labeled simple graphs on 1 through 6 vertices",
+    "results": [
+      {
+        "n": 1,
+        "triangle_free_labeled_graphs": 1,
+        "maximum_edges": 0,
+        "mantel_bound": 0
+      },
+      {
+        "n": 2,
+        "triangle_free_labeled_graphs": 2,
+        "maximum_edges": 1,
+        "mantel_bound": 1
+      },
+      {
+        "n": 3,
+        "triangle_free_labeled_graphs": 7,
+        "maximum_edges": 2,
+        "mantel_bound": 2
+      },
+      {
+        "n": 4,
+        "triangle_free_labeled_graphs": 41,
+        "maximum_edges": 4,
+        "mantel_bound": 4
+      },
+      {
+        "n": 5,
+        "triangle_free_labeled_graphs": 388,
+        "maximum_edges": 6,
+        "mantel_bound": 6
+      },
+      {
+        "n": 6,
+        "triangle_free_labeled_graphs": 5789,
+        "maximum_edges": 9,
+        "mantel_bound": 9
+      }
+    ],
+    "smallest_counterexample": {
+      "claim": "Every triangle-free graph has independence number at least n/2",
+      "n": 5,
+      "alpha": 2,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    }
+  },
+  "cap_set": {
+    "dimension": 3,
+    "baseline_binary_cube_size": 8,
+    "trials": 100,
+    "best_size": 9,
+    "points": [
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        2,
+        1
+      ]
+    ],
+    "independently_checked_triples": 84,
+    "claim": "Explicit valid construction; no optimality or novelty claim"
+  }
+}
