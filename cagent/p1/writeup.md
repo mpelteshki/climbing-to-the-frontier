@@ -1,6 +1,6 @@
 # Angles between lines: written proofs for C1–C5
 
-For unit representatives of lines through the origin, write $\theta(x,y)=\arccos|\langle x,y\rangle|$, $\delta(x,y)=\pi/2-\theta(x,y)=\arcsin|\langle x,y\rangle|$, and $S=\sum_{i<j}\theta(x_i,x_j)$. Repeated lines are allowed throughout. These are complete written proofs for the five stated cells. C6 is an open general conjecture and is not claimed here. The arguments do not rely on computation.
+For unit representatives of lines through the origin, write $\theta(x,y)=\arccos|\langle x,y\rangle|$, $\delta(x,y)=\pi/2-\theta(x,y)=\arcsin|\langle x,y\rangle|$, and $S=\sum_{i<j}\theta(x_i,x_j)$. Repeated lines are allowed throughout. These are complete written proofs for the five stated cells. C6 is an open general conjecture and is not claimed here; partial C6 results are recorded separately at the end. The arguments do not rely on computation.
 
 ## C1: planar lines
 
@@ -363,4 +363,14 @@ This proves $D\ge\pi$ for the sparse angle maximizer in all cases. Every other c
 
 The five proved statements above cover all their stated parameters and allow repeated lines. The proof is mathematical and does not rely on computation. For historical context, [Fodor–Vígh–Zarnócz](https://www.math.u-szeged.hu/~vigvik/preprints/egyenesekszogei.pdf) reports earlier small-dimensional results and identifies [Fejes Tóth’s 1959 paper](https://doi.org/10.1007/BF02063286); its full original proof was not inspected or used as a substitute for the arguments here. The C5 projection extension was reconstructed in this work; no novelty claim is made.
 
-The companion Lean project checks selected analytic, geometric, and matrix lemmas, not the full general C1–C5 theorems. Its reproducibility files are [verification script](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/verify.sh), [fresh replay record](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/evidence/replay/README.md), and [source checksums](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/evidence/source-sha256.txt). From the repository root, run `cd cagent/p1 && ./verify.sh`. C6 is excluded, and no organizer acceptance or platform submission is claimed.
+The companion Lean project checks selected analytic, geometric, and matrix lemmas, not the full general C1–C5 theorems. Its reproducibility files are [verification script](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/verify.sh), [fresh replay record](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/evidence/replay/README.md), and [source checksums](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/evidence/source-sha256.txt). From the repository root, run `cd cagent/p1 && ./verify.sh`. C6 is not claimed, and no organizer acceptance or platform submission is claimed.
+
+## C6: partial results, not a proof
+
+The [C6 statement](https://hackathon.bainsa.ai/p/p1/c6) asks to prove or disprove $S\le\left(\binom N2-M(N,d)\right)\frac\pi2$ for all $N$ and $d$, with $M(N,d)=s\binom{q+1}2+(d-s)\binom q2$ for $N=qd+s$, $0\le s<d$. This cell is **not solved**. The [C6 partial results](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p1/c6/partial-results.md) prove, with complete written arguments:
+
+- *Averaging.* If the C6 bound holds for $N-1$ lines in $\mathbb R^d$ and $d$ divides $N$, it holds for $N$ lines. With C5 this proves the case $(N,d)=(6,3)$: six lines in $\mathbb R^3$ satisfy $S\le6\pi$.
+- *Explicit bound.* For all $d\ge2$ and $N\ge d+2$, $S\le\frac\pi2\binom N2\left(1-\frac{4}{(d+1)(d+2)}\right)$; this is the conjectured value only for $N=d+2$ and $(6,3)$.
+- *Reduction for $N=d+3$.* The bound $D\ge3\pi/2$ for $d+3$ lines in $\mathbb R^d$ follows for every $d$ once it is known for connected configurations with maximum nonorthogonality degree three, distinct lines, no line outside the span of the others, every line with total edge deficiency below $\pi/2$, and no three consecutive degree-two vertices between nonadjacent vertices.
+
+No infinite family beyond C5 is proved, and no counterexample is known; a numerical search at $21$ small parameter pairs agrees with the conjecture.
