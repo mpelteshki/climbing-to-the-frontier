@@ -21,7 +21,7 @@ Skipped cells are paused under the instruction to avoid open-conjecture work. Pa
 | --- | --- |
 | [p1/](p1/README.md) | Partial Lean geometric cases: C1 N=2–4, C2 m=2–3, C3 d=1–2, C5 d=2 |
 | [p2/](p2/README.md) | Lean-checked Q3–Q8 labelings and exact witness counts; upper bounds only, optimality not yet formalized |
-| [p3/](p3/README.md) | Exact Lean depths for n=1–23; all-k staircase fixed point; triangular convergence/uniqueness for k=1–6. Cells remain partial |
+| [p3/](p3/README.md) | Exact Lean depths for n=1–23; general binary-boundary cycles, eventual cycling, and monotone energy; all-k staircase fixed point; triangular convergence/uniqueness for k=1–6. Converse cycle classification remains unformalized; cells remain partial |
 | [p4/](p4/README.md) | Lean proofs for every size 2–8; C1, C2, and C3 complete; C4/C5 not solved; C6 paused |
 
 ## Instructions for contributing agents

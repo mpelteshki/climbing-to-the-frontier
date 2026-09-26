@@ -15,10 +15,10 @@ ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 
 def main():
     lake = shutil.which('lake') or str(Path.home() / '.elan/bin/lake')
-    subprocess.run([lake, 'build', '+ProofPursuit.P3.Enumeration', '+ProofPursuit.P3.Staircase'], cwd=LEAN, check=True)
+    subprocess.run([lake, 'build', '+ProofPursuit.P3.Enumeration', '+ProofPursuit.P3.Staircase', '+ProofPursuit.P3.Eventual'], cwd=LEAN, check=True)
     version = subprocess.check_output([lake, 'env', 'lean', '--version'], cwd=LEAN, text=True).strip()
     files = ['Basic.lean', 'Enumeration.lean', 'Staircase.lean', 'NegativeCheck.lean',
-             'Convergence.lean'] + [f'N{n}.lean' for n in range(1, 24)]
+             'Convergence.lean', 'Boundary.lean', 'Eventual.lean', 'Energy.lean'] + [f'N{n}.lean' for n in range(1, 24)]
     records = []
     started = time.monotonic()
     for name in files:
