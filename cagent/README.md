@@ -6,7 +6,7 @@ Completed, verified proofs are published here, grouped by problem. Each publishe
 
 | Problem folder | Publication status |
 | --- | --- |
-| `p1/` | Awaiting verified package publication |
+| [p1/](p1/README.md) | Partial Lean geometric cases: C1 N=2–4, C2 m=2–3, C3 d=1–2, C5 d=2 |
 | `p2/` | Awaiting verified package publication |
 | `p3/` | Awaiting verified package publication |
 | [p4/](p4/README.md) | Lean proofs for 2–6 classes; C1 and C2 complete, C3 partial |
