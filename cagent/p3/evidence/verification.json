@@ -1,0 +1,405 @@
+{
+  "lean_version": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "source_sha256": {
+    "lean/ProofPursuit/P3/Basic.lean": "4d128e6ac5b779a6b5c84facc73639de52a2d9f09bf433a6951b3b0ca89e6008",
+    "lean/ProofPursuit/P3/Convergence.lean": "271514d7669bcece3aa1879ea57e64f4b44fe335a7a328d653c991478bfed173",
+    "lean/ProofPursuit/P3/Enumeration.lean": "d780a3d60e9d31cd0d410b4d9fd1126cd6ee07d7e58f6a076d2a820cd3233fda",
+    "lean/ProofPursuit/P3/N1.lean": "bf3c50bc3fe21e5776fec013feae2f700281ae4e016bb4fda042678dbdd4ead0",
+    "lean/ProofPursuit/P3/N10.lean": "adb2194973b9a0719803645bf569727ef20535c9d47bdb5c8f469ab6d5b9f8d1",
+    "lean/ProofPursuit/P3/N11.lean": "ef7ba62c449818f9798758017c4e6340dfe0d57294ff04a7dba92c80e2991472",
+    "lean/ProofPursuit/P3/N12.lean": "c5b9f1033b643f8149ecf9e8ebc6ead74b914f85d86bb51539bd5d7bb1527290",
+    "lean/ProofPursuit/P3/N13.lean": "af93e9036ee9acc0fa9df751b801765c988615898a60cdb8e82d3a066400d3d3",
+    "lean/ProofPursuit/P3/N14.lean": "2fc24e768be2d5d3e3b45e773213839a40cf4f1b9c8f75cd20aeb7d7b6f4f6e9",
+    "lean/ProofPursuit/P3/N15.lean": "0bc498acaeab39f5f7bced5633d73c3aca2cc151a8adf4c235f9b5a2723da058",
+    "lean/ProofPursuit/P3/N16.lean": "c57d4f753821e10dfd7e415f6ff9bd2bc6cc5fce78efdc54b81145740bef2c08",
+    "lean/ProofPursuit/P3/N17.lean": "caac8c236d61a37999d37e9c27a1eb1ab079962bef0df5d2fa0834592b932ba2",
+    "lean/ProofPursuit/P3/N18.lean": "61805a15be226b860d7854885b7a9a584670d1d842cd0c1d817946f5daa3162c",
+    "lean/ProofPursuit/P3/N19.lean": "51096162f8744e81ada549cd3ec63a13e793420fafc74567d4ef70636df6143e",
+    "lean/ProofPursuit/P3/N2.lean": "808a9399c522a3f1a9a6c719bfd967991076301735903249158b88a91d46abeb",
+    "lean/ProofPursuit/P3/N20.lean": "76c40763b1c1ef57a2d688e679fb13881c893e6c90f1e66a3e2015f27eef6701",
+    "lean/ProofPursuit/P3/N21.lean": "f0e84e59d59705e9858ceb6c9a07a9426fc74c82c2bf60de928693c00f6d8f8c",
+    "lean/ProofPursuit/P3/N22.lean": "7591b3f67bbce29b859a080b65774bbbcef35573f7d35035804e7e9452406856",
+    "lean/ProofPursuit/P3/N23.lean": "3dd862b348386ae681af70d870847f43c9264b2446aad5b9d2670bc9b06a642d",
+    "lean/ProofPursuit/P3/N3.lean": "87794a677daaa5ed339a9e0b9f19dfdfaea55bed937a62d0157e3fa641a32417",
+    "lean/ProofPursuit/P3/N4.lean": "71bd85364d85698f51cf70c8d736752a397f974e6caedaf19b5f674d89fce2a2",
+    "lean/ProofPursuit/P3/N5.lean": "4c107aa1670f32ab179814ad2bb11f72f87ebe56c96aeda48124d23f479f24a1",
+    "lean/ProofPursuit/P3/N6.lean": "0ab8e99a51d22c09b079ed689c1096a229e74724e4d47c02f07c3f718592a77a",
+    "lean/ProofPursuit/P3/N7.lean": "f8b02a6fbfb4e9d6673406b26324d4883f59ca60bfada88a4c39c89065799618",
+    "lean/ProofPursuit/P3/N8.lean": "9df2e4fc51f1ddf0258f840029dd51197f124d99d1b1875a2c3738c9b13f60c5",
+    "lean/ProofPursuit/P3/N9.lean": "0454d61756a9f6217bc1e8f000316f0f9e0bb473b6eb8bddd0ec56e8998294d0",
+    "lean/ProofPursuit/P3/NegativeCheck.lean": "ea9babfd95320c2343fce3b8fcdcb2261c628c6a56f1accf7263bba4cec5c140",
+    "lean/ProofPursuit/P3/Staircase.lean": "532514e031e68fb564643c61479d1fa54741661ac9259a05854f759e41290e09",
+    "lean/lake-manifest.json": "14dba1712a3ac9fa99952e723e93a403ed6223f7fc08ab04a6f540b3fbd619a2",
+    "lean/lakefile.toml": "40be3da9173856eb049db546dca54e21c07ff0d74b8b79da96d9615e02f9b997",
+    "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "verify.py": "3a55dddb29c28716a4d0150cbf7ca7533af80bf5b24552ee5b3ecaf1b44eb52e"
+  },
+  "records": [
+    {
+      "file": "ProofPursuit/P3/Basic.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/Basic.lean"
+      ],
+      "seconds": 0.425,
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "file": "ProofPursuit/P3/Enumeration.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/Enumeration.lean"
+      ],
+      "seconds": 0.441,
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "file": "ProofPursuit/P3/Staircase.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/Staircase.lean"
+      ],
+      "seconds": 0.416,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.staircase_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.staircase_partition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.staircase_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.step_isPartition' depends on axioms: [propext, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/NegativeCheck.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/NegativeCheck.lean"
+      ],
+      "seconds": 0.366,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.one_card_not_depth_one' does not depend on any axioms\n"
+    },
+    {
+      "file": "ProofPursuit/P3/Convergence.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/Convergence.lean"
+      ],
+      "seconds": 2.018,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.triangular_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_3' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_4' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_5' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ProofPursuit.P3.triangular_6' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N1.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N1.lean"
+      ],
+      "seconds": 0.393,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N2.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N2.lean"
+      ],
+      "seconds": 0.399,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N3.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N3.lean"
+      ],
+      "seconds": 0.408,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_3' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N4.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N4.lean"
+      ],
+      "seconds": 0.414,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_4' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N5.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N5.lean"
+      ],
+      "seconds": 0.413,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_5' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N6.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N6.lean"
+      ],
+      "seconds": 0.456,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_6' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N7.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N7.lean"
+      ],
+      "seconds": 0.433,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_7' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N8.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N8.lean"
+      ],
+      "seconds": 0.452,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_8' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N9.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N9.lean"
+      ],
+      "seconds": 0.498,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_9' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N10.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N10.lean"
+      ],
+      "seconds": 0.51,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_10' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N11.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N11.lean"
+      ],
+      "seconds": 0.534,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_11' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N12.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N12.lean"
+      ],
+      "seconds": 0.587,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_12' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N13.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N13.lean"
+      ],
+      "seconds": 0.576,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_13' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N14.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N14.lean"
+      ],
+      "seconds": 0.677,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_14' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N15.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N15.lean"
+      ],
+      "seconds": 0.815,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_15' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N16.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N16.lean"
+      ],
+      "seconds": 0.992,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_16' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N17.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N17.lean"
+      ],
+      "seconds": 1.075,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_17' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N18.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N18.lean"
+      ],
+      "seconds": 1.329,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_18' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N19.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N19.lean"
+      ],
+      "seconds": 1.629,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_19' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N20.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N20.lean"
+      ],
+      "seconds": 2.062,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_20' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N21.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N21.lean"
+      ],
+      "seconds": 2.854,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_21' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N22.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N22.lean"
+      ],
+      "seconds": 3.324,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_22' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "file": "ProofPursuit/P3/N23.lean",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "ProofPursuit/P3/N23.lean"
+      ],
+      "seconds": 4.363,
+      "exit_code": 0,
+      "output": "'ProofPursuit.P3.maximumDepth_23' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "total_seconds": 28.859,
+  "status": "PASS"
+}

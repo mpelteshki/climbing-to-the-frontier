@@ -8,7 +8,7 @@ Completed, verified proofs are published here, grouped by problem. Each publishe
 | --- | --- |
 | [p1/](p1/README.md) | Partial Lean geometric cases: C1 N=2–4, C2 m=2–3, C3 d=1–2, C5 d=2 |
 | `p2/` | Awaiting verified package publication |
-| `p3/` | Awaiting verified package publication |
+| [p3/](p3/README.md) | Exact Lean depths for n=1–23; all-k staircase fixed point; triangular convergence/uniqueness for k=1–6. Cells remain partial |
 | [p4/](p4/README.md) | Lean proofs for 2–6 classes; C1 and C2 complete, C3 partial |
 
 Update each entry with a relative README link and precise verified coverage when its package is published. A completed theorem does not imply that every cell in its problem is complete.
