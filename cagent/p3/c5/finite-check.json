@@ -1,0 +1,169 @@
+{
+  "scope": "finite exhaustive cross-check by direct cycle detection, not a general proof",
+  "results": [
+    {
+      "k": 2,
+      "n": 3,
+      "partitions": 3,
+      "maximum_depth": 2,
+      "maximizing_partitions": 1,
+      "witness": [
+        1,
+        1,
+        1
+      ],
+      "witness_depth": 2
+    },
+    {
+      "k": 3,
+      "n": 5,
+      "partitions": 7,
+      "maximum_depth": 3,
+      "maximizing_partitions": 1,
+      "witness": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness_depth": 3
+    },
+    {
+      "k": 4,
+      "n": 8,
+      "partitions": 22,
+      "maximum_depth": 5,
+      "maximizing_partitions": 1,
+      "witness": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness_depth": 5
+    },
+    {
+      "k": 5,
+      "n": 12,
+      "partitions": 77,
+      "maximum_depth": 8,
+      "maximizing_partitions": 2,
+      "witness": [
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "witness_depth": 8
+    },
+    {
+      "k": 6,
+      "n": 17,
+      "partitions": 297,
+      "maximum_depth": 12,
+      "maximizing_partitions": 1,
+      "witness": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "witness_depth": 12
+    },
+    {
+      "k": 7,
+      "n": 23,
+      "partitions": 1255,
+      "maximum_depth": 18,
+      "maximizing_partitions": 66,
+      "witness": [
+        5,
+        5,
+        4,
+        3,
+        3,
+        2,
+        1
+      ],
+      "witness_depth": 18
+    },
+    {
+      "k": 8,
+      "n": 30,
+      "partitions": 5604,
+      "maximum_depth": 28,
+      "maximizing_partitions": 253,
+      "witness": [
+        6,
+        6,
+        5,
+        4,
+        3,
+        3,
+        2,
+        1
+      ],
+      "witness_depth": 28
+    },
+    {
+      "k": 9,
+      "n": 38,
+      "partitions": 26015,
+      "maximum_depth": 40,
+      "maximizing_partitions": 1341,
+      "witness": [
+        7,
+        7,
+        6,
+        5,
+        4,
+        3,
+        3,
+        2,
+        1
+      ],
+      "witness_depth": 40
+    },
+    {
+      "k": 10,
+      "n": 47,
+      "partitions": 124754,
+      "maximum_depth": 54,
+      "maximizing_partitions": 6335,
+      "witness": [
+        8,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        3,
+        2,
+        1
+      ],
+      "witness_depth": 54
+    }
+  ],
+  "seconds": 0.335
+}

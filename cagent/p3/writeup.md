@@ -1,6 +1,6 @@
 # P3 — Bulgarian solitaire: consolidated proof write-up
 
-This item contains complete written proofs for **C1–C4**, together with independently checkable Lean results and finite cross-checks. **C5 is partial:** its matching general upper bound is not proved. C6 is intentionally excluded. No platform submission or organizer acceptance is claimed.
+This final item contains complete written proofs for **C1–C5**, together with independently checkable Lean results, explicit witnesses, and finite cross-checks. C6 is intentionally excluded. No platform submission or organizer acceptance is claimed.
 
 [Problem and cell statements](https://hackathon.bainsa.ai/p/p3). A move removes one card from every pile, discards empty piles, adds a pile equal to the previous pile count, and sorts. Write $B$ for this map, $T_k=k(k+1)/2$, and $D_B(n)$ for the maximum, over partitions of $n$, of the first time a periodic state is reached. Depth excludes subsequent travel around a cycle.
 
@@ -12,10 +12,10 @@ This item contains complete written proofs for **C1–C4**, together with indepe
 | C2 | $D_B(T_k)=k(k-1)$ for every $k\ge1$, with explicit attaining partitions. | General upper/lower written proof; finite cases and abstract descent arithmetic in Lean. |
 | C3 | For nontriangular rank $k\ge4$, $D_B(n)\le k^2-2k-1$; equality at $T_k-1$. An explicit finite inverse construction gives every maximizer at that size. | General written proof; Lean finite cases; independent exhaustive cross-check of maximizer sets for $k=4,5,6,7$. |
 | C4 | $D_B(T_{k-1}+1)=(k-1)(k-3)$ for every $k\ge5$, with explicit attaining partitions. | General upper/lower written proof; Lean instances $k=5,6,7$; exhaustive cross-check through $k=9$. |
-| C5 | Exact values $2,3,5,8,12,18$ at $k=2,3,4,5,6,7$. A family has depth $(k-1)(k-4)$ for every $k\ge5$; it is not optimal at $k=5,6$. The proposed formula for all $k\ge7$ remains unproved. | Exact listed finite maxima in Lean; general lower bound and partial upper bound in writing. |
+| C5 | $D_B(T_{k-1}+2)=(k-1)(k-4)$ for every $k\ge7$. Exceptional depths at $k=2,3,4,5,6$ are $2,3,5,8,12$. | General written upper/lower proof; all exceptional maxima and $k=7$ checked in Lean; direct-cycle replay through $k=10$. |
 | C6 | Not attempted in this item. | Open-conjecture work paused. |
 
-The following sections include the complete arguments, not merely citations to their target results. Sources and proof limitations remain attached to each result. The C5 gap is not used in any C1–C4 proof.
+The following sections include the complete arguments, not merely citations to their target results. Sources and proof limitations remain attached to each result. The general C5 proof uses the lifetime lemmas established earlier in this item.
 
 ## C1: complete mathematical argument
 
@@ -751,9 +751,17 @@ The tail is empty when $k=5$. This is a complete staircase of height $k-1$ plus 
 The matching upper-bound claim for all $k\ge7$ remains a separate proof obligation; finite agreement alone does not establish it.
 
 
-## P3 C5: upper-bound reduction for two above a triangular number
+## P3 C5: uniform upper bound for two above a triangular number
 
-Let $k\ge7$, $n=T_{k-1}+2$, and $F=(k-1)(k-4)$. The proposed equality $D_B(n)=F$ has the [general lower-bound witness](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/lower-bound-proof.md). The argument below proves the upper bound for most trajectories and identifies the single family still requiring an all $k$ estimate. **It is not a proof of the general C5 upper bound.** In particular, the Griggs–Ho [Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf) gives the lower bound, while the assertion that it is always sharp is their Conjecture 4.7.
+For every $k\ge7$, put $n=T_{k-1}+2$ and $F=(k-1)(k-4)$. This proof establishes the uniform upper bound $D_B(n)\le F$. Together with the [explicit lower-bound family](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/lower-bound-proof.md), it proves
+
+$$
+D_B(T_{k-1}+2)=(k-1)(k-4)\qquad(k\ge7).
+$$
+
+The exceptional values for $k=2,3,4,5,6$ are respectively $2,3,5,8,12$, proved by the exhaustive Lean certificates linked in the [cell summary](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/README.md). The general proof below is written mathematics, not a full Lean formalization.
+
+[Griggs and Ho, Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf) supplies the general lower-bound construction; their Conjecture 4.7 concerns its sharpness more broadly. The argument here proves this particular two-above-triangular case directly. It does not assume their conjecture or claim novelty.
 
 ### Sequence facts
 
@@ -762,7 +770,7 @@ For a trajectory from a partition of $n$, let $c_i$ be the pile count in $B^{i-1
 * Type I: $(c_p,\ldots,c_q)=(k-1,k,\ldots,k,k+1)$, with $t-k\le p<q\le t-1$.
 * Type II: $(c_p,\ldots,c_q)=(k-2,k-1,\ldots,k-1,k)$, with $t-k+1\le p<q\le t+1$.
 
-Write $L=q-p\ge2$. Every level $x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies 
+Write $L=q-p\ge2$. Every level $x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies
 
 $$
 \sum_{j=0}^{m-1}c_{p+j}\le n+T_{m-1}.
@@ -896,21 +904,110 @@ If the inverse rule instead selects one of the equal largest parts of size $M$, 
 
 Including the initial $B_k\to P_k$ reverse move gives $p\le1+j+2\le3+\lfloor F/4\rfloor\le F$, since $F\ge18$ for $k\ge7$. This proves the $B_k$ first-entry bound without a high-birth-deadline lemma or a finite-rank assumption.
 
-### The $A_k$ family remains unresolved
+### The $A_k$ family is bounded
 
-The retreat bound gives only $p\le(k-1)(k-3)=F+k-1$ for $A_k$. A uniform first-entry estimate $p\le F$ is still needed. Finite enumeration suggests $p\le T_{k-2}$, but does not prove this for all ranks.
+Use the exhaustive inverse rule: for a partition $\mu$ with $m$ parts, choose a distinct part $s\ge m-1$, remove it, increment every other part, and append $s-m+1$ ones. The resulting partition is a predecessor of $\mu$, and all predecessors arise this way.
 
-One precise sufficient lemma would be the following **unproved high-birth deadline** for this card count:
+Since $A_k$ has $k-1$ parts, only its part values $k$ and $k-2$ are eligible. Removing $k$ gives
 
 $$
-c_i\ge k+1\quad\Longrightarrow\quad i+c_i\le n+1.
+(k-1,k-1,k-3,k-4,\ldots,2,1,1),
 $$
 
-(7)
+which is already cyclic: relative to the padded staircase $(k-1,k-2,\ldots,1,0)$, it has exactly the two added boundary bits at columns $1$ and $k-1$. Hence, if $p>0$, its predecessor at time $p-1$ must be
 
-Indeed, at $A_k$ the pile of size $k$ is old, since the newest pile has size $k-2$. If it is original, its initial size was $k+p\le n$, giving $p\le n-k$. Otherwise, if born on move $i<p$, its birth size satisfies $c_i=k+p-i\ge k+1$; (7) gives $p\le n+1-k$. At $B_k$, two old piles have size $k-1$. An original one likewise gives $p\le n+1-k$. If both were born during play, at most one could have birth size exactly $k$, because that would force the common birth index $i=p-1$. The other has $c_i\ge k+1$ and $i+c_i=p+k-1$; (7) gives $p\le n+2-k\le F$ for $k\ge7$. Thus proving (7) would close this final case. It has been checked on all trajectories for the finite ranks $k=7,8,9$, but that evidence does not establish its general validity.
+$$
+P_k=(k+1,k-1,k-3,k-4,\ldots,2),
+$$
 
-Thus this note settles type I, every other type-II width, and the $B_k$ family at width $k-2$. Only the $A_k$ entry family remains unresolved, so the general C5 upper bound remains unproved. It also explains why the [C3 bound](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c3/written-proof.md), $k^2-2k-1$, does not imply the sharper target $F=k^2-5k+4$: their difference is $3k-5$.
+obtained by removing $k-2$. This state has two distinguished largest parts $M=k+1$ and $M-2=k-1$, and every tail part is at most $M-4$.
+
+Trace the $p-1$ further inverse moves from $P_k$. Call a move *tail-selecting* if it selects neither distinguished large part. After $j$ successive tail-selecting moves, both large parts remain, of sizes $M=k+1+j$ and $M-2$. Card conservation gives
+
+$$
+2k+2j\le n,\qquad
+j\le\left\lfloor\frac{n-2k}{2}\right\rfloor
+ =\left\lfloor\frac F4\right\rfloor.
+$$
+
+If the inverse chain ends without selecting a distinguished part, its length from $A_k$ is at most $1+j\le1+\lfloor F/4\rfloor<F$.
+
+Suppose at least one tail-selecting move occurs. Initially $P_k$ has $k-2$ parts, so the inverse threshold is $k-3$; its unique eligible tail part is the largest tail part $k-3=M-4$. Removing that part leaves every tail part at most $M-5$ before incrementing, so afterward every tail part is at most the new largest part minus $5$. Further tail-selecting moves preserve this gap. Thus, when a distinguished part is eventually selected after $j\ge1$ tail moves, the state has top parts $M,M-2$ and tail parts at most $M-5$.
+
+If the inverse step selects the largest part $M$, the next partition has $M$ parts, one part $M-1$, and all others at most $M-4$. Its threshold is $M-1$, making that top part the unique eligible choice. Selecting it gives a partition of length $M-1$, all of whose parts are at most $M-3$, below the threshold $M-2$. Thus at most two inverse moves follow the $j$ tail moves. If instead the step selects the second-largest part $M-2$, the next partition has $M-2$ parts, one part $M+1$, and all others at most $M-4$. Its threshold is $M-3$, so again only its top part is eligible; selecting it gives a partition of length $M+1$, all of whose parts are at most $M-3$, below the threshold $M$. In either case,
+
+$$
+p\le1+j+2\le3+\left\lfloor\frac F4\right\rfloor\le F.
+$$
+
+It remains to consider selecting a distinguished part immediately at $P_k$, before any tail move.
+
+**Select the second-largest $k-1$.** The resulting partition is
+
+$$
+Q_2=(k+2,k-2,k-3,\ldots,3,1,1).
+$$
+
+Its unique largest part exceeds every tail part by at least $4$. Any reverse step selecting a tail part preserves this gap and increments the largest part. If a reverse step selects the largest part $M$, its predecessor has length $M$ and all parts at most $M-3$, so it has no predecessor. Starting from size $k+2$, there can be at most $n-k-2$ tail-selecting inverse moves by card conservation, followed by at most one largest-part selection. Including the first two reverse moves $A_k\to P_k\to Q_2$,
+
+$$
+p\le2+(n-k-2)+1=n-k+1\le F.
+$$
+
+For the last inequality, $2(F-(n-k+1))=k^2-7k+2\ge0$ when $k\ge7$.
+
+**Select the largest $k+1$.** The resulting partition is
+
+$$
+Q_1=(k,k-2,k-3,\ldots,3,1,1,1,1).
+$$
+
+It has $k+1$ parts and largest part $k$, so its only predecessor is obtained by selecting $k$. That predecessor has $k$ parts and largest part $k-1$, so its predecessor is again unique, obtained by selecting $k-1$. If $p\le3$, the desired bound is immediate. Otherwise the resulting earlier state exists, and the three consecutive pile counts at indices $p-3,p-2,p-1$ are
+
+$$
+(c_{p-3},c_{p-2},c_{p-1})=(k-1,k,k+1).
+$$
+
+This is a width-two, level $k$ sandwich. The C2 width-two lifetime lemma gives $p-3\le k$, hence $p\le k+3\le F$ for $k\ge7$.
+
+All reverse branches are covered, proving the claimed first-entry bound for $A_k$.
+
+### Conclusion and why C3 alone is insufficient
+
+Every final-pattern case now gives $d\le F$: type I, all type-II widths other than $k-2$, and both possible first-entry states at width $k-2$. Together with the explicit lower-bound family, this proves the formula for every $k\ge7$.
+
+C3 gives only $D_B(n)\le k^2-2k-1$, exceeding this target $F=k^2-5k+4$ by $3k-5$. Even after the two-extra-card budget eliminates most pattern widths, the ordinary retreat estimate at width $k-2$ is only $p\le(k-1)(k-3)=F+k-1$. It still misses the target by $k-1$.
+
+The additional ingredient is the exact inverse structure of the two possible cyclic entry states. Distinguished large piles persist under inverse steps until selected; their total card mass bounds those steps, and selecting them leaves only a short branch. The one exceptional branch has two forced predecessors, exposing a width-two count pattern to which the C2 lifetime lemma applies. This closes the gap uniformly in $k$, without a separate search for each rank.
+
+
+## P3 C5: two above a triangular number
+
+[Cell statement](https://hackathon.bainsa.ai/p/p3/c5) · [Consolidated judge write-up](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/writeup.md)
+
+**Solved — complete written proof; Lean partial.** For $k\ge7$,
+
+$$
+D_B(T_{k-1}+2)=(k-1)(k-4).
+$$
+
+The [general upper bound](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/upper-bound-proof.md) closes every final-pattern case using pile lifetimes, exact card counts, and inverse-tree arguments. The [explicit attaining family](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/lower-bound-proof.md) proves the matching lower bound. The upper proof explains both the strict gap from C3 and the additional inverse argument needed to close it. The general result is not fully formalized in Lean.
+
+### Exceptional values and witnesses
+
+| $k$ | Cards | Maximum depth | An attaining partition | Lean certificate |
+| --- | --- | --- | --- | --- |
+| 2 | 3 | 2 | $(1,1,1)$ | [N3](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/lean/ProofPursuit/P3/N3.lean) |
+| 3 | 5 | 3 | $(1,1,1,1,1)$ | [N5](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/lean/ProofPursuit/P3/N5.lean) |
+| 4 | 8 | 5 | Eight piles of one | [N8](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/lean/ProofPursuit/P3/N8.lean) |
+| 5 | 12 | 8 | $(3,3,2,2,1,1)$ | [N12](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/lean/ProofPursuit/P3/N12.lean) |
+| 6 | 17 | 12 | Seventeen piles of one | [N17](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/lean/ProofPursuit/P3/N17.lean) |
+
+Each Lean theorem proves its upper bound over every partition and verifies its displayed attaining witness. The same package also proves $D_B(23)=18$ at $k=7$.
+
+### Independent finite replay
+
+Run `python3 cagent/p3/c5/check.py` from the repository root. [The checker](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/check.py) detects cycles directly, without using the binary-boundary classification, and exhausts all partitions at $k=2$ through $10$. [Recorded evidence](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/finite-check.json): **158,034 partitions**, maxima **2,3,5,8,12,18,28,40,54**, **0.335 seconds**. This finite replay is a cross-check of the written general proof, not its replacement.
 
 
 ## Reproduction and trust boundaries
@@ -924,11 +1021,12 @@ python3 cagent/p3/verify.py
 python3 cagent/p3/c1/check_cycles.py
 python3 cagent/p3/c3/check.py
 python3 cagent/p3/c4/check.py --max-k 9
+python3 cagent/p3/c5/check.py --max-k 10
 ```
 
 The Lean project pins **Lean 4.34.1** and uses its standard library. The [verification script](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/verify.py) checks 41 files, exact source hashes, warnings, and printed axiom dependencies. Recorded successful runtime: **28.203 seconds**. There are no `sorry`, custom axioms, `native_decide`, or external solver assumptions. The permitted standard dependencies are `propext`, `Classical.choice`, and `Quot.sound`. See [full verification evidence](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/evidence/verification.json) and [independent kernel checks](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/evidence/kernel-checks.json).
 
-The finite maxima cover **every card count 1–23**, with a proved complete partition enumeration, universal finite upper bound, and explicit attaining witness for each count. They do not prove an unbounded formula. General C1 classification and triangular convergence are formalized; the C2 lifetime arguments, C3/C4 general bounds, and C5 general lower bound are written mathematical proofs rather than full Lean theorems.
+The finite maxima cover **every card count 1–23**, with a proved complete partition enumeration, universal finite upper bound, and explicit attaining witness for each count. They do not prove an unbounded formula. General C1 classification and triangular convergence are formalized; the C2 lifetime arguments, C3/C4 general bounds, and C5 general upper/lower bounds are written mathematical proofs rather than full Lean theorems.
 
 The independent Python cross-checks use exact integers and exhaustive enumeration. Their recorded runs are:
 
@@ -936,4 +1034,4 @@ The independent Python cross-checks use exact integers and exhaustive enumeratio
 - C3: forward maximizer sets equal the inverse construction for $k=4,5,6,7$, with **1, 6, 34, 175** maximizers; **0.010 seconds**. [Code](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c3/check.py) · [record](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c3/finite-check.json).
 - C4: all **27,491** partitions at $n=11,16,22,29,37$ give maxima **8,15,24,35,48**; **0.051 seconds**. [Code](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c4/check.py) · [record](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c4/finite-check.json).
 
-These timings describe recorded local runs, not a hardware-independent guarantee. The Python experiments cross-check complete written arguments; they are not substituted for general proofs. The C5 inverse trees displayed above are small enough to check by hand with the exhaustive predecessor rule. The unproved deadline remains an explicit research question, even where finite experiments support it.
+These timings describe recorded local runs, not a hardware-independent guarantee. The Python experiments cross-check complete written arguments; they are not substituted for general proofs. The C5 inverse trees displayed above are small enough to check by hand with the exhaustive predecessor rule. C5’s uniform proof uses the inverse branches explicitly proved above; it does not assume a conjectural deadline.
