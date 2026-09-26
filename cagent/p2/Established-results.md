@@ -1,6 +1,6 @@
 # Established optimal values and the remaining Lean gap
 
-The explicit witnesses have path counts 14, 34, 88, 204, 464, 1040 in dimensions 3 through 8. These are the optimal values mathematically, using the following reduction and the established hypercube decycling numbers. For C1, [Lean now proves](c1/C1Optimal.lean) that the Q3 and Q4 witnesses attain universal lower bounds. The reduction and external decycling theorem used for C2–C4 have **not** been formalized in this Lean project; their Lean certificates prove witness counts and upper bounds.
+The explicit witnesses have path counts 14, 34, 88, 204, 464, 1040 in dimensions 3 through 8. These are the optimal values mathematically, using the following reduction and the established hypercube decycling numbers. For C1, [Lean now proves](c1/C1Optimal.lean) that the Q3 and Q4 witnesses attain universal lower bounds. The [path-count budget inequality](shared/DecyclingBridge.lean) is also formalized. The remaining feedback-vertex-set reduction and external decycling theorem used for C2–C4 have **not** been formalized; their complete Lean conclusions remain witness counts and upper bounds.
 
 ## Reduction, proved mathematically
 
@@ -46,4 +46,4 @@ Original paper: https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1097-0118(1997
 
 The table is reproduced in Section 2 of the primary-author survey *The Decycling Number of Graphs*: https://arxiv.org/pdf/math/0703544 (PDF page 3). The general doubling lower bound follows by restricting a feedback vertex set to each of two disjoint (d-1)-dimensional faces. Thus the value 14 for Q5 also supplies the lower bounds 28,56,112 for Q6,Q7,Q8.
 
-No reference is imported as an axiom. Full Lean optimality for C2–C4 still requires formalizing the reduction and the relevant feedback-vertex-set lower bounds. C5 and C6 remain unworked under the instruction to pause open-problem research.
+No reference is imported as an axiom. Full Lean optimality for C2–C4 still requires connecting the checked path-count budget to the relevant feedback-vertex-set lower bounds and formalizing those lower bounds. C5 and C6 remain unworked under the instruction to pause open-problem research.

@@ -1,0 +1,41 @@
+P2 reusable lower-bound verification
+Source SHA256: 4feeaa4fe688d87024dbe4e1f268afcb849bc28ba23a78fd1e85079f78a20094
+$ lean --version
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Exit: 0; seconds: 0.062
+$ lake build DecyclingBridge
+ℹ [2/7] Replayed Hypercube
+info: shared/Hypercube.lean:107:0: 'Hypercube.paths_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/Hypercube.lean:108:0: 'Hypercube.mem_extensions' depends on axioms: [propext, Quot.sound]
+info: shared/Hypercube.lean:109:0: 'Hypercube.mem_paths' depends on axioms: [propext, Quot.sound]
+ℹ [3/7] Replayed Fast
+info: shared/Fast.lean:73:0: 'Hypercube.fast_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4/7] Replayed RegularLower
+info: shared/RegularLower.lean:427:0: 'Hypercube.endpoint_ge_indegree' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:428:0: 'Hypercube.totalIndegree_eq_edgeCount' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:429:0: 'Hypercube.edgeCount_cube3' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:430:0: 'Hypercube.edgeCount_cube4' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:431:0: 'Hypercube.regularLower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/RegularLower.lean:432:0: 'Hypercube.regularLower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5/7] Replayed LowerBound
+info: shared/LowerBound.lean:542:0: 'Hypercube.append_vertex_mem_paths_iff' depends on axioms: [propext, Quot.sound]
+info: shared/LowerBound.lean:543:0: 'Hypercube.path_append_of_edge' depends on axioms: [propext, Quot.sound]
+info: shared/LowerBound.lean:544:0: 'Hypercube.endPaths_perm_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:545:0: 'Hypercube.endCount_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:546:0: 'Hypercube.pathCount_eq_sum_endCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:547:0: 'Hypercube.pathCount_lower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:548:0: 'Hypercube.pathCount_lower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [6/7] Replayed DecyclingBridge
+info: shared/DecyclingBridge.lean:325:0: 'Hypercube.bad_predecessor_forces_bad' depends on axioms: [propext, Quot.sound]
+info: shared/DecyclingBridge.lean:326:0: 'Hypercube.regular_path_budget' depends on axioms: [propext, Quot.sound]
+info: shared/DecyclingBridge.lean:327:0: 'Hypercube.pathCount_regular_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (7 jobs).
+Exit: 0; seconds: 0.174
+$ lake env leanchecker DecyclingBridge
+
+Exit: 0; seconds: 1.061
+$ lake env lean shared/DecyclingBridge.lean
+'Hypercube.bad_predecessor_forces_bad' depends on axioms: [propext, Quot.sound]
+'Hypercube.regular_path_budget' depends on axioms: [propext, Quot.sound]
+'Hypercube.pathCount_regular_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exit: 0; seconds: 0.783

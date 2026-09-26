@@ -32,3 +32,5 @@ shared/witnesses.py
 c1-optimality.log
 verification.log
 verify.sh
+shared/DecyclingBridge.lean
+decycling-budget-verification.log

@@ -12,6 +12,10 @@ echo "Check C1 theorem axioms:"
 lake env lean shared/LowerBound.lean
 lake env lean shared/RegularLower.lean
 lake env lean c1/C1Optimal.lean
+echo "Build and kernel-check the reusable path-count lower bound:"
+lake build DecyclingBridge
+lake env leanchecker DecyclingBridge
+lake env lean shared/DecyclingBridge.lean
 for d in 5 6 7 8; do
   case "$d" in
     5) part=c2 ;;

@@ -29,3 +29,7 @@ srcDir = "c1"
 [[lean_lib]]
 name = "C1Optimal"
 srcDir = "c1"
+
+[[lean_lib]]
+name = "DecyclingBridge"
+srcDir = "shared"
