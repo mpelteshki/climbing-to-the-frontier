@@ -4,7 +4,7 @@ Verified on 2026-09-26. Mathematical review and platform submission are separate
 
 ## Mathematical review
 
-Independent Astra review approved the complete written solutions for P3 C1–C4, P4 C1–C5, and P1 C4–C5. P4 C5 claims the contiguous range through 14; its 24/30 exclusions remain conditional. Computation through 16 is not presented as a general Lean theorem.
+Independent Astra review approved the complete written solutions for P3 C1–C5, P4 C1–C5, and P1 C4–C5. P4 C5 claims the contiguous range through 14; its 24/30 exclusions remain conditional. Computation through 16 is not presented as a general Lean theorem.
 
 P3 C5 now has a complete uniform upper/lower proof, independently audited by a fresh Astra reviewer. Its updated 13-page cell PDF includes the prerequisite lemmas and supersedes the earlier partial cell edition and the C5 section of the historical combined P3 PDF. [Audit evidence](../../cagent/p3/c5/audit.md). P3 C6 and P4 C6 are status-only. The C6 documents retain their incomplete labels and are not submitted as complete solutions. P1 C3 belongs to a separate owner and is excluded from this publishing batch. P1 C1–C2 and P2 C1–C4 were already solved on the platform.
 
