@@ -1,0 +1,11 @@
+{
+ "maxn": 36,
+ "partitions": 99132,
+ "sandwiches": 421738,
+ "type1": 36380,
+ "type2": 33151,
+ "full_width_typeII": 3702,
+ "min_slack_retreat": 0,
+ "seconds": 9.94,
+ "status": "PASS"
+}

@@ -1,0 +1,14 @@
+exhaustive 2 3 3 2
+exhaustive 3 5 7 3
+exhaustive 4 8 22 5
+exhaustive 5 12 77 8
+exhaustive 6 17 297 12
+exhaustive 7 23 1255 18
+exhaustive 8 30 5604 28
+exhaustive 9 38 26015 40
+exhaustive 10 47 124754 54
+modular witness trajectory verified k=5..150
+S_k exclusion trajectory verified k=7..150
+U inverse layers 7 [1, 1, 1, 1, 2, 3, 4, 4, 0] depth 5
+U inverse layers 8 [1, 1, 0] depth 6
+python3 c5/evidence/astra-independent-check.py  10.92s user 0.10s system 98% cpu 11.135 total

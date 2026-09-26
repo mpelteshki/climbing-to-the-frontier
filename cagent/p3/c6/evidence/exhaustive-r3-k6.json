@@ -1,0 +1,50 @@
+{
+ "k": 6,
+ "n": 18,
+ "partitions": 385,
+ "D_B": 13,
+ "griggs_ho_L": 13,
+ "small_residue_candidate_(k-1)(k-5)": 5,
+ "match_L": true,
+ "num_maximizers": 1,
+ "maximizers": [
+  [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ ],
+ "layer_sizes": [
+  20,
+  11,
+  28,
+  51,
+  71,
+  66,
+  34,
+  29,
+  28,
+  26,
+  15,
+  3,
+  2,
+  1
+ ],
+ "sampled_depth_checks": 36,
+ "seconds": 0.0
+}

@@ -1,0 +1,31 @@
+{
+ "k": 4,
+ "n": 9,
+ "partitions": 30,
+ "D_B": 7,
+ "griggs_ho_L": 7,
+ "small_residue_candidate_(k-1)(k-5)": -3,
+ "match_L": true,
+ "num_maximizers": 1,
+ "maximizers": [
+  [
+   3,
+   2,
+   2,
+   1,
+   1
+  ]
+ ],
+ "layer_sizes": [
+  4,
+  3,
+  6,
+  7,
+  4,
+  3,
+  2,
+  1
+ ],
+ "sampled_depth_checks": 18,
+ "seconds": 0.0
+}

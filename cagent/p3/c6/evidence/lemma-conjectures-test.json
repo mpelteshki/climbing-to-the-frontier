@@ -1,0 +1,45 @@
+{
+ "nmax": 30,
+ "tested": {
+  "D''": 9742,
+  "O": 11732,
+  "O3": 660
+ },
+ "tight": {
+  "D''": 289,
+  "O": 29,
+  "O3": 0
+ },
+ "sharpness": {
+  "mu1=m+2_without_ones_condition_max_excess_over_n-M+1": [
+   20,
+   28,
+   [
+    8,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   41
+  ],
+  "exactly_3_ones_max_excess_over_n-m": [
+   20,
+   28,
+   [
+    7,
+    6,
+    5,
+    4,
+    3,
+    1,
+    1,
+    1
+   ],
+   40
+  ]
+ },
+ "seconds": 0.31,
+ "status": "PASS"
+}

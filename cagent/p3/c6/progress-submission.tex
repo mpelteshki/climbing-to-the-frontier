@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,geometry,hyperref}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\DB}{D_B}
+\newcommand{\Tr}{T}
+\title{Bulgarian solitaire: progress on $\DB(n)$}
+\author{P3 C6 research progress}
+\date{26 September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a partial submission to P3 C6, which asks for $\DB(n)$ for every $n$.
+The general problem remains open in this work.  A written argument gives the
+small-residue formula at residue $3$ for all sufficiently large ranks; exhaustive
+computation covers the remaining ranks.  Additional finite values are obtained
+by exhaustive enumeration and a case-certificate checker.  We distinguish
+these results from conjectural inverse-height bounds needed for a general proof.
+\end{abstract}
+
+\section{Problem and main result}
+Let $B$ remove one card from each pile of a partition, discard empty piles,
+create one pile equal to the old pile count, and sort.  Put
+\[
+ d_B(\lambda)=\min\{t\geq0:B^t(\lambda)\text{ is periodic}\},\qquad
+ \DB(n)=\max_{\lambda\vdash n}d_B(\lambda),\qquad
+ \Tr_j=\frac{j(j+1)}2.
+\]
+For $n=\Tr_{k-1}+3$, the following is the result supported by the research
+report and accompanying exact computations.
+
+\begin{theorem}[Residue $3$]
+\[
+\begin{array}{c|rrrrrr|c}
+k&3&4&5&6&7&8&k\geq9\\ \hline
+\DB(\Tr_{k-1}+3)&6&7&9&13&18&24&(k-1)(k-5)
+\end{array}
+\]
+For $k\geq14$ there is a written upper-bound proof.  For $3\leq k\leq14$
+the stated values have exhaustive backward-layer certificates, with $k=14$
+covered by both methods.
+\end{theorem}
+
+The result uses the cyclic-partition classification and pile-count sandwich
+lemmas of Griggs--Ho~\cite{GH}, also proved in the earlier P3 C1--C3 work.
+Those prerequisites were read and independently stress-tested here; they are
+not newly formalized in Lean.  The lower-bound construction is from
+Griggs--Ho, with its trajectory calculation written out in the research
+report.  No claim of first discovery or of a full C6 solution is made.
+
+\section{Lower bound and proof structure}
+For $k\geq9$ set $F=(k-1)(k-5)$ and
+\[
+ \lambda_k=(k-2,k-2,k-3,\ldots,5,4,4,3,2,1)\vdash\Tr_{k-1}+3.
+\]
+Relative to the staircase $(k-1,k-2,\ldots,1,0)$, this partition has a hole
+on diagonal $k-1$ at column $0$ and four extra cells on diagonal $k$ at
+columns $k-4,k-3,k-2,k-1$.  For $0\leq s<F$, write
+$s=a(k-1)+b$, where $0\leq a\leq k-6$ and $0\leq b\leq k-2$.
+The hole is at column $b$; the four extra cells are at
+$(b-a-1-j)\bmod k$, $0\leq j\leq3$.  None meets the hole or its right
+neighbor, so the unsorted move remains a partition.  The hole persists until
+step $F$, when the first sort yields the cyclic boundary
+$(k-1,k-2,k-2,k-3,k-4,k-6,\ldots,1)$.  Thus
+$d_B(\lambda_k)=F$.  This calculation reproduces the lower-bound family of
+Griggs--Ho Theorem 4.5, case (1).
+
+For the upper bound, write $c_i$ for pile count at time $i$.  The cited
+final-pattern dichotomy says a sufficiently late first cyclic time has an
+earlier type-I sandwich $(k-1,k,\ldots,k,k+1)$ or type-II sandwich
+$(k-2,k-1,\ldots,k-1,k)$.  For a sandwich
+$(x-1,x,\ldots,x,x+1)$ of width $L$, its start time $p$ satisfies
+$p\leq x(L-1)$.  At time $p+1$, the newborn pile has size $x-1$; among old
+piles there is exactly one of each size $1,\ldots,L-2$, none of size
+$L-1$, and all remaining old piles have size at least $L$.  This entry-state
+description and card budget limit possible widths and states.
+
+For $k\geq14$, the budget rules out type-I width $k-5$ or greater; retreat
+then gives $d_B\leq F-6$.  Type-II widths at most $k-5$ give
+$d_B\leq F-1$, and width $k-1$ is impossible.  Widths
+$k-4,k-3,k-2,k$ require entry-state analysis.  At width $k-4$, the excess
+over minimum pile sizes is $6$, spread over four free piles.  Its nine
+partitions give four cyclic entry states, two states controlled by a
+dominant-pile inverse-height bound, one state exposing an earlier short
+sandwich, and two states excluded by a persistent diagonal-$(k+1)$ cell.
+The cyclic state entered by $\lambda_k$ is the tight case.  At widths
+$k-3$ and $k-2$, explicit inverse branches of the cyclic entry states end
+in a dominant-pile state, a dead end, or an earlier short sandwich.  Full
+width $k$ has a single possible entry state.  All resulting bounds are at
+most $F$.
+
+Two reusable bounds make this finite case analysis possible.  If a partition
+$\mu\vdash n$ has a unique largest part $M$ exceeding every other part by
+at least $3$, its inverse-tree height satisfies $h(\mu)\leq n-M+1$.
+If its two largest parts are $M\geq M'\geq3$ and all others are at most
+$M'-3$, then
+\[
+ h(\mu)\leq\left\lfloor\frac{n-M-M'}2\right\rfloor+2.
+\]
+For the first bound, every inverse step selecting a smaller part raises the
+dominant part by one, so there are at most $n-M$ such steps; selecting the
+dominant part ends the chain.  For the second, each tail step raises both
+dominant parts and at most two head steps follow.  The research report lists
+every residual entry state and inverse branch; all symbolic identities were
+tested for $9\leq k\leq60$.  These finite checks support the written proof
+but do not replace its all-$k$ reasoning.
+
+\section{Exact finite evidence beyond residue $3$}
+Backward layering from all cyclic partitions visits each partition exactly
+once because every partition has one forward successor.  Summing layer sizes
+and checking against the partition number $p(n)$ certifies exhaustive
+coverage.  The computation agrees with the Griggs--Ho conjectured value
+$L(n)$ for every $n\leq70$, and also for $n=81,82,94,95$.
+At residue $3$, the new finite checks include
+\[
+ \DB(58)=60,\quad \DB(69)=77,\quad
+ \DB(81)=96,\quad \DB(94)=117.
+\]
+The $n=94$ run covers $92{,}669{,}720$ partitions.  A separate case-certificate
+checker applies the proved sandwich and inverse-height rules at fixed
+$(r,k)$ to obtain the following additional exact values:
+\[
+\begin{array}{c|c|c}
+r& k&\DB(\Tr_{k-1}+r)\\ \hline
+4&12,\ldots,21&(k-1)(k-6)\\
+5&15,\ldots,21&(k-1)(k-7)\\
+6&17,\ldots,20&(k-1)(k-8)\\
+7&19,\ldots,21&(k-1)(k-9)
+\end{array}
+\]
+These are 24 fixed-$n$ computer-assisted results, not a theorem for every
+rank.  Three overlap exhaustive enumeration and agree.  The checker has not
+received an independent audit; its rule tags and replay code are retained
+with the research output.
+
+\section{Open step toward C6}
+For general residue $r$ at type-II width $k-1-r$, the card excess is
+$\Tr_r$ among $r+1$ free old piles, while the retreat bound equals
+$F_r=(k-1)(k-r-2)$.  This identifies a tight case.  Other entry states
+at larger widths pose an inverse-height question.  The proposed bound
+\[
+ \mu_1\geq m+3\quad\Longrightarrow\quad h(\mu)\leq n-\mu_1+1
+ \qquad(\mu\vdash n,\;m=\text{number of parts})
+\]
+has been tested on every partition of $n\leq34$ but remains \emph{unproved}.
+It follows from two still-unproved four-ones and three-ones bounds identified
+in the research report.  Adding it as an explicitly conditional rule closes
+certificate checks for residues $4$ through $8$ over tested ranges of ranks;
+those conditional checks are not claimed as exact values.  A uniform proof
+of this inverse-height bound, and a general classification for every residue,
+remain open.  Hence this submission does not determine $\DB(n)$ for every
+$n$ and requests evaluation for partial progress only.
+
+\begin{thebibliography}{9}
+\bibitem{GH} J. R. Griggs and C. H. Ho, ``The cycling of partitions and
+compositions under repeated shifts,'' \emph{Advances in Applied Mathematics}
+21 (1998), 205--227. \url{https://people.math.sc.edu/griggs/cycling.pdf}.
+\bibitem{Cell} BAINSA, ``$D_B(n)$ for every $n$,'' P3 C6.
+\url{https://hackathon.bainsa.ai/p/p3/c6}.
+\end{thebibliography}
+\end{document}
