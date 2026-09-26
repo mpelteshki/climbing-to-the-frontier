@@ -1,5 +1,7 @@
 # P4: disjoint congruence classes
 
+**Final hand-in document:** [SUBMISSION.md](SUBMISSION.md). It assembles all cell claims, written arguments, formal-proof links, exhaustive certificates, and replay instructions in one Markdown document.
+
 This standalone Lean 4 package proves the P4 statement for every number of classes `k` from 2 through 12. The current range theorem is `ProofPursuit.P4.ThroughTwelve.solution`:
 
 ```lean
