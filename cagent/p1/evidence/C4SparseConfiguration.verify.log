@@ -1,0 +1,2 @@
+'C4SparseConfiguration.exists_sparse_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4SparseConfiguration.exists_degree_two_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]

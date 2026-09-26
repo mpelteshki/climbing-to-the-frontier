@@ -1,6 +1,6 @@
 name = "angles"
 version = "0.1.0"
-defaultTargets = ["Angles"]
+defaultTargets = ["Angles", "C4Pentagon", "C4Extremum", "C4Rotation", "C4SparseStep", "C4SignedSparse", "C4Geometry", "C4LocalRotation", "C4Selection", "C4Configuration", "C4Replacement", "C4Direction", "C4MaximalSparse", "C4NeighborCount", "C4SparseConfiguration", "C4MatrixCorank", "C4FiveCycle", "C4SixCycle"]
 
 [[require]]
 name = "mathlib"
@@ -10,3 +10,54 @@ rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
 
 [[lean_lib]]
 name = "Angles"
+
+[[lean_lib]]
+name = "C4Pentagon"
+
+[[lean_lib]]
+name = "C4Extremum"
+
+[[lean_lib]]
+name = "C4Rotation"
+
+[[lean_lib]]
+name = "C4SparseStep"
+
+[[lean_lib]]
+name = "C4SignedSparse"
+
+[[lean_lib]]
+name = "C4Geometry"
+
+[[lean_lib]]
+name = "C4LocalRotation"
+
+[[lean_lib]]
+name = "C4Selection"
+
+[[lean_lib]]
+name = "C4Configuration"
+
+[[lean_lib]]
+name = "C4Replacement"
+
+[[lean_lib]]
+name = "C4Direction"
+
+[[lean_lib]]
+name = "C4MaximalSparse"
+
+[[lean_lib]]
+name = "C4NeighborCount"
+
+[[lean_lib]]
+name = "C4SparseConfiguration"
+
+[[lean_lib]]
+name = "C4MatrixCorank"
+
+[[lean_lib]]
+name = "C4FiveCycle"
+
+[[lean_lib]]
+name = "C4SixCycle"

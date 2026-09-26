@@ -1,0 +1,5 @@
+'C4MatrixCorank.finrank_ker_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4MatrixCorank.finrank_range_add_two_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4MatrixCorank.rank_add_two_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4MatrixCorank.path_finrank_ker_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4MatrixCorank.path_rank_add_one_ge' depends on axioms: [propext, Classical.choice, Quot.sound]

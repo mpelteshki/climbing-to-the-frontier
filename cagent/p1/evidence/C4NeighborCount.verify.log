@@ -1,0 +1,2 @@
+'C4NeighborCount.neighbor_span_finrank_le_zero_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4NeighborCount.nonorthogonal_neighbors_le' depends on axioms: [propext, Classical.choice, Quot.sound]

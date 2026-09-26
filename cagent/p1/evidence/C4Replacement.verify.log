@@ -1,0 +1,8 @@
+'C4Replacement.totalAngle_replacement_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.totalAngle_replacement_eq_of_incident_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.incidentAngle_le_of_totalAngle_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.incidentAngle_eq_star' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.incidentAngle_eq_sum_neighbors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.totalAngle_replacement_star_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.neighbor_sum_le_of_totalAngle_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Replacement.orthogonalityCount_replacement_strict' depends on axioms: [propext, Classical.choice, Quot.sound]

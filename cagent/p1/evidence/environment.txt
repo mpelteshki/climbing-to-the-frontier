@@ -2,4 +2,7 @@ Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd
 Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
 Mathlib HEAD: d13f23b723b8a846827a245b89c10fc7d3f11612
 Angles.lean SHA-256: a4f6c5b156b5b6630cb3c85bc0b342e3b32eb9957368a6cd7e79871c4bb019fe
-Verification command: /Users/martin/.elan/bin/lake env lean package/cagent/p1/Angles.lean
+C4Pentagon.lean SHA-256: 092e302e13dcc62784280594511a29a058f6b8191c56fac98ae09a18e33f964d
+Verification commands:
+  /Users/martin/.elan/bin/lake env lean package/cagent/p1/Angles.lean
+  /Users/martin/.elan/bin/lake env lean package/cagent/p1/C4Pentagon.lean

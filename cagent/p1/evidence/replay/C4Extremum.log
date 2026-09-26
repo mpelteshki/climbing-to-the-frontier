@@ -1,0 +1,2 @@
+'C4Extremum.convex_max_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Extremum.rotation_endpoint_contradiction' depends on axioms: [propext, Classical.choice, Quot.sound]

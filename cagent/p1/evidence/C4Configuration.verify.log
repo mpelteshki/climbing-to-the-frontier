@@ -1,0 +1,3 @@
+'C4Configuration.continuous_totalAngle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Configuration.orthogonalityCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Configuration.exists_lex_max' depends on axioms: [propext, Classical.choice, Quot.sound]

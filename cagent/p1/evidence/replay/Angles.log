@@ -1,0 +1,6 @@
+'Angles.c2_m2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Angles.c1_n4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Angles.c3_d2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Angles.c5_d2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Angles.c2_m3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Angles.c1_n3' depends on axioms: [propext, Classical.choice, Quot.sound]

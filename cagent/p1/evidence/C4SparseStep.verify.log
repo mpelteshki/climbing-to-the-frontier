@@ -1,0 +1,4 @@
+'C4SparseStep.cosine_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4SparseStep.common_positive_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4SparseStep.phase_family_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4SparseStep.positive_coefficient_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]

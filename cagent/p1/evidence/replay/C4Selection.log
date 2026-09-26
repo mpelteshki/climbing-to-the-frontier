@@ -1,0 +1,1 @@
+'C4Selection.compact_lex_max' depends on axioms: [propext, Classical.choice, Quot.sound]

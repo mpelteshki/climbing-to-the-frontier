@@ -1,0 +1,6 @@
+'C4Pentagon.pentagon_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Pentagon.pentagon_scalar_angles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Pentagon.arccos_triple_ge_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Pentagon.six_cycle_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Pentagon.gap_angle_add_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'C4Pentagon.local_projection_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]

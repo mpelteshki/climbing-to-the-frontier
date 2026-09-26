@@ -1,0 +1,19 @@
+# P1 criteria and exact-statement audit — 2026-09-26
+
+The P1 overview and [C1](https://hackathon.bainsa.ai/p/p1/c1), [C2](https://hackathon.bainsa.ai/p/p1/c2), [C3](https://hackathon.bainsa.ai/p/p1/c3), [C4](https://hackathon.bainsa.ai/p/p1/c4), and [C5](https://hackathon.bainsa.ai/p/p1/c5) were reread in signed-in Chrome on 2026-09-26. The [overview](https://hackathon.bainsa.ai/p/p1) requires a full proof rather than a citation of the target result. It permits written proofs; a proof relying on computation must include rigorous exact or interval code running in under ten minutes on a laptop. The proofs below are mathematical written arguments and do not rely on computation, so the computational rule does not apply.
+
+For unit representatives of lines through the origin, write `θ(x,y) = arccos |⟨x,y⟩|` and `S = Σ_{i<j} θ(x_i,x_j)`. Repeated lines are allowed. The status below means the full written argument addresses the live hand-in statement; it does not claim full Lean formalization, submission, or organizer acceptance.
+
+| Cell | Exact requested bound and quantifiers | Complete proof and audit |
+| --- | --- | --- |
+| C1 | For every N ≥ 0, N lines in ℝ²: `S ≤ (π/2)⌊N²/4⌋`. | [Circle-cut proof](written-proofs.md#c1-all-n-planar-lines) integrates the count of separated pairs and gives a sharp repeated-axis example. It covers N = 0, 1, 2 and repeated lines. |
+| C2 | For every m ≥ 2, m unit vectors in ℝ^(m−1), with `⟨x_i,x_j⟩ = 0` whenever `|i−j| ≥ 2`: `Σ_{i=1}^{m−1} θ(x_i,x_{i+1}) ≤ (m−2)π/2`. | [Tridiagonal Gram proof](written-proofs.md#c2-all-m-via-positive-definiteness) uses singularity and positive LDLᵀ pivots; indexing, zero adjacent products, and m = 2 were checked. |
+| C3 | For every d ≥ 1, d + 1 lines in ℝ^d: `S ≤ (choose(d+1,2)−1)π/2`. | [C4 proof §1](c4/proof.md#1-a-maximizing-configuration-can-be-made-sparse) supplies the general auxiliary deficiency bound `D ≥ π/2` for m vectors spanning dimension at most m−1, with m = d + 1. The d = 1 case and repetitions are covered. |
+| C4 | Five lines in ℝ³: `S ≤ 4π`; six lines in ℝ⁴: `S ≤ 13π/2`. | [Complete written proof](c4/proof.md) covers the sparse maximizer, cycle cases, and six-cycle projection; equality examples show both bounds are sharp. |
+| C5 | For every d ≥ 2 and N = d + 2 lines in ℝ^d: `S ≤ (choose(N,2)−2)π/2`. | [Complete written induction](c5/proof.md) extends the cycle projection to all dimensions using Cauchy–Schwarz and scalar monotonicity; the d = 2 base, repetitions, and equality examples are covered. [Independent audit and provenance](c5/literature.md) record the checked boundary cases. |
+
+C1–C5 status: **Solved — complete written proof; Lean partial.** The [Lean replay](evidence/replay/README.md) checked 18 modules and 51 printed declarations with standard axioms only. The Lean lemmas cover important subclaims but do not assemble full general C1–C5 theorems. [C6](https://hackathon.bainsa.ai/p/p1/c6) is **Skipped** because work on the open all-parameter question was explicitly paused.
+
+Primary-source provenance matters for C5: the [literature note](c5/literature.md) links the papers and distinguishes historical reported results from this reconstructed projection argument. The original 1959 Fejes Tóth full proof was not inspected and is not cited as a substitute for the written proof here. The remaining full Lean graph/coordinate plumbing has limited mathematical value relative to its formalization cost; the written C4/C5 arguments and the checked scalar, rotation, and rank lemmas are the appropriate evidence for this hand-in format.
+
+Publication boundary: C1–C5 written proofs and supporting evidence are included in this package. Nothing here represents a hackathon submission or organizer acceptance.

@@ -1,0 +1,1 @@
+'C4SignedSparse.coefficient_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
