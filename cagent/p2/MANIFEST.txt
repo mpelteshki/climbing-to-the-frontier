@@ -11,6 +11,11 @@ c1/q3.json
 c1/q4-labels.txt
 c1/q4.json
 c2/Q5.lean
+c2/C2-notes.md
+c2/decycling5_replay.py
+c2/decycling5_replay.log
+c2/decycling5_parity_replay.py
+c2/decycling5_parity_replay.log
 c2/q5-labels.txt
 c2/q5.json
 c3/Q6.lean
@@ -33,4 +38,5 @@ c1-optimality.log
 verification.log
 verify.sh
 shared/DecyclingBridge.lean
-decycling-budget-verification.log
+shared/Decycling5.lean
+decycling-increment-verification.log

@@ -1,6 +1,6 @@
 name = "p2-certificates"
 version = "0.1.0"
-defaultTargets = ["C1Optimal"]
+defaultTargets = ["C1Optimal", "DecyclingBridge"]
 
 [[lean_lib]]
 name = "Hypercube"
@@ -32,4 +32,8 @@ srcDir = "c1"
 
 [[lean_lib]]
 name = "DecyclingBridge"
+srcDir = "shared"
+
+[[lean_lib]]
+name = "Decycling5"
 srcDir = "shared"

@@ -1,0 +1,11 @@
+7b9354149eec8db1083ad07270f7142b80ceb7be5c51d272775bb30b4121de1c  c2/decycling5_parity_replay.py
+k=0: even_subsets=1, min_edges=0, max_zero_neighbors=16, candidates_le3=560, forests=0
+k=1: even_subsets=16, min_edges=1, max_zero_neighbors=11, candidates_le3=10640, forests=0
+k=2: even_subsets=120, min_edges=3, max_zero_neighbors=8, candidates_le3=1600, forests=0
+k=3: even_subsets=560, min_edges=4, max_zero_neighbors=6, candidates_le3=0, forests=0
+k=4: even_subsets=1820, min_edges=4, max_zero_neighbors=5, candidates_le3=0, forests=0
+k=5: even_subsets=4368, min_edges=5, max_zero_neighbors=5, candidates_le3=0, forests=0
+k=6: even_subsets=8008, min_edges=5, max_zero_neighbors=3, candidates_le3=0, forests=0
+k=5, zero_neighbors=5: cases=16, max_one_neighbors=0
+total_candidates_le3=12800, forests=0
+candidate_stream_sha256=9396db7962de031f30f22753ef2eeb1bdbc628be87b3dfdabdc84711f60d01f0

@@ -12,10 +12,15 @@ echo "Check C1 theorem axioms:"
 lake env lean shared/LowerBound.lean
 lake env lean shared/RegularLower.lean
 lake env lean c1/C1Optimal.lean
-echo "Build and kernel-check the reusable path-count lower bound:"
-lake build DecyclingBridge
+echo "Build incremental Q5 decycling and path-count bridge lemmas:"
+lake build Decycling5 DecyclingBridge
+lake env leanchecker Decycling5
 lake env leanchecker DecyclingBridge
+lake env lean shared/Decycling5.lean
 lake env lean shared/DecyclingBridge.lean
+echo "Replay independent Q5 finite lower-bound checks:"
+python3 c2/decycling5_replay.py
+python3 c2/decycling5_parity_replay.py
 for d in 5 6 7 8; do
   case "$d" in
     5) part=c2 ;;

@@ -1,4 +1,5 @@
 import LowerBound
+import Decycling5
 
 namespace Hypercube
 
@@ -322,8 +323,276 @@ theorem pathCount_regular_budget (d : Nat) (order : List Nat)
   rw [pathCount_eq_sum_endCount d order hn]
   exact regular_path_budget d order (endCount d order) hn hrec hd hdegree
 
+theorem good_indegree_budget (d : Nat) (order : List Nat)
+    (p : Nat → Nat) (horder : order ≠ [])
+    (hrec : endpointRecurrence d order p) :
+    ((order.filter (fun v => !badFlag p v)).map (indegree d order)).sum + 1 ≤
+      (order.filter (fun v => !badFlag p v)).length := by
+  obtain ⟨head, rest, rfl⟩ := List.exists_cons_of_ne_nil horder
+  have hhead : p head = 1 := by
+    rw [hrec head (by simp)]
+    simp [before]
+  have hheadgood : badFlag p head = false := by
+    simp [badFlag, hhead]
+  have hheadin : indegree d (head :: rest) head = 0 := by
+    simp [indegree, before]
+  simp only [List.filter_cons, hheadgood, Bool.not_false, ↓reduceIte,
+    List.map_cons, List.sum_cons, List.length_cons, hheadin, Nat.zero_add]
+  have htail : ∀ v ∈ rest.filter (fun v => !badFlag p v),
+      indegree d (head :: rest) v ≤ 1 := by
+    intro v hv
+    obtain ⟨hvr, hgv⟩ := List.mem_filter.mp hv
+    have hvorder : v ∈ head :: rest := by simp [hvr]
+    have hg : badFlag p v = false := by
+      cases h : badFlag p v <;> simp_all
+    have hpe := good_endpoint_eq_one d (head :: rest) p hrec v hvorder hg
+    exact hpe ▸ endpoint_ge_indegree d (head :: rest) p hrec v hvorder
+  have hsum := sum_map_le_nat (rest.filter (fun v => !badFlag p v))
+    (indegree d (head :: rest)) (fun _ => 1) htail
+  have hone : ((rest.filter (fun v => !badFlag p v)).map (fun _ => 1)).sum =
+      (rest.filter (fun v => !badFlag p v)).length := by
+    induction rest.filter (fun v => !badFlag p v) with
+    | nil => rfl
+    | cons v vs ih => simp [ih, Nat.add_comm]
+  omega
+
+theorem regular_edge_budget (d : Nat) (order : List Nat)
+    (p : Nat → Nat) (hn : order.Nodup) (horder : order ≠ [])
+    (hrec : endpointRecurrence d order p) (hd : 1 ≤ d)
+    (hdegree : ∀ v ∈ order,
+      indegree d order v + outdegree d order v = d) :
+    edgeCount d order + 1 + edgeCount d (badVertices order p) ≤
+      order.length + (d - 1) * (badVertices order p).length := by
+  let bad := badVertices order p
+  let good := order.filter (fun v => !badFlag p v)
+  have hbadout : (bad.map (outdegree d order)).sum = edgeCount d bad := by
+    have hfiltered : (bad.map (outdegree d order)).sum =
+        totalOutdegree d bad := by
+      unfold totalOutdegree
+      congr 1
+      apply List.map_congr_left
+      intro v hv
+      obtain ⟨hvorder, hb⟩ := List.mem_filter.mp hv
+      exact bad_outdegree_eq_filtered d order p hn hrec v hvorder hb
+    rw [hfiltered]
+    exact totalOutdegree_eq_edgeCount d bad
+      ((List.filter_sublist).nodup hn)
+  have hbaddegree : d * bad.length =
+      (bad.map (indegree d order)).sum + edgeCount d bad := by
+    have hmap : bad.map (fun v =>
+        indegree d order v + outdegree d order v) =
+        bad.map (fun _ => d) := by
+      apply List.map_congr_left
+      intro v hv
+      exact hdegree v (List.filter_sublist.mem hv)
+    have hsum := congrArg List.sum hmap
+    rw [sum_map_add_nat, sum_map_const_nat, hbadout] at hsum
+    exact hsum.symm
+  have hperm := List.filter_append_perm (badFlag p) order
+  have hlen : bad.length + good.length = order.length := by
+    simpa [bad, good, badVertices] using hperm.length_eq
+  have hsum : (bad.map (indegree d order)).sum +
+      (good.map (indegree d order)).sum = edgeCount d order := by
+    have hsum' : (bad.map (indegree d order)).sum +
+        (good.map (indegree d order)).sum =
+        (order.map (indegree d order)).sum := by
+      simpa [bad, good, badVertices, List.map_append, List.sum_append] using
+        (hperm.map (indegree d order)).sum_nat
+    rw [hsum']
+    exact totalIndegree_eq_edgeCount d order hn
+  have hgood : (good.map (indegree d order)).sum + 1 ≤ good.length := by
+    exact good_indegree_budget d order p horder hrec
+  have hd' : d = (d - 1) + 1 := by omega
+  have hmul : d * bad.length = (d - 1) * bad.length + bad.length := by
+    calc
+      d * bad.length = ((d - 1) + 1) * bad.length := by rw [← hd']
+      _ = (d - 1) * bad.length + bad.length := by simp [Nat.add_mul]
+  change edgeCount d order + 1 + edgeCount d bad ≤
+    order.length + (d - 1) * bad.length
+  omega
+
+theorem cube5_degree (order : List Nat) (h : IsLabelling 5 order)
+    (v : Nat) (hv : v ∈ order) :
+    indegree 5 order v + outdegree 5 order v = 5 := by
+  rw [indegree_add_outdegree 5 order v hv]
+  have hr : v ∈ List.range 32 := (List.Perm.mem_iff h).mp hv
+  have hd : ∀ v ∈ List.range 32,
+      ((List.range 32).filter (adjacent 5 v)).length = 5 := by decide
+  exact (List.Perm.length_eq (h.filter (adjacent 5 v))).trans (hd v hr)
+
+theorem edgeCount_cube5 (order : List Nat) (h : IsLabelling 5 order) :
+    edgeCount 5 order = 80 := by
+  rw [edgeCount_perm 5 h]
+  decide
+
+theorem q5_bad_profile (order : List Nat) (p : Nat → Nat)
+    (h : IsLabelling 5 order) (hrec : endpointRecurrence 5 order p)
+    (hsmall : (badVertices order p).length ≤ 13) :
+    (badVertices order p).length = 13 ∧
+    edgeCount 5 (badVertices order p) ≤ 3 := by
+  have hn : order.Nodup := h.nodup_iff.mpr List.nodup_range
+  have hlen : order.length = 32 := by simpa using h.length_eq
+  have hnonempty : order ≠ [] := by
+    intro he
+    simp [he] at hlen
+  have hbudget := regular_edge_budget 5 order p hn hnonempty hrec
+    (by omega) (by intro v hv; exact cube5_degree order h v hv)
+  rw [edgeCount_cube5 order h, hlen] at hbudget
+  constructor <;> omega
+
+theorem one_indegree_edge_budget (d : Nat) (vertices : List Nat)
+    (hn : vertices.Nodup) (hne : vertices ≠ [])
+    (hdegree : ∀ v ∈ vertices, indegree d vertices v ≤ 1) :
+    edgeCount d vertices + 1 ≤ vertices.length := by
+  obtain ⟨head, rest, rfl⟩ := List.exists_cons_of_ne_nil hne
+  have hzero : indegree d (head :: rest) head = 0 := by
+    simp [indegree, before]
+  have hrest : ∀ v ∈ rest, indegree d (head :: rest) v ≤ 1 := by
+    intro v hv
+    exact hdegree v (by simp [hv])
+  have hsum := sum_map_le_nat rest (indegree d (head :: rest))
+    (fun _ => 1) hrest
+  have hone : (rest.map (fun _ => 1)).sum = rest.length := by
+    simpa using sum_map_const_nat rest 1
+  have heq := totalIndegree_eq_edgeCount d (head :: rest) hn
+  simp only [totalIndegree, List.map_cons, List.sum_cons, hzero, Nat.zero_add]
+    at heq
+  simp only [List.length_cons]
+  omega
+
+theorem indegree_filter_le (d : Nat) (order : List Nat)
+    (keep : Nat → Bool) (v : Nat) (hv : keep v = true) :
+    indegree d (order.filter keep) v ≤ indegree d order v := by
+  unfold indegree
+  rw [before_filter_of_kept order keep v hv]
+  have hs : ((before order v).filter keep).Sublist (before order v) :=
+    List.filter_sublist
+  exact (hs.filter (adjacent d v)).length_le
+
+theorem edgeCount_good_subset (d : Nat) (order : List Nat)
+    (p : Nat → Nat) (hn : order.Nodup)
+    (hrec : endpointRecurrence d order p)
+    (c : List Nat) (hc : c.Nodup) (hcne : c ≠ [])
+    (hsubset : c ⊆ order)
+    (hgood : ∀ v ∈ c, badFlag p v = false) :
+    edgeCount d c + 1 ≤ c.length := by
+  let selected := order.filter (fun v => decide (v ∈ c))
+  have hnselected : selected.Nodup := by
+    exact List.filter_sublist.nodup hn
+  have hperm : selected.Perm c := by
+    apply (List.perm_ext_iff_of_nodup hnselected hc).mpr
+    intro v
+    simp only [selected, List.mem_filter, decide_eq_true_iff]
+    exact ⟨fun h => h.2, fun h => ⟨hsubset h, h⟩⟩
+  have hselne : selected ≠ [] := by
+    intro he
+    exact hcne ((he ▸ hperm).nil_eq.symm)
+  have hdegree : ∀ v ∈ selected, indegree d selected v ≤ 1 := by
+    intro v hv
+    have hvorder : v ∈ order := (List.mem_filter.mp hv).1
+    have hvc : v ∈ c := by simpa [selected] using (List.mem_filter.mp hv).2
+    have hpe := good_endpoint_eq_one d order p hrec v hvorder (hgood v hvc)
+    have hle := indegree_filter_le d order (fun x => decide (x ∈ c)) v
+      (by simpa [selected] using (List.mem_filter.mp hv).2)
+    change indegree d selected v ≤ indegree d order v at hle
+    have hrecdeg := endpoint_ge_indegree d order p hrec v hvorder
+    omega
+  have hbudget := one_indegree_edge_budget d selected hnselected hselne hdegree
+  rw [edgeCount_perm d hperm, hperm.length_eq] at hbudget
+  exact hbudget
+
+theorem edge_rich_subset_hits_bad (d : Nat) (order : List Nat)
+    (p : Nat → Nat) (hn : order.Nodup)
+    (hrec : endpointRecurrence d order p)
+    (c : List Nat) (hc : c.Nodup) (hcne : c ≠ [])
+    (hsubset : c ⊆ order)
+    (hedges : c.length ≤ edgeCount d c) :
+    ∃ v ∈ c, badFlag p v = true := by
+  by_cases hex : ∃ v ∈ c, badFlag p v = true
+  · exact hex
+  have hnone := hex
+  have hgood : ∀ v ∈ c, badFlag p v = false := by
+    intro v hv
+    cases hb : badFlag p v with
+    | false => rfl
+    | true => exact False.elim (hnone ⟨v, hv, hb⟩)
+  have hbudget := edgeCount_good_subset d order p hn hrec c hc hcne
+    hsubset hgood
+  omega
+
+theorem edge_rich_family_hits_bad (d : Nat) (order : List Nat)
+    (p : Nat → Nat) (hn : order.Nodup)
+    (hrec : endpointRecurrence d order p)
+    (cycles : List (List Nat))
+    (hvalid : ∀ c ∈ cycles,
+      c.Nodup ∧ c ≠ [] ∧ c ⊆ order ∧ c.length ≤ edgeCount d c) :
+    cycles.all (fun c => c.any (badVertices order p).contains) = true := by
+  apply List.all_eq_true.mpr
+  intro c hc
+  obtain ⟨hcn, hcne, hsub, hedge⟩ := hvalid c hc
+  obtain ⟨v, hvc, hb⟩ := edge_rich_subset_hits_bad d order p hn hrec
+    c hcn hcne hsub hedge
+  apply List.any_eq_true.mpr
+  refine ⟨v, hvc, ?_⟩
+  exact List.contains_iff_mem.mpr (List.mem_filter.mpr ⟨hsub hvc, hb⟩)
+
+theorem q5_shortCycles_hit (order : List Nat) (p : Nat → Nat)
+    (h : IsLabelling 5 order) (hrec : endpointRecurrence 5 order p) :
+    Decycling5.shortCyclesHit (badVertices order p) = true := by
+  have hn : order.Nodup := h.nodup_iff.mpr List.nodup_range
+  have hrange : ∀ c ∈ Decycling5.shortCycles,
+      c ⊆ List.range 32 := Decycling5.shortCycles_subset_range
+  have hvalid : ∀ c ∈ Decycling5.shortCycles,
+      c.Nodup ∧ c ≠ [] ∧ c ⊆ order ∧ c.length ≤ edgeCount 5 c := by
+    intro c hc
+    obtain ⟨hcn, hcne, hedge⟩ := Decycling5.shortCycles_edge_rich c hc
+    refine ⟨hcn, hcne, ?_, hedge⟩
+    intro v hv
+    exact (List.Perm.mem_iff h).mpr (hrange c hc hv)
+  exact edge_rich_family_hits_bad 5 order p hn hrec
+    Decycling5.shortCycles hvalid
+
+theorem pathCount_lower5_of_search_and_edges (order : List Nat)
+    (h : IsLabelling 5 order)
+    (hcheck : Decycling5.search 13 [] = true)
+    (hedgeBridge : ∀ bad : List Nat, bad.Nodup →
+      bad ⊆ List.range 32 →
+      Decycling5.internalEdges bad ≤ edgeCount 5 bad) :
+    88 ≤ pathCount 5 order := by
+  have hn : order.Nodup := h.nodup_iff.mpr List.nodup_range
+  let p := endCount 5 order
+  let bad := badVertices order p
+  have hrec : endpointRecurrence 5 order p := by
+    intro v hv
+    exact endCount_recurrence 5 order v hn hv
+  have hbudget := pathCount_regular_budget 5 order hn (by omega)
+    (by intro v hv; exact cube5_degree order h v hv)
+  have hlen : order.length = 32 := by simpa using h.length_eq
+  rw [hlen] at hbudget
+  by_cases hmany : 14 ≤ bad.length
+  · change 32 + (5 - 1) * bad.length ≤ pathCount 5 order at hbudget
+    omega
+  · have hsmall : bad.length ≤ 13 := by omega
+    have ⟨_, heB⟩ := q5_bad_profile order p h hrec hsmall
+    change edgeCount 5 bad ≤ 3 at heB
+    have hbn : bad.Nodup := List.filter_sublist.nodup hn
+    have hbr : bad ⊆ List.range 32 := by
+      intro v hv
+      exact (List.Perm.mem_iff h).mp (List.filter_sublist.mem hv)
+    have hedge : Decycling5.internalEdges bad ≤ 3 := by
+      have hle := hedgeBridge bad hbn hbr
+      omega
+    have hhit := q5_shortCycles_hit order p h hrec
+    exact False.elim (Decycling5.no_thirteen_of_search
+      hcheck bad hbn hsmall hedge hhit)
+
 #print axioms bad_predecessor_forces_bad
 #print axioms regular_path_budget
 #print axioms pathCount_regular_budget
+#print axioms regular_edge_budget
+#print axioms q5_bad_profile
+#print axioms edge_rich_subset_hits_bad
+#print axioms q5_shortCycles_hit
+#print axioms pathCount_lower5_of_search_and_edges
 
 end Hypercube

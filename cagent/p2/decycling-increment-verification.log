@@ -1,0 +1,62 @@
+Lean toolchain:
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+
+Build incremental Q5 modules:
+ℹ [2/9] Replayed Hypercube
+info: shared/Hypercube.lean:107:0: 'Hypercube.paths_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/Hypercube.lean:108:0: 'Hypercube.mem_extensions' depends on axioms: [propext, Quot.sound]
+info: shared/Hypercube.lean:109:0: 'Hypercube.mem_paths' depends on axioms: [propext, Quot.sound]
+ℹ [3/9] Replayed RegularLower
+info: shared/RegularLower.lean:427:0: 'Hypercube.endpoint_ge_indegree' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:428:0: 'Hypercube.totalIndegree_eq_edgeCount' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:429:0: 'Hypercube.edgeCount_cube3' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:430:0: 'Hypercube.edgeCount_cube4' depends on axioms: [propext, Quot.sound]
+info: shared/RegularLower.lean:431:0: 'Hypercube.regularLower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/RegularLower.lean:432:0: 'Hypercube.regularLower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4/9] Replayed Fast
+info: shared/Fast.lean:73:0: 'Hypercube.fast_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5/9] Replayed LowerBound
+info: shared/LowerBound.lean:542:0: 'Hypercube.append_vertex_mem_paths_iff' depends on axioms: [propext, Quot.sound]
+info: shared/LowerBound.lean:543:0: 'Hypercube.path_append_of_edge' depends on axioms: [propext, Quot.sound]
+info: shared/LowerBound.lean:544:0: 'Hypercube.endPaths_perm_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:545:0: 'Hypercube.endCount_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:546:0: 'Hypercube.pathCount_eq_sum_endCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:547:0: 'Hypercube.pathCount_lower3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/LowerBound.lean:548:0: 'Hypercube.pathCount_lower4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [6/9] Built Decycling5 (6.0s)
+info: shared/Decycling5.lean:962:0: 'Decycling5.shortCycles_valid' depends on axioms: [propext, Quot.sound]
+info: shared/Decycling5.lean:963:0: 'Decycling5.shortCycles_edge_rich' depends on axioms: [propext]
+info: shared/Decycling5.lean:964:0: 'Decycling5.shortCycles_subset_range' depends on axioms: [propext]
+info: shared/Decycling5.lean:965:0: 'Decycling5.edgePairs_valid' depends on axioms: [propext]
+info: shared/Decycling5.lean:966:0: '_private.Decycling5.0.Decycling5.search_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/Decycling5.lean:967:0: 'Decycling5.no_thirteen_of_search' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8/9] Built DecyclingBridge (906ms)
+info: shared/DecyclingBridge.lean:589:0: 'Hypercube.bad_predecessor_forces_bad' depends on axioms: [propext, Quot.sound]
+info: shared/DecyclingBridge.lean:590:0: 'Hypercube.regular_path_budget' depends on axioms: [propext, Quot.sound]
+info: shared/DecyclingBridge.lean:591:0: 'Hypercube.pathCount_regular_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/DecyclingBridge.lean:592:0: 'Hypercube.regular_edge_budget' depends on axioms: [propext, Quot.sound]
+info: shared/DecyclingBridge.lean:593:0: 'Hypercube.q5_bad_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/DecyclingBridge.lean:594:0: 'Hypercube.edge_rich_subset_hits_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/DecyclingBridge.lean:595:0: 'Hypercube.q5_shortCycles_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/DecyclingBridge.lean:596:0: 'Hypercube.pathCount_lower5_of_search_and_edges' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9 jobs).
+
+Independent kernel replay:
+
+Decycling5 axiom audit:
+'Decycling5.shortCycles_valid' depends on axioms: [propext, Quot.sound]
+'Decycling5.shortCycles_edge_rich' depends on axioms: [propext]
+'Decycling5.shortCycles_subset_range' depends on axioms: [propext]
+'Decycling5.edgePairs_valid' depends on axioms: [propext]
+'_private.shared.Decycling5.0.Decycling5.search_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Decycling5.no_thirteen_of_search' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+DecyclingBridge axiom audit:
+'Hypercube.bad_predecessor_forces_bad' depends on axioms: [propext, Quot.sound]
+'Hypercube.regular_path_budget' depends on axioms: [propext, Quot.sound]
+'Hypercube.pathCount_regular_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.regular_edge_budget' depends on axioms: [propext, Quot.sound]
+'Hypercube.q5_bad_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.edge_rich_subset_hits_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q5_shortCycles_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.pathCount_lower5_of_search_and_edges' depends on axioms: [propext, Classical.choice, Quot.sound]

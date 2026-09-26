@@ -1,0 +1,5 @@
+edges=80 squares=80 hexagons=640
+source_sha256=1fdf6619b2649359217ae6bc13cb62d3593ab229f74e71916e7b04053b4097fe
+inventory_sha256=b4b6bdf1fe9c302d2e1baafa9d44c1bef3707cf852446019a85684816abf168b
+distinct_states=42324 recursive_branches=61072
+result=UNSAT elapsed_seconds=0.265
