@@ -1,0 +1,11 @@
+name = "p2-certificates"
+version = "0.1.0"
+defaultTargets = ["Fast"]
+
+[[lean_lib]]
+name = "Hypercube"
+srcDir = "shared"
+
+[[lean_lib]]
+name = "Fast"
+srcDir = "shared"

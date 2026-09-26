@@ -1,0 +1,54 @@
+Lean toolchain:
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Build shared semantics and fast counting theorem:
+info: p2-certificates: no previous manifest, creating one from scratch
+info: toolchain not updated; already up-to-date
+ℹ [2/4] Built Hypercube (397ms)
+info: shared/Hypercube.lean:107:0: 'Hypercube.paths_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: shared/Hypercube.lean:108:0: 'Hypercube.mem_extensions' depends on axioms: [propext, Quot.sound]
+info: shared/Hypercube.lean:109:0: 'Hypercube.mem_paths' depends on axioms: [propext, Quot.sound]
+ℹ [3/4] Built Fast (356ms)
+info: shared/Fast.lean:73:0: 'Hypercube.fast_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (4 jobs).
+Verify Q3 in c1:
+'Hypercube.q3_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q3_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q3_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 0.40
+user 0.21
+sys 0.18
+Verify Q4 in c1:
+'Hypercube.q4_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q4_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q4_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 0.46
+user 0.28
+sys 0.18
+Verify Q5 in c2:
+'Hypercube.q5_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q5_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q5_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 0.83
+user 0.65
+sys 0.21
+Verify Q6 in c3:
+'Hypercube.q6_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q6_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q6_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 2.51
+user 2.49
+sys 0.24
+Verify Q7 in c4:
+'Hypercube.q7_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q7_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q7_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 10.53
+user 11.05
+sys 0.50
+Verify Q8 in c4:
+'Hypercube.q8_labelling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q8_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hypercube.q8_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 53.34
+user 53.96
+sys 3.51
