@@ -8,7 +8,7 @@ This item contains complete written proofs for **C1–C4**, together with indepe
 
 | Cell | Established answer | Assurance |
 | --- | --- | --- |
-| C1 | Rank-$k$ cyclic states are binary staircase boundaries; cycles are binary necklaces of weight $n-T_{k-1}$. The exact count is proved below. Triangular sizes have one fixed staircase. | General classification, rotation correspondence and triangular convergence in Lean; numerical necklace count in writing. |
+| C1 | Rank $k$ cyclic states are binary staircase boundaries; cycles are binary necklaces of weight $n-T_{k-1}$. The exact count is proved below. Triangular sizes have one fixed staircase. | General classification, rotation correspondence and triangular convergence in Lean; numerical necklace count in writing. |
 | C2 | $D_B(T_k)=k(k-1)$ for every $k\ge1$, with explicit attaining partitions. | General upper/lower written proof; finite cases and abstract descent arithmetic in Lean. |
 | C3 | For nontriangular rank $k\ge4$, $D_B(n)\le k^2-2k-1$; equality at $T_k-1$. An explicit finite inverse construction gives every maximizer at that size. | General written proof; Lean finite cases; independent exhaustive cross-check of maximizer sets for $k=4,5,6,7$. |
 | C4 | $D_B(T_{k-1}+1)=(k-1)(k-3)$ for every $k\ge5$, with explicit attaining partitions. | General upper/lower written proof; Lean instances $k=5,6,7$; exhaustive cross-check through $k=9$. |
@@ -90,7 +90,7 @@ Uniqueness of rank gives $K=k$, and the bit sum is $r$. This proves necessity of
 
 ### 3. Every asserted boundary is cyclic
 
-Conversely, take any length-$k$ bit word of weight $r$. The asserted pile list is decreasing: adjacent differences are $1+\varepsilon_j-\varepsilon_{j+1}\ge0$. Its only possible zero is the last entry, and its total is $T_{k-1}+r=n$.
+Conversely, take any length $k$ bit word of weight $r$. The asserted pile list is decreasing: adjacent differences are $1+\varepsilon_j-\varepsilon_{j+1}\ge0$. Its only possible zero is the last entry, and its total is $T_{k-1}+r=n$.
 
 Its number of positive piles is $k-1+\varepsilon_{k-1}$. One move therefore changes its boundary word to
 
@@ -379,7 +379,7 @@ $$
 
 (B)
 
-The state at time $m$ is already cyclic. Indeed, for $1\le a\le k$, all the $a-1$ piles born on moves $m,\ldots,m+a-2$ remain alive at time $m+a-1$. If $H_a$ counts the piles of the time-$m$ state that have size at least $a$, then
+The state at time $m$ is already cyclic. Indeed, for $1\le a\le k$, all the $a-1$ piles born on moves $m,\ldots,m+a-2$ remain alive at time $m+a-1$. If $H_a$ counts the piles of the time $m$ state that have size at least $a$, then
 
 $$
 H_a=c_{m+a-1}-(a-1)\in\{k-a,k-a+1\}.
@@ -387,7 +387,7 @@ $$
 
 (C)
 
-At time $m+k$, the $k-1$ piles $J_{m+1},\ldots,J_{m+k-1}$ already fill all $c_{m+k}=k-1$ places, so no time-$m$ pile has size above $k$. Formula (C) says the conjugate diagram lies between the staircases of sizes $k-1$ and $k$; transposing gives the same containment for the original diagram. Its column heights therefore have the form $k-1+\varepsilon_0,k-2+\varepsilon_1,\ldots,\varepsilon_{k-1}$, with bits $\varepsilon_j$, so it is cyclic by the [C1 classification](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c1/written-proof.md).
+At time $m+k$, the $k-1$ piles $J_{m+1},\ldots,J_{m+k-1}$ already fill all $c_{m+k}=k-1$ places, so no time $m$ pile has size above $k$. Formula (C) says the conjugate diagram lies between the staircases of sizes $k-1$ and $k$; transposing gives the same containment for the original diagram. Its column heights therefore have the form $k-1+\varepsilon_0,k-2+\varepsilon_1,\ldots,\varepsilon_{k-1}$, with bits $\varepsilon_j$, so it is cyclic by the [C1 classification](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c1/written-proof.md).
 
 ### Finding a late sandwich
 
@@ -442,7 +442,7 @@ $$
 
 The last inequality follows from $n\le T_k-1$ and $T_k-2<B$ for $k\ge5$.
 
-Width $k-1$ is impossible for either type. For type I, the index range forces $q=t-1$, so $c_{t-1}=k+1$. Move $t-1$ then creates a pile of size $k+1$ in the cyclic state at time $t$, impossible because every rank-$k$ cyclic pile has size at most $k$. For type II, the index range and $c_t=k-1$ force $(p,q)=(t-k+2,t+1)$: the only other possible placement would have $q=t$ and $c_t=k$. But $c_p=k-2$ makes $J_p$ end at $p+k-2=t$, whereas $c_t=k-1\to c_{t+1}=k$ permits no pile to end at $t$.
+Width $k-1$ is impossible for either type. For type I, the index range forces $q=t-1$, so $c_{t-1}=k+1$. Move $t-1$ then creates a pile of size $k+1$ in the cyclic state at time $t$, impossible because every rank $k$ cyclic pile has size at most $k$. For type II, the index range and $c_t=k-1$ force $(p,q)=(t-k+2,t+1)$: the only other possible placement would have $q=t$ and $c_t=k$. But $c_p=k-2$ makes $J_p$ end at $p+k-2=t$, whereas $c_t=k-1\to c_{t+1}=k$ permits no pile to end at $t$.
 
 Every remaining pattern has width $L\le k-2$, level $x\in\{k-1,k\}$, and $p\ge t-k$. The C2 retreat bound yields
 
@@ -464,13 +464,13 @@ $$
 
 (F)
 
-This is the witness of [Griggs and Ho, Theorem 4.4(2)](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf). Put $B=k^2-2k-1$. For $0\le t<B$, define a diagram $D_t$ by deleting the diagonal-$k$ cells in columns
+This is the witness of [Griggs and Ho, Theorem 4.4(2)](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf). Put $B=k^2-2k-1$. For $0\le t<B$, define a diagram $D_t$ by deleting the diagonal $k$ cells in columns
 
 $$
 p_t=t\bmod k,\qquad p'_t=(p_t+1)\bmod k,
 $$
 
-and adding the diagonal-$(k+1)$ cell in column $q_t=(k+t)\bmod(k+1)$. Here a cell on diagonal $w$ in column $j$ has row $w-j$. We check that every $D_t$ is a Ferrers partition. If $p_t\le k-2$, the only invalid added-column positions are $q_t\in\{p_t,p_t+1,p_t+2\}$: they create a vertical gap or reverse adjacent heights. If $p_t=k-1$, the holes wrap to columns $k-1,0$, and the invalid positions are $q_t\in\{k-1,k,0,1\}$.
+and adding the diagonal $(k+1)$ cell in column $q_t=(k+t)\bmod(k+1)$. Here a cell on diagonal $w$ in column $j$ has row $w-j$. We check that every $D_t$ is a Ferrers partition. If $p_t\le k-2$, the only invalid added-column positions are $q_t\in\{p_t,p_t+1,p_t+2\}$: they create a vertical gap or reverse adjacent heights. If $p_t=k-1$, the holes wrap to columns $k-1,0$, and the invalid positions are $q_t\in\{k-1,k,0,1\}$.
 
 Write $t=ak+b$, $0\le b<k$. For $t<B$, we have $a\le k-3$, excluding $(a,b)=(k-3,k-1)$, and
 
@@ -493,7 +493,7 @@ $$
 B^{B-1}(\lambda^*)=(k+1,k-1,k-2,\ldots,3,1).
 $$
 
-Its next unsorted move has column heights $(k-1,k,k-2,\ldots,2)$; sorting the first two yields $(k,k-1,k-2,\ldots,2)$, a rank-$k$ cyclic boundary partition of $T_k-1$. Every earlier $D_t$ has an occupied cell on diagonal $k+1$, while a rank-$k$ cyclic partition has none, by C1. Hence $d_B(\lambda^*)=B$, and the upper bound proves $D_B(T_k-1)=B$.
+Its next unsorted move has column heights $(k-1,k,k-2,\ldots,2)$; sorting the first two yields $(k,k-1,k-2,\ldots,2)$, a rank $k$ cyclic boundary partition of $T_k-1$. Every earlier $D_t$ has an occupied cell on diagonal $k+1$, while a rank $k$ cyclic partition has none, by C1. Hence $d_B(\lambda^*)=B$, and the upper bound proves $D_B(T_k-1)=B$.
 
 ### Which starting partitions attain the maximum?
 
@@ -522,7 +522,7 @@ $$
 P_k=(k+1,k-1,k-2,\ldots,3,1),
 $$
 
-whose next move is the cyclic boundary $(k,k-1,\ldots,2)$. Both $Q_k$ and $P_k$ are noncyclic: the former has too many piles for a rank-$k$ cyclic partition, and the latter has a pile larger than $k$. Thus (J) is another necessary and sufficient condition for depth $B$.
+whose next move is the cyclic boundary $(k,k-1,\ldots,2)$. Both $Q_k$ and $P_k$ are noncyclic: the former has too many piles for a rank $k$ cyclic partition, and the latter has a pile larger than $k$. Thus (J) is another necessary and sufficient condition for depth $B$.
 
 Equation (J) gives a finite **inverse construction of all starting maximizers**, using only a fixed seed and an explicit rule on partitions. For a partition $\mu$ with $m$ parts, choose any distinct part value $s$ of $\mu$ such that $s\ge m-1$. Remove one occurrence of $s$, add $1$ to each remaining part, append $s-m+1$ parts of size $1$, and sort; call the result $R_s(\mu)$. It has exactly $s$ parts and $B(R_s(\mu))=\mu$. Conversely every predecessor of $\mu$ arises this way, because its new pile must have size $s$, one of the parts of $\mu$.
 
@@ -608,7 +608,7 @@ $$
 
 Both are statements about arbitrary solitaire trajectories, not just triangular card counts. Their lifetime proofs precede the triangular application in C2. Equation (2)'s abstract induction is additionally [checked in Lean](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/lean/ProofPursuit/P3/C2SandwichBound.lean).
 
-Choose the earliest index $t$ such that $B^{t-1}(\lambda)$ is cyclic and $(c_t,c_{t+1})=(k-1,k)$. Such an index exists: C1 identifies the cycle with a rotating length-$k$ word containing exactly one $1$. The count is $k$ in one phase and $k-1$ in the others. Write $d$ for the first cyclic depth. Then $d\le t-1$.
+Choose the earliest index $t$ such that $B^{t-1}(\lambda)$ is cyclic and $(c_t,c_{t+1})=(k-1,k)$. Such an index exists: C1 identifies the cycle with a rotating length $k$ word containing exactly one $1$. The count is $k$ in one phase and $k-1$ in the others. Write $d$ for the first cyclic depth. Then $d\le t-1$.
 
 If $t\ge k+1$, there is either
 
@@ -753,7 +753,7 @@ The matching upper-bound claim for all $k\ge7$ remains a separate proof obligati
 
 ## P3 C5: upper-bound reduction for two above a triangular number
 
-Let $k\ge7$, $n=T_{k-1}+2$, and $F=(k-1)(k-4)$. The proposed equality $D_B(n)=F$ has the [general lower-bound witness](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/lower-bound-proof.md). The argument below proves the upper bound for most trajectories and identifies the two families still requiring an all-$k$ estimate. **It is not a proof of the general C5 upper bound.** In particular, the Griggs–Ho [Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf) gives the lower bound, while the assertion that it is always sharp is their Conjecture 4.7.
+Let $k\ge7$, $n=T_{k-1}+2$, and $F=(k-1)(k-4)$. The proposed equality $D_B(n)=F$ has the [general lower-bound witness](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c5/lower-bound-proof.md). The argument below proves the upper bound for most trajectories and identifies the single family still requiring an all $k$ estimate. **It is not a proof of the general C5 upper bound.** In particular, the Griggs–Ho [Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf) gives the lower bound, while the assertion that it is always sharp is their Conjecture 4.7.
 
 ### Sequence facts
 
@@ -762,7 +762,7 @@ For a trajectory from a partition of $n$, let $c_i$ be the pile count in $B^{i-1
 * Type I: $(c_p,\ldots,c_q)=(k-1,k,\ldots,k,k+1)$, with $t-k\le p<q\le t-1$.
 * Type II: $(c_p,\ldots,c_q)=(k-2,k-1,\ldots,k-1,k)$, with $t-k+1\le p<q\le t+1$.
 
-Write $L=q-p\ge2$. Every level-$x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies 
+Write $L=q-p\ge2$. Every level $x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies 
 
 $$
 \sum_{j=0}^{m-1}c_{p+j}\le n+T_{m-1}.
@@ -845,15 +845,15 @@ $$
 
 (4)
 
-This state cannot belong to the final pattern. To see its delay directly, use zero-based columns and one-based rows. Relative to the full staircase of height $k-1$, $S_k$ has one missing cell on diagonal $k-1$ at column $0$, two added cells on diagonal $k$ at columns $2,3$, and one added cell on diagonal $k+1$ at column $3$. Under the unsorted move, diagonal $w$ advances one column modulo $w$. For $0\le j\le k-2$, place the missing cell at column $j$, the two diagonal-$k$ cells at $(j+2)\bmod k,(j+3)\bmod k$, and the diagonal-$(k+1)$ cell at $(j+3)\bmod(k+1)$. These diagrams are Ferrers:
+This state cannot belong to the final pattern. To see its delay directly, use zero-based columns and one-based rows. Relative to the full staircase of height $k-1$, $S_k$ has one missing cell on diagonal $k-1$ at column $0$, two added cells on diagonal $k$ at columns $2,3$, and one added cell on diagonal $k+1$ at column $3$. Under the unsorted move, diagonal $w$ advances one column modulo $w$. For $0\le j\le k-2$, place the missing cell at column $j$, the two diagonal $k$ cells at $(j+2)\bmod k,(j+3)\bmod k$, and the diagonal $(k+1)$ cell at $(j+3)\bmod(k+1)$. These diagrams are Ferrers:
 
 * For $0\le j\le k-4$, all displayed columns are unwrapped. The missing cell makes columns $j,j+1$ equal, while the extra cells make columns $j+1,j+2,j+3$ equal; all other adjacent staircase differences remain nonnegative.
-* At $j=k-3$, the diagonal-$k$ extras wrap to $k-1,0$, and the diagonal-$(k+1)$ extra is in column $k$. The right tail has heights $1,1,1,1$, and the increased column $0$ preserves the leftmost inequality.
+* At $j=k-3$, the diagonal $k$ extras wrap to $k-1,0$, and the diagonal $(k+1)$ extra is in column $k$. The right tail has heights $1,1,1,1$, and the increased column $0$ preserves the leftmost inequality.
 * At $j=k-2$, the extras occupy columns $0,1$ on diagonal $k$ and column $0$ on diagonal $k+1$; the missing cell deletes the rightmost staircase column. The first two heights become $k+1,k-1$, and the rest decrease.
 
 Thus sorting does nothing during these $k-2$ moves, and every one of $S_k,B(S_k),\ldots,B^{k-2}(S_k)$ still has a cell on diagonal $k+1$. The [C1 classification](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c1/written-proof.md) rules out cyclicity at all these times. But $t\le p+k-1$, so the chosen cyclic state at time $t-1$ would occur at most $k-2$ moves after $B^p(\lambda)=S_k$, a contradiction. Therefore width $k-3$ also obeys $d\le F$.
 
-### Width $k-2$: remaining general gap
+### Width $k-2$: two possible cyclic entry states
 
 At this width, the same death-and-card calculation leaves exactly two possible states immediately after the first rise:
 
@@ -864,7 +864,7 @@ $$
 
 (5)
 
-Both are cyclic by C1, hence $d\le p$. Their only immediate predecessors compatible with the initial rise and no deaths are, respectively,
+Both are cyclic by C1. The preceding state has $c_p=k-2$ piles, whereas a rank $k$ cyclic state has $k-1$ or $k$ piles. Thus this is the first cyclic entry and $d=p$. Their only immediate predecessors compatible with the initial rise and no deaths are, respectively,
 
 $$
 (k+1,k-1,k-3,k-4,\ldots,2),\qquad
@@ -873,7 +873,32 @@ $$
 
 (6)
 
-The general retreat bound is only $p\le(k-1)(k-3)=F+k-1$, so it does not prove $d\le F$. An all-$k$ bound on the **first entry time** into either state (5), or a different argument ruling out late entry, is still needed. Finite enumerations at $k=7,8,9$ suggest much stronger bounds $p_A\le T_{k-2}$ and $p_B\le k-1$; those observations are not substituted for a proof.
+### The $B_k$ family is bounded
+
+For a partition $\mu$ with $m$ parts, every predecessor under Bulgarian solitaire is obtained by choosing a distinct part $s\ge m-1$, removing it, incrementing every other part, and appending $s-m+1$ ones. This is exhaustive: $s$ is the newborn pile in $\mu$, and the ones are precisely the predecessor piles that die in the move.
+
+The only eligible values in $B_k$ are $k-1$ and $k-2$. Removing $k-1$ gives another cyclic binary-boundary state. Removing $k-2$ gives the unique noncyclic immediate predecessor
+
+$$
+P_k=(k,k,k-3,k-4,\ldots,2).
+$$
+
+Thus $p=0$ or the reverse path passes through $P_k$ after its first step.
+
+In every state reached by reversing from $P_k$ while retaining both displayed largest piles, they remain equal, say of size $M=k+j$, and every other part is at most $M-3$. This holds initially. If the inverse rule selects a smaller part, both largest parts gain one and every other surviving part gains one; appended ones also satisfy the gap. Since the two large parts contain $2(k+j)$ cards, card conservation gives
+
+$$
+j\le\left\lfloor\frac{n-2k}{2}\right\rfloor
+ =\left\lfloor\frac{F}{4}\right\rfloor.
+$$
+
+If the inverse rule instead selects one of the equal largest parts of size $M$, the next state has exactly $M$ parts, one part of size $M+1$, and all other parts at most $M-2$. Its inverse eligibility threshold is $M-1$, so the $M+1$ part is its only eligible choice. Selecting it gives a state with $M+1$ parts and all parts at most $M-1$, below the new threshold $M$. No further predecessor exists. Therefore at most two reverse moves follow the last twin-retaining state.
+
+Including the initial $B_k\to P_k$ reverse move gives $p\le1+j+2\le3+\lfloor F/4\rfloor\le F$, since $F\ge18$ for $k\ge7$. This proves the $B_k$ first-entry bound without a high-birth-deadline lemma or a finite-rank assumption.
+
+### The $A_k$ family remains unresolved
+
+The retreat bound gives only $p\le(k-1)(k-3)=F+k-1$ for $A_k$. A uniform first-entry estimate $p\le F$ is still needed. Finite enumeration suggests $p\le T_{k-2}$, but does not prove this for all ranks.
 
 One precise sufficient lemma would be the following **unproved high-birth deadline** for this card count:
 
@@ -885,7 +910,7 @@ $$
 
 Indeed, at $A_k$ the pile of size $k$ is old, since the newest pile has size $k-2$. If it is original, its initial size was $k+p\le n$, giving $p\le n-k$. Otherwise, if born on move $i<p$, its birth size satisfies $c_i=k+p-i\ge k+1$; (7) gives $p\le n+1-k$. At $B_k$, two old piles have size $k-1$. An original one likewise gives $p\le n+1-k$. If both were born during play, at most one could have birth size exactly $k$, because that would force the common birth index $i=p-1$. The other has $c_i\ge k+1$ and $i+c_i=p+k-1$; (7) gives $p\le n+2-k\le F$ for $k\ge7$. Thus proving (7) would close this final case. It has been checked on all trajectories for the finite ranks $k=7,8,9$, but that evidence does not establish its general validity.
 
-Thus this note settles type I and all type-II widths except $k-2$, but the general C5 upper bound remains unproved. It also explains why the [C3 bound](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c3/written-proof.md), $k^2-2k-1$, does not imply the sharper target $F=k^2-5k+4$: their difference is $3k-5$.
+Thus this note settles type I, every other type-II width, and the $B_k$ family at width $k-2$. Only the $A_k$ entry family remains unresolved, so the general C5 upper bound remains unproved. It also explains why the [C3 bound](https://github.com/mpelteshki/climbing-to-the-frontier/blob/main/cagent/p3/c3/written-proof.md), $k^2-2k-1$, does not imply the sharper target $F=k^2-5k+4$: their difference is $3k-5$.
 
 
 ## Reproduction and trust boundaries

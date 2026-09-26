@@ -37,7 +37,7 @@ $$
 
 (B)
 
-The state at time $m$ is already cyclic. Indeed, for $1\le a\le k$, all the $a-1$ piles born on moves $m,\ldots,m+a-2$ remain alive at time $m+a-1$. If $H_a$ counts the piles of the time-$m$ state that have size at least $a$, then
+The state at time $m$ is already cyclic. Indeed, for $1\le a\le k$, all the $a-1$ piles born on moves $m,\ldots,m+a-2$ remain alive at time $m+a-1$. If $H_a$ counts the piles of the time $m$ state that have size at least $a$, then
 
 $$
 H_a=c_{m+a-1}-(a-1)\in\{k-a,k-a+1\}.
@@ -45,7 +45,7 @@ $$
 
 (C)
 
-At time $m+k$, the $k-1$ piles $J_{m+1},\ldots,J_{m+k-1}$ already fill all $c_{m+k}=k-1$ places, so no time-$m$ pile has size above $k$. Formula (C) says the conjugate diagram lies between the staircases of sizes $k-1$ and $k$; transposing gives the same containment for the original diagram. Its column heights therefore have the form $k-1+\varepsilon_0,k-2+\varepsilon_1,\ldots,\varepsilon_{k-1}$, with bits $\varepsilon_j$, so it is cyclic by the [C1 classification](../c1/written-proof.md).
+At time $m+k$, the $k-1$ piles $J_{m+1},\ldots,J_{m+k-1}$ already fill all $c_{m+k}=k-1$ places, so no time $m$ pile has size above $k$. Formula (C) says the conjugate diagram lies between the staircases of sizes $k-1$ and $k$; transposing gives the same containment for the original diagram. Its column heights therefore have the form $k-1+\varepsilon_0,k-2+\varepsilon_1,\ldots,\varepsilon_{k-1}$, with bits $\varepsilon_j$, so it is cyclic by the [C1 classification](../c1/written-proof.md).
 
 ## Finding a late sandwich
 
@@ -100,7 +100,7 @@ $$
 
 The last inequality follows from $n\le T_k-1$ and $T_k-2<B$ for $k\ge5$.
 
-Width $k-1$ is impossible for either type. For type I, the index range forces $q=t-1$, so $c_{t-1}=k+1$. Move $t-1$ then creates a pile of size $k+1$ in the cyclic state at time $t$, impossible because every rank-$k$ cyclic pile has size at most $k$. For type II, the index range and $c_t=k-1$ force $(p,q)=(t-k+2,t+1)$: the only other possible placement would have $q=t$ and $c_t=k$. But $c_p=k-2$ makes $J_p$ end at $p+k-2=t$, whereas $c_t=k-1\to c_{t+1}=k$ permits no pile to end at $t$.
+Width $k-1$ is impossible for either type. For type I, the index range forces $q=t-1$, so $c_{t-1}=k+1$. Move $t-1$ then creates a pile of size $k+1$ in the cyclic state at time $t$, impossible because every rank $k$ cyclic pile has size at most $k$. For type II, the index range and $c_t=k-1$ force $(p,q)=(t-k+2,t+1)$: the only other possible placement would have $q=t$ and $c_t=k$. But $c_p=k-2$ makes $J_p$ end at $p+k-2=t$, whereas $c_t=k-1\to c_{t+1}=k$ permits no pile to end at $t$.
 
 Every remaining pattern has width $L\le k-2$, level $x\in\{k-1,k\}$, and $p\ge t-k$. The C2 retreat bound yields
 
@@ -122,13 +122,13 @@ $$
 
 (F)
 
-This is the witness of [Griggs and Ho, Theorem 4.4(2)](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf). Put $B=k^2-2k-1$. For $0\le t<B$, define a diagram $D_t$ by deleting the diagonal-$k$ cells in columns
+This is the witness of [Griggs and Ho, Theorem 4.4(2)](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf). Put $B=k^2-2k-1$. For $0\le t<B$, define a diagram $D_t$ by deleting the diagonal $k$ cells in columns
 
 $$
 p_t=t\bmod k,\qquad p'_t=(p_t+1)\bmod k,
 $$
 
-and adding the diagonal-$(k+1)$ cell in column $q_t=(k+t)\bmod(k+1)$. Here a cell on diagonal $w$ in column $j$ has row $w-j$. We check that every $D_t$ is a Ferrers partition. If $p_t\le k-2$, the only invalid added-column positions are $q_t\in\{p_t,p_t+1,p_t+2\}$: they create a vertical gap or reverse adjacent heights. If $p_t=k-1$, the holes wrap to columns $k-1,0$, and the invalid positions are $q_t\in\{k-1,k,0,1\}$.
+and adding the diagonal $(k+1)$ cell in column $q_t=(k+t)\bmod(k+1)$. Here a cell on diagonal $w$ in column $j$ has row $w-j$. We check that every $D_t$ is a Ferrers partition. If $p_t\le k-2$, the only invalid added-column positions are $q_t\in\{p_t,p_t+1,p_t+2\}$: they create a vertical gap or reverse adjacent heights. If $p_t=k-1$, the holes wrap to columns $k-1,0$, and the invalid positions are $q_t\in\{k-1,k,0,1\}$.
 
 Write $t=ak+b$, $0\le b<k$. For $t<B$, we have $a\le k-3$, excluding $(a,b)=(k-3,k-1)$, and
 
@@ -151,7 +151,7 @@ $$
 B^{B-1}(\lambda^*)=(k+1,k-1,k-2,\ldots,3,1).
 $$
 
-Its next unsorted move has column heights $(k-1,k,k-2,\ldots,2)$; sorting the first two yields $(k,k-1,k-2,\ldots,2)$, a rank-$k$ cyclic boundary partition of $T_k-1$. Every earlier $D_t$ has an occupied cell on diagonal $k+1$, while a rank-$k$ cyclic partition has none, by C1. Hence $d_B(\lambda^*)=B$, and the upper bound proves $D_B(T_k-1)=B$.
+Its next unsorted move has column heights $(k-1,k,k-2,\ldots,2)$; sorting the first two yields $(k,k-1,k-2,\ldots,2)$, a rank $k$ cyclic boundary partition of $T_k-1$. Every earlier $D_t$ has an occupied cell on diagonal $k+1$, while a rank $k$ cyclic partition has none, by C1. Hence $d_B(\lambda^*)=B$, and the upper bound proves $D_B(T_k-1)=B$.
 
 ## Which starting partitions attain the maximum?
 
@@ -180,7 +180,7 @@ $$
 P_k=(k+1,k-1,k-2,\ldots,3,1),
 $$
 
-whose next move is the cyclic boundary $(k,k-1,\ldots,2)$. Both $Q_k$ and $P_k$ are noncyclic: the former has too many piles for a rank-$k$ cyclic partition, and the latter has a pile larger than $k$. Thus (J) is another necessary and sufficient condition for depth $B$.
+whose next move is the cyclic boundary $(k,k-1,\ldots,2)$. Both $Q_k$ and $P_k$ are noncyclic: the former has too many piles for a rank $k$ cyclic partition, and the latter has a pile larger than $k$. Thus (J) is another necessary and sufficient condition for depth $B$.
 
 Equation (J) gives a finite **inverse construction of all starting maximizers**, using only a fixed seed and an explicit rule on partitions. For a partition $\mu$ with $m$ parts, choose any distinct part value $s$ of $\mu$ such that $s\ge m-1$. Remove one occurrence of $s$, add $1$ to each remaining part, append $s-m+1$ parts of size $1$, and sort; call the result $R_s(\mu)$. It has exactly $s$ parts and $B(R_s(\mu))=\mu$. Conversely every predecessor of $\mu$ arises this way, because its new pile must have size $s$, one of the parts of $\mu$.
 

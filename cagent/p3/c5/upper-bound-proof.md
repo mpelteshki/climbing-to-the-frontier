@@ -1,6 +1,6 @@
 # P3 C5: upper-bound reduction for two above a triangular number
 
-Let $k\ge7$, $n=T_{k-1}+2$, and $F=(k-1)(k-4)$. The proposed equality $D_B(n)=F$ has the [general lower-bound witness](lower-bound-proof.md). The argument below proves the upper bound for most trajectories and identifies the two families still requiring an all-$k$ estimate. **It is not a proof of the general C5 upper bound.** In particular, the Griggs–Ho [Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf) gives the lower bound, while the assertion that it is always sharp is their Conjecture 4.7.
+Let $k\ge7$, $n=T_{k-1}+2$, and $F=(k-1)(k-4)$. The proposed equality $D_B(n)=F$ has the [general lower-bound witness](lower-bound-proof.md). The argument below proves the upper bound for most trajectories and identifies the single family still requiring an all $k$ estimate. **It is not a proof of the general C5 upper bound.** In particular, the Griggs–Ho [Theorem 4.5](https://sc.edu/study/colleges_schools/artsandsciences/mathematics/research/imi/research/documents/1998/1998_12.pdf) gives the lower bound, while the assertion that it is always sharp is their Conjecture 4.7.
 
 ## Sequence facts
 
@@ -9,7 +9,7 @@ For a trajectory from a partition of $n$, let $c_i$ be the pile count in $B^{i-1
 * Type I: $(c_p,\ldots,c_q)=(k-1,k,\ldots,k,k+1)$, with $t-k\le p<q\le t-1$.
 * Type II: $(c_p,\ldots,c_q)=(k-2,k-1,\ldots,k-1,k)$, with $t-k+1\le p<q\le t+1$.
 
-Write $L=q-p\ge2$. Every level-$x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies 
+Write $L=q-p\ge2$. Every level $x$ pattern satisfies $p\le x(L-1)$. A block of $m$ consecutive counts satisfies 
 
 $$
 \sum_{j=0}^{m-1}c_{p+j}\le n+T_{m-1}.
@@ -92,15 +92,15 @@ $$
 
 (4)
 
-This state cannot belong to the final pattern. To see its delay directly, use zero-based columns and one-based rows. Relative to the full staircase of height $k-1$, $S_k$ has one missing cell on diagonal $k-1$ at column $0$, two added cells on diagonal $k$ at columns $2,3$, and one added cell on diagonal $k+1$ at column $3$. Under the unsorted move, diagonal $w$ advances one column modulo $w$. For $0\le j\le k-2$, place the missing cell at column $j$, the two diagonal-$k$ cells at $(j+2)\bmod k,(j+3)\bmod k$, and the diagonal-$(k+1)$ cell at $(j+3)\bmod(k+1)$. These diagrams are Ferrers:
+This state cannot belong to the final pattern. To see its delay directly, use zero-based columns and one-based rows. Relative to the full staircase of height $k-1$, $S_k$ has one missing cell on diagonal $k-1$ at column $0$, two added cells on diagonal $k$ at columns $2,3$, and one added cell on diagonal $k+1$ at column $3$. Under the unsorted move, diagonal $w$ advances one column modulo $w$. For $0\le j\le k-2$, place the missing cell at column $j$, the two diagonal $k$ cells at $(j+2)\bmod k,(j+3)\bmod k$, and the diagonal $(k+1)$ cell at $(j+3)\bmod(k+1)$. These diagrams are Ferrers:
 
 * For $0\le j\le k-4$, all displayed columns are unwrapped. The missing cell makes columns $j,j+1$ equal, while the extra cells make columns $j+1,j+2,j+3$ equal; all other adjacent staircase differences remain nonnegative.
-* At $j=k-3$, the diagonal-$k$ extras wrap to $k-1,0$, and the diagonal-$(k+1)$ extra is in column $k$. The right tail has heights $1,1,1,1$, and the increased column $0$ preserves the leftmost inequality.
+* At $j=k-3$, the diagonal $k$ extras wrap to $k-1,0$, and the diagonal $(k+1)$ extra is in column $k$. The right tail has heights $1,1,1,1$, and the increased column $0$ preserves the leftmost inequality.
 * At $j=k-2$, the extras occupy columns $0,1$ on diagonal $k$ and column $0$ on diagonal $k+1$; the missing cell deletes the rightmost staircase column. The first two heights become $k+1,k-1$, and the rest decrease.
 
 Thus sorting does nothing during these $k-2$ moves, and every one of $S_k,B(S_k),\ldots,B^{k-2}(S_k)$ still has a cell on diagonal $k+1$. The [C1 classification](../c1/written-proof.md) rules out cyclicity at all these times. But $t\le p+k-1$, so the chosen cyclic state at time $t-1$ would occur at most $k-2$ moves after $B^p(\lambda)=S_k$, a contradiction. Therefore width $k-3$ also obeys $d\le F$.
 
-## Width $k-2$: remaining general gap
+## Width $k-2$: two possible cyclic entry states
 
 At this width, the same death-and-card calculation leaves exactly two possible states immediately after the first rise:
 
@@ -111,7 +111,7 @@ $$
 
 (5)
 
-Both are cyclic by C1, hence $d\le p$. Their only immediate predecessors compatible with the initial rise and no deaths are, respectively,
+Both are cyclic by C1. The preceding state has $c_p=k-2$ piles, whereas a rank $k$ cyclic state has $k-1$ or $k$ piles. Thus this is the first cyclic entry and $d=p$. Their only immediate predecessors compatible with the initial rise and no deaths are, respectively,
 
 $$
 (k+1,k-1,k-3,k-4,\ldots,2),\qquad
@@ -120,7 +120,32 @@ $$
 
 (6)
 
-The general retreat bound is only $p\le(k-1)(k-3)=F+k-1$, so it does not prove $d\le F$. An all-$k$ bound on the **first entry time** into either state (5), or a different argument ruling out late entry, is still needed. Finite enumerations at $k=7,8,9$ suggest much stronger bounds $p_A\le T_{k-2}$ and $p_B\le k-1$; those observations are not substituted for a proof.
+## The $B_k$ family is bounded
+
+For a partition $\mu$ with $m$ parts, every predecessor under Bulgarian solitaire is obtained by choosing a distinct part $s\ge m-1$, removing it, incrementing every other part, and appending $s-m+1$ ones. This is exhaustive: $s$ is the newborn pile in $\mu$, and the ones are precisely the predecessor piles that die in the move.
+
+The only eligible values in $B_k$ are $k-1$ and $k-2$. Removing $k-1$ gives another cyclic binary-boundary state. Removing $k-2$ gives the unique noncyclic immediate predecessor
+
+$$
+P_k=(k,k,k-3,k-4,\ldots,2).
+$$
+
+Thus $p=0$ or the reverse path passes through $P_k$ after its first step.
+
+In every state reached by reversing from $P_k$ while retaining both displayed largest piles, they remain equal, say of size $M=k+j$, and every other part is at most $M-3$. This holds initially. If the inverse rule selects a smaller part, both largest parts gain one and every other surviving part gains one; appended ones also satisfy the gap. Since the two large parts contain $2(k+j)$ cards, card conservation gives
+
+$$
+j\le\left\lfloor\frac{n-2k}{2}\right\rfloor
+ =\left\lfloor\frac{F}{4}\right\rfloor.
+$$
+
+If the inverse rule instead selects one of the equal largest parts of size $M$, the next state has exactly $M$ parts, one part of size $M+1$, and all other parts at most $M-2$. Its inverse eligibility threshold is $M-1$, so the $M+1$ part is its only eligible choice. Selecting it gives a state with $M+1$ parts and all parts at most $M-1$, below the new threshold $M$. No further predecessor exists. Therefore at most two reverse moves follow the last twin-retaining state.
+
+Including the initial $B_k\to P_k$ reverse move gives $p\le1+j+2\le3+\lfloor F/4\rfloor\le F$, since $F\ge18$ for $k\ge7$. This proves the $B_k$ first-entry bound without a high-birth-deadline lemma or a finite-rank assumption.
+
+## The $A_k$ family remains unresolved
+
+The retreat bound gives only $p\le(k-1)(k-3)=F+k-1$ for $A_k$. A uniform first-entry estimate $p\le F$ is still needed. Finite enumeration suggests $p\le T_{k-2}$, but does not prove this for all ranks.
 
 One precise sufficient lemma would be the following **unproved high-birth deadline** for this card count:
 
@@ -132,4 +157,4 @@ $$
 
 Indeed, at $A_k$ the pile of size $k$ is old, since the newest pile has size $k-2$. If it is original, its initial size was $k+p\le n$, giving $p\le n-k$. Otherwise, if born on move $i<p$, its birth size satisfies $c_i=k+p-i\ge k+1$; (7) gives $p\le n+1-k$. At $B_k$, two old piles have size $k-1$. An original one likewise gives $p\le n+1-k$. If both were born during play, at most one could have birth size exactly $k$, because that would force the common birth index $i=p-1$. The other has $c_i\ge k+1$ and $i+c_i=p+k-1$; (7) gives $p\le n+2-k\le F$ for $k\ge7$. Thus proving (7) would close this final case. It has been checked on all trajectories for the finite ranks $k=7,8,9$, but that evidence does not establish its general validity.
 
-Thus this note settles type I and all type-II widths except $k-2$, but the general C5 upper bound remains unproved. It also explains why the [C3 bound](../c3/written-proof.md), $k^2-2k-1$, does not imply the sharper target $F=k^2-5k+4$: their difference is $3k-5$.
+Thus this note settles type I, every other type-II width, and the $B_k$ family at width $k-2$. Only the $A_k$ entry family remains unresolved, so the general C5 upper bound remains unproved. It also explains why the [C3 bound](../c3/written-proof.md), $k^2-2k-1$, does not imply the sharper target $F=k^2-5k+4$: their difference is $3k-5$.

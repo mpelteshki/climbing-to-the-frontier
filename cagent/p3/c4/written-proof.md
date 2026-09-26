@@ -52,7 +52,7 @@ $$
 
 Both are statements about arbitrary solitaire trajectories, not just triangular card counts. Their lifetime proofs precede the triangular application in C2. Equation (2)'s abstract induction is additionally [checked in Lean](../lean/ProofPursuit/P3/C2SandwichBound.lean).
 
-Choose the earliest index $t$ such that $B^{t-1}(\lambda)$ is cyclic and $(c_t,c_{t+1})=(k-1,k)$. Such an index exists: C1 identifies the cycle with a rotating length-$k$ word containing exactly one $1$. The count is $k$ in one phase and $k-1$ in the others. Write $d$ for the first cyclic depth. Then $d\le t-1$.
+Choose the earliest index $t$ such that $B^{t-1}(\lambda)$ is cyclic and $(c_t,c_{t+1})=(k-1,k)$. Such an index exists: C1 identifies the cycle with a rotating length $k$ word containing exactly one $1$. The count is $k$ in one phase and $k-1$ in the others. Write $d$ for the first cyclic depth. Then $d\le t-1$.
 
 If $t\ge k+1$, there is either
 

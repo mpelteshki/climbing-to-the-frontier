@@ -71,7 +71,7 @@ Uniqueness of rank gives $K=k$, and the bit sum is $r$. This proves necessity of
 
 ## 3. Every asserted boundary is cyclic
 
-Conversely, take any length-$k$ bit word of weight $r$. The asserted pile list is decreasing: adjacent differences are $1+\varepsilon_j-\varepsilon_{j+1}\ge0$. Its only possible zero is the last entry, and its total is $T_{k-1}+r=n$.
+Conversely, take any length $k$ bit word of weight $r$. The asserted pile list is decreasing: adjacent differences are $1+\varepsilon_j-\varepsilon_{j+1}\ge0$. Its only possible zero is the last entry, and its total is $T_{k-1}+r=n$.
 
 Its number of positive piles is $k-1+\varepsilon_{k-1}$. One move therefore changes its boundary word to
 

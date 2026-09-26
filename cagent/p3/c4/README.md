@@ -12,4 +12,4 @@ The proof supplies a uniform upper bound and the explicit family $(k-2,k-2,k-3,\
 
 Lean proves the finite cases $k=5,6,7$ in `N11`, `N16`, and `N22`, and the shared abstract descent arithmetic. The general C4 proof is written mathematics, not a full Lean formalization.
 
-Run `python3 cagent/p3/c4/check.py` for an independent exhaustive check through $k=9$. [Finite evidence](finite-check.json) includes counts, witnesses, and exact depths; it does not replace the all-$k$ proof.
+Run `python3 cagent/p3/c4/check.py` for an independent exhaustive check through $k=9$. [Finite evidence](finite-check.json) includes counts, witnesses, and exact depths; it does not replace the all $k$ proof.
