@@ -52,3 +52,7 @@ C4 remains `Not solved`: the cell also requires the complete survivor audit for 
 Focused replay in the isolated publication checkout passed (all exit 0): `audit.py` for k=9–14; `compare_independent.py` with empty symmetric differences at every k=9–16; `verify_global_minima.py` for 107 claims and 20,436 facts including 19,704 smaller SAT witnesses; `verify_refutations.py` for 59 trees / 40,292 nodes; `verify_cert_strings.py` for those same trees and 83,325-byte ASCII encoding. Exact commands appear in `audit/MANIFEST.md`. These checks verify saved certificates/results; they do not rerun both complete searches.
 
 The k=11 generator reproduced the embedded certificate byte for byte, SHA-256 `83bd0c47bc24923a50ae3df347b5946349d3788302ab76bd9c525ffdb18a3689`.
+
+## Complete C5 certificate through 14
+
+`python3 -B replay.py --max-k 14 --output-dir .` completed in the audit directory with exit 0 in 16.109 seconds. Both algorithms reproduced every recorded node count and exact survivor list at 9–14. Early strong pruning enabled/disabled produced identical reduced lists at each size. Positive control, corrected residue audit, minimum-obstruction witnesses and all refutation trees passed. See `audit/replay-evidence-9-14.json`; rerun safely with `python3 -B cagent/p4/audit/replay.py --max-k 14`, which writes to a new temporary directory. C5 is complete for claimed boundary 14; larger-size ablation is explicitly excluded from that claim.

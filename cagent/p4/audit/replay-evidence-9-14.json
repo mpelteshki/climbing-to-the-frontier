@@ -1,0 +1,268 @@
+{
+  "checks": {
+    "audit_9_14": {
+      "exact_corrected_output_match": true,
+      "wall_seconds": 0.685
+    },
+    "compact_trees": {
+      "bytes": 83325,
+      "checked_nodes": 40292,
+      "complete": true,
+      "trees": 59,
+      "wall_seconds": 0.364
+    },
+    "global_minima": {
+      "claims": 107,
+      "complete": true,
+      "facts": 20436,
+      "minimum_sizes": {
+        "15": {
+          "12": 3,
+          "6": 16,
+          "7": 11
+        },
+        "16": {
+          "10": 11,
+          "11": 9,
+          "7": 16,
+          "8": 2,
+          "9": 39
+        }
+      },
+      "smaller_sat_facts_used": 19704,
+      "wall_seconds": 1.509
+    },
+    "independent_comparison": {
+      "all_symmetric_differences_empty": true,
+      "sizes": 6,
+      "wall_seconds": 0.031
+    },
+    "positive_control": {
+      "complete": true,
+      "moduli": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "residues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "wall_seconds": 0.035
+    },
+    "refutation_trees": {
+      "checked_nodes": 40292,
+      "complete": true,
+      "unique_obstructions": 59,
+      "wall_seconds": 0.35
+    }
+  },
+  "complete": true,
+  "output_dir": ".",
+  "overall_wall_seconds": 16.109,
+  "residue_checker_correction": "audit.py now compares xs[j] == xs[i] for original equal moduli, not xs[j] == R_i; fresh global-minimum claims and all 20436 fact statuses and witnesses matched saved data exactly",
+  "rule_on_off": [
+    {
+      "k": 9,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 10,
+      "rule_on_complete": true,
+      "rule_on_nodes": 10,
+      "rule_on_wall_seconds": 0.037,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 10,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 92,
+      "rule_on_complete": true,
+      "rule_on_nodes": 92,
+      "rule_on_wall_seconds": 0.038,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 11,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 9541,
+      "rule_on_complete": true,
+      "rule_on_nodes": 6222,
+      "rule_on_wall_seconds": 0.111,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 12,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 773,
+      "rule_on_complete": true,
+      "rule_on_nodes": 53,
+      "rule_on_wall_seconds": 0.048,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 13,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 347628,
+      "rule_on_complete": true,
+      "rule_on_nodes": 143111,
+      "rule_on_wall_seconds": 2.489,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 14,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 12884,
+      "rule_on_complete": true,
+      "rule_on_nodes": 322,
+      "rule_on_wall_seconds": 0.104,
+      "same_reduced_survivors": true
+    }
+  ],
+  "shared_validator": "clique.py imports audit.maximal_power_failure for its leaf rule; graph/multiplicity enumeration is independent",
+  "sizes": [
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 20,
+        "exact_baseline_match": true,
+        "nodes": 20,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.0,
+        "wall_seconds": 0.036
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 10,
+        "exact_baseline_match": true,
+        "nodes": 10,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.0,
+        "wall_seconds": 0.036
+      },
+      "independent_lists_equal": true,
+      "k": 9
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 85,
+        "exact_baseline_match": true,
+        "nodes": 85,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.001,
+        "wall_seconds": 0.036
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 92,
+        "exact_baseline_match": true,
+        "nodes": 92,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.001,
+        "wall_seconds": 0.036
+      },
+      "independent_lists_equal": true,
+      "k": 10
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 7460,
+        "exact_baseline_match": true,
+        "nodes": 7460,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.079,
+        "wall_seconds": 0.114
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 9541,
+        "exact_baseline_match": true,
+        "nodes": 9541,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.078,
+        "wall_seconds": 0.115
+      },
+      "independent_lists_equal": true,
+      "k": 11
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 699,
+        "exact_baseline_match": true,
+        "nodes": 699,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.006,
+        "wall_seconds": 0.042
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 773,
+        "exact_baseline_match": true,
+        "nodes": 773,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.012,
+        "wall_seconds": 0.048
+      },
+      "independent_lists_equal": true,
+      "k": 12
+    },
+    {
+      "clique.py": {
+        "base_survivors": 51,
+        "baseline_nodes": 217024,
+        "exact_baseline_match": true,
+        "nodes": 217024,
+        "reduced_survivors": 1,
+        "reported_seconds": 3.937,
+        "wall_seconds": 4.01
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 51,
+        "baseline_nodes": 347628,
+        "exact_baseline_match": true,
+        "nodes": 347628,
+        "reduced_survivors": 1,
+        "reported_seconds": 5.479,
+        "wall_seconds": 5.576
+      },
+      "independent_lists_equal": true,
+      "k": 13
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 8359,
+        "exact_baseline_match": true,
+        "nodes": 8359,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.053,
+        "wall_seconds": 0.09
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 12884,
+        "exact_baseline_match": true,
+        "nodes": 12884,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.121,
+        "wall_seconds": 0.16
+      },
+      "independent_lists_equal": true,
+      "k": 14
+    }
+  ]
+}

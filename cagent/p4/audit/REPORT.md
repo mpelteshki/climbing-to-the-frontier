@@ -2,9 +2,10 @@
 
 This folder gives an exact integer enumeration and independent checks for the
 necessary modulus conditions of a **least-size** counterexample to the
-disjoint-congruence-classes conjecture. It is not itself a formal certificate.
-The adjoining `cagent/p4/lean` package is the authority for any Lean theorem;
-none of these Python files should be used to mark a cell solved on their own.
+disjoint-congruence-classes conjecture. Together with the [finite-reduction and pruning proof](reduction-proof.md),
+exact outputs, and replay evidence, it forms a computational exhaustiveness
+certificate. The adjoining `cagent/p4/lean` package separately records Lean
+formalization; a Python execution is not a Lean theorem.
 
 ## Source and finite reduction
 
@@ -113,8 +114,9 @@ equal-modulus copies by residue because they can be permuted. It found
 no feasible assignment for any of the 30 or 77 final lists. The files
 `global-minima-claims.jsonl` and `global-minima-facts.jsonl` give the
 stronger smallest-cardinality obstruction result described below. These
-unsatisfiability claims are Python results and require independent formal
-proof before any cell is called solved.
+unsatisfiability claims are independently replayed finite certificates.
+Their completeness relies on the written residue-normalization proof and
+the branch-by-branch verifier, not on an unexamined search return value.
 
 ### Globally smallest obstructions inside each survivor
 
@@ -207,3 +209,7 @@ exploratory output omitted repeated anchors and is excluded from this
 package. Timed-out runs do not imply empty survivor sets. No size above
 16 was searched here. The 24/30 conditional argument has not been
 converted into a Lean certificate in this folder.
+
+## Correction and fresh replay
+
+The old `audit.py` compared an original modulus with an effective residue bound when imposing equal-modulus ordering. It now compares original moduli `xs[j] == xs[i]`. Freshly regenerated 107 minimum claims, 20,436 facts including their statuses and concrete witnesses, and the k=13 audit match the earlier artifacts exactly. The independent tree checker always used the correct condition and checks all 59 refutations. The defect is recorded rather than hidden; full search and certificate replay uses the corrected checker.

@@ -1,8 +1,8 @@
 # Reproducible audit manifest
 
-Copy the following 31 files together to replay the two finite enumerators,
+The original 31 files below form the base data package; retain them together to replay the two finite enumerators,
 the shared SAT-witness map, the global minimum obstruction claims, and all
-59 finite UNSAT trees. Total size before this manifest: **1,619,073 bytes**.
+59 finite UNSAT trees. The current package additionally includes the proof and replay files below.
 All paths below are relative to this directory.
 
 | Role | Required files |
@@ -27,3 +27,14 @@ is invalid and must not be copied as evidence.
 
 Every production output in the list has a completeness or independent replay
 check described in `REPORT.md`. Python checking is not a Lean theorem.
+
+## Complete boundary-14 replay additions
+
+- `reduction-proof.md`: reconstructed proofs of every finite reduction and pruning rule.
+- `replay.py`: one-command fresh replay, defaulting to a new temporary output directory.
+- `replay-evidence-9-14.json`: complete 16.109-second run and per-size node/wall-clock records.
+- `rerun-tuple-9-14.jsonl`, `rerun-clique-9-14.jsonl`: regenerated exact search outputs.
+- `rerun-rule-on-9-14.jsonl`: enabled early pruning compared with disabled baseline at every size.
+- `rerun-positive-control-9-14.jsonl`, `rerun-audit-9-14.json`: corrected fresh control and direct audit.
+
+Run from repository root: `python3 -B cagent/p4/audit/replay.py --max-k 14`. Saved outputs need not be deleted; choose `--output-dir` only for a fresh directory. The runner checks baseline counts as well as exact survivor lists.

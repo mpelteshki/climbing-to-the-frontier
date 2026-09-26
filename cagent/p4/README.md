@@ -30,7 +30,7 @@ lake env lean ProofPursuit/P4/C3.lean
 | [C2](c2/README.md) | `Statement 4` | Complete |
 | [C3](c3/README.md) | `Statement k` for `2 ≤ k ≤ 8` | Complete |
 | [C4](c4/README.md) | `Statement k` for `2 ≤ k ≤ 12`; finite-reduction and density lemmas; exact k=13 obstruction audit | Not solved |
-| [C5](c5/known-cases.md) | Written exclusions of 24 and 30 as least counterexample sizes; computational survivor audit | Not solved |
+| [C5](c5/solution.md) | Certified boundary 14; full replay, rule-off comparison, positive control; written 24/30 least-counterexample exclusions | Complete for claimed boundary 14 |
 | C6 | — | Skipped; open-conjecture work paused |
 
 The full C3 theorem is in [C3.lean](lean/ProofPursuit/P4/C3.lean). The package contains individual proofs through `Statement 7`. `Eight.step` proves `Statement 8` from `Statement 7`, and `Progress.solution` supplies that premise using `Seven.solution`. `ThroughTwelve.solution` now extends the unconditional range through 12. No theorem asserting `Statement k` for `k > 12` is claimed. The k=13 results concern one explicit modulus list, not all configurations of thirteen classes.
@@ -44,3 +44,7 @@ Use existing published solutions when their hypotheses match the task; cite the 
 Lean is valuable here for the actual congruence semantics, reductions, density inequality, and the complete range theorem. Python proposes finite certificates; Lean checks the k=11 certificate independently. For larger survivor tables, independent exact computational replay and readable mathematical arguments offer better hackathon return than formalizing every search and literature bookkeeping step. Such evidence remains explicitly separate from full-cell completion.
 
 The [computational audit](audit/MANIFEST.md) includes exact independent replay and the deterministic `eleven_lean.py` certificate generator. The latter regenerated the embedded Lean certificate byte for byte; kernel checking, not trust in Python, establishes its correctness.
+
+## Completed C5 boundary
+
+[C5 solution](c5/solution.md) claims the contiguous range through **14**, with all additional benchmark checks complete in a 16.109-second fresh replay. Evidence through 16 is reported separately because its stronger C5 rule-off requirement is unfinished. This is a task-specific certificate endpoint, not a claim that 15 is false or unknown in the literature.
