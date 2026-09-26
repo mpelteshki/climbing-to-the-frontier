@@ -1,6 +1,6 @@
 # C1: complete mathematical argument
 
-This document gives the general mathematical proof, including the numerical cycle count. The classification, rotation correspondence, and triangular convergence are also formalized in Lean. The final counting argument below is a **written proof**, not yet a Lean theorem. Consequently the repository's full-Lean status for C1 remains **Not solved**.
+This document gives the general mathematical proof, including the numerical cycle count. The classification, rotation correspondence, and triangular convergence are also formalized in Lean. The final counting argument below is a **written proof**, not yet a Lean theorem. **C1 is Solved under the task criteria**; the numerical counting step remains outside the Lean formalization.
 
 Write (T_k=k(k+1)/2). For (n>0), let (k) be its unique rank, so (T_{k-1}<n\le T_k), and put (r=n-T_{k-1}). Thus (1\le r\le k).
 
