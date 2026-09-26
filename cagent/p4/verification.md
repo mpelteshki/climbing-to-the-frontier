@@ -56,3 +56,9 @@ The k=11 generator reproduced the embedded certificate byte for byte, SHA-256 `8
 ## Complete C5 certificate through 14
 
 `python3 -B replay.py --max-k 14 --output-dir .` completed in the audit directory with exit 0 in 16.109 seconds. Both algorithms reproduced every recorded node count and exact survivor list at 9–14. Early strong pruning enabled/disabled produced identical reduced lists at each size. Positive control, corrected residue audit, minimum-obstruction witnesses and all refutation trees passed. See `audit/replay-evidence-9-14.json`; rerun safely with `python3 -B cagent/p4/audit/replay.py --max-k 14`, which writes to a new temporary directory. C5 is complete for claimed boundary 14; larger-size ablation is explicitly excluded from that claim.
+
+## Complete C4 replay through 16
+
+`python3 -B replay.py --max-k 16 --output-dir rerun-full` completed with exit 0 in **500.013 seconds**. Both algorithms exactly reproduced baseline node counts and full relevant survivor lists for all eight sizes 9–16. Positive control, 107 minimum-obstruction claims, 20,436 facts / 19,704 smaller SAT witnesses, 59 refutation trees / 40,292 nodes, and compact encodings passed. Evidence: `audit/rerun-full/replay-evidence-9-16.json`. This completes C4; C5's additional observed rule-off comparison remains scoped through 14.
+
+Audit correction: the earlier diagnosis of the old residue-ordering condition as unsound was withdrawn after proving its compressed-variable symmetry. The current simpler condition remains sound and reproduces all stored results. See `audit/reduction-proof.md`; no mathematical result changed.

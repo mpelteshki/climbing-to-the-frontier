@@ -1,0 +1,314 @@
+{
+  "checks": {
+    "audit_9_14": {
+      "exact_corrected_output_match": true,
+      "wall_seconds": 0.68
+    },
+    "compact_trees": {
+      "bytes": 83325,
+      "checked_nodes": 40292,
+      "complete": true,
+      "trees": 59,
+      "wall_seconds": 0.365
+    },
+    "global_minima": {
+      "claims": 107,
+      "complete": true,
+      "facts": 20436,
+      "minimum_sizes": {
+        "15": {
+          "12": 3,
+          "6": 16,
+          "7": 11
+        },
+        "16": {
+          "10": 11,
+          "11": 9,
+          "7": 16,
+          "8": 2,
+          "9": 39
+        }
+      },
+      "smaller_sat_facts_used": 19704,
+      "wall_seconds": 1.505
+    },
+    "independent_comparison": {
+      "all_symmetric_differences_empty": true,
+      "sizes": 8,
+      "wall_seconds": 0.036
+    },
+    "positive_control": {
+      "complete": true,
+      "moduli": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "residues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "wall_seconds": 0.032
+    },
+    "refutation_trees": {
+      "checked_nodes": 40292,
+      "complete": true,
+      "unique_obstructions": 59,
+      "wall_seconds": 0.346
+    }
+  },
+  "complete": true,
+  "output_dir": "rerun-full",
+  "overall_wall_seconds": 500.013,
+  "residue_checker_correction": "audit.py now compares xs[j] == xs[i] for original equal moduli, not xs[j] == R_i; fresh global-minimum claims and all 20436 fact statuses and witnesses matched saved data exactly",
+  "rule_on_off": [
+    {
+      "k": 9,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 10,
+      "rule_on_complete": true,
+      "rule_on_nodes": 10,
+      "rule_on_wall_seconds": 0.043,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 10,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 92,
+      "rule_on_complete": true,
+      "rule_on_nodes": 92,
+      "rule_on_wall_seconds": 0.033,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 11,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 9541,
+      "rule_on_complete": true,
+      "rule_on_nodes": 6222,
+      "rule_on_wall_seconds": 0.103,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 12,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 773,
+      "rule_on_complete": true,
+      "rule_on_nodes": 53,
+      "rule_on_wall_seconds": 0.04,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 13,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 347628,
+      "rule_on_complete": true,
+      "rule_on_nodes": 143111,
+      "rule_on_wall_seconds": 2.4,
+      "same_reduced_survivors": true
+    },
+    {
+      "k": 14,
+      "rule_off_baseline_complete": true,
+      "rule_off_nodes": 12884,
+      "rule_on_complete": true,
+      "rule_on_nodes": 322,
+      "rule_on_wall_seconds": 0.097,
+      "same_reduced_survivors": true
+    }
+  ],
+  "shared_validator": "clique.py imports audit.maximal_power_failure for its leaf rule; graph/multiplicity enumeration is independent",
+  "sizes": [
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 20,
+        "exact_baseline_match": true,
+        "nodes": 20,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.0,
+        "wall_seconds": 0.03
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 10,
+        "exact_baseline_match": true,
+        "nodes": 10,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.0,
+        "wall_seconds": 0.031
+      },
+      "independent_lists_equal": true,
+      "k": 9
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 85,
+        "exact_baseline_match": true,
+        "nodes": 85,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.001,
+        "wall_seconds": 0.033
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 92,
+        "exact_baseline_match": true,
+        "nodes": 92,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.001,
+        "wall_seconds": 0.032
+      },
+      "independent_lists_equal": true,
+      "k": 10
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 7460,
+        "exact_baseline_match": true,
+        "nodes": 7460,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.074,
+        "wall_seconds": 0.106
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 9541,
+        "exact_baseline_match": true,
+        "nodes": 9541,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.074,
+        "wall_seconds": 0.107
+      },
+      "independent_lists_equal": true,
+      "k": 11
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 699,
+        "exact_baseline_match": true,
+        "nodes": 699,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.005,
+        "wall_seconds": 0.036
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 773,
+        "exact_baseline_match": true,
+        "nodes": 773,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.011,
+        "wall_seconds": 0.042
+      },
+      "independent_lists_equal": true,
+      "k": 12
+    },
+    {
+      "clique.py": {
+        "base_survivors": 51,
+        "baseline_nodes": 217024,
+        "exact_baseline_match": true,
+        "nodes": 217024,
+        "reduced_survivors": 1,
+        "reported_seconds": 3.728,
+        "wall_seconds": 3.795
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 51,
+        "baseline_nodes": 347628,
+        "exact_baseline_match": true,
+        "nodes": 347628,
+        "reduced_survivors": 1,
+        "reported_seconds": 5.115,
+        "wall_seconds": 5.2
+      },
+      "independent_lists_equal": true,
+      "k": 13
+    },
+    {
+      "clique.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 8359,
+        "exact_baseline_match": true,
+        "nodes": 8359,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.049,
+        "wall_seconds": 0.081
+      },
+      "compared_field": "base_survivors",
+      "enumerate.py": {
+        "base_survivors": 0,
+        "baseline_nodes": 12884,
+        "exact_baseline_match": true,
+        "nodes": 12884,
+        "reduced_survivors": 0,
+        "reported_seconds": 0.115,
+        "wall_seconds": 0.149
+      },
+      "independent_lists_equal": true,
+      "k": 14
+    },
+    {
+      "clique.py": {
+        "base_survivors": 97,
+        "baseline_nodes": 1522808,
+        "exact_baseline_match": true,
+        "nodes": 1522808,
+        "reduced_survivors": 30,
+        "reported_seconds": 57.687,
+        "wall_seconds": 57.823
+      },
+      "compared_field": "reduced_survivors",
+      "enumerate.py": {
+        "base_survivors": 102,
+        "baseline_nodes": 2330980,
+        "exact_baseline_match": true,
+        "nodes": 2330980,
+        "reduced_survivors": 30,
+        "reported_seconds": 59.358,
+        "wall_seconds": 59.622
+      },
+      "independent_lists_equal": true,
+      "k": 15
+    },
+    {
+      "clique.py": {
+        "base_survivors": 288,
+        "baseline_nodes": 4111538,
+        "exact_baseline_match": true,
+        "nodes": 4111538,
+        "reduced_survivors": 77,
+        "reported_seconds": 165.252,
+        "wall_seconds": 165.504
+      },
+      "compared_field": "reduced_survivors",
+      "enumerate.py": {
+        "base_survivors": 300,
+        "baseline_nodes": 6921594,
+        "exact_baseline_match": true,
+        "nodes": 6921594,
+        "reduced_survivors": 77,
+        "reported_seconds": 201.373,
+        "wall_seconds": 201.727
+      },
+      "independent_lists_equal": true,
+      "k": 16
+    }
+  ]
+}
